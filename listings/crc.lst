@@ -8,122 +8,129 @@ ARM Macro Assembler    Page 1
     2 00000000                 EXPORT           CrcAssVersion
     3 00000000         CrcAssVersion
     4 00000000         
-    5 00000000        0 
-                       string  RN               R0
-    6 00000000        1 
+    5 00000000 E92D 1FFE       PUSH             {R1-R12}    ; Save the register
+                                                            s value
+    6 00000004         
+    7 00000004        0 
+                       crc     RN               R0
+    8 00000004        1 
+                       string  RN               R1
+    9 00000004        2 
                        stringLength
-                               RN               R1
-    7 00000000        4 
-                       polynom RN               R4
-    8 00000000        6 
+                               RN               R2
+   10 00000004        5 
+                       polynom RN               R5
+   11 00000004        6 
                        bitCounter
                                RN               R6
-    9 00000000        7 
+   12 00000004        7 
                        character
                                RN               R7
-   10 00000000        A 
+   13 00000004        A 
                        characterIndex
                                RN               R10
-   11 00000000        B 
+   14 00000004        B 
                        remainder
                                RN               R11
-   12 00000000         
-   13 00000000 F248 4408       MOV              polynom, #0x8408 ;can't XOR wit
+   15 00000004         
+   16 00000004 F248 4508       MOV              polynom, #0x8408 ;can't XOR wit
                                                             h more than 255 (co
                                                             nstant)
-   14 00000004         CLOOP
-   15 00000004 6807            LDR              character, [string] ;ask for on
+   17 00000008         CLOOP
+   18 00000008 680F            LDR              character, [string] ;ask for on
                                                             e instruction (acce
                                                             ss pointed data)
-   16 00000006 F007 07FF       AND              character, #0xFF
-   17 0000000A EA8B 0B07       EOR              remainder, character
-   18 0000000E F04F 0600       MOV              bitCounter, #0 ;
-   19 00000012         
-   20 00000012         BLOOP
-   21 00000012 F00B 0901       AND              R9, remainder, #0x0001
-   22 00000016 F1B9 0F01       CMP              R9, #1
-   23 0000001A D003            BEQ              SHIFTANDXOR
-   24 0000001C         
-   25 0000001C D1FF            BNE              SHIFT
-   26 0000001E         
-   27 0000001E         SHIFT
-   28 0000001E EA4F 0B5B       LSR              remainder, #1
-   29 00000022 E004            B                OUTOFIF
-   30 00000024         
-   31 00000024         SHIFTANDXOR
-   32 00000024 EA4F 0B5B       LSR              remainder, #1
-   33 00000028 EA8B 0B04       EOR              remainder, polynom
-   34 0000002C E7FF            B                OUTOFIF
-   35 0000002E         
-   36 0000002E         OUTOFIF
-   37 0000002E F106 0601       ADD              bitCounter, #1
-   38 00000032 2E08            CMP              bitCounter, #8
-   39 00000034 D000            BEQ              BLOOPDONE
-   40 00000036 DBEC            BLT              BLOOP
-   41 00000038         
-   42 00000038         BLOOPDONE
-   43 00000038 F10A 0A01       ADD              characterIndex, #1
+   19 0000000A F007 07FF       AND              character, #0xFF
+   20 0000000E EA8B 0B07       EOR              remainder, character
+   21 00000012 F04F 0600       MOV              bitCounter, #0 ;
+   22 00000016         
+   23 00000016         BLOOP
+   24 00000016 F00B 0901       AND              R9, remainder, #0x0001
+   25 0000001A F1B9 0F01       CMP              R9, #1
+   26 0000001E D003            BEQ              SHIFTANDXOR
+   27 00000020         
+   28 00000020 D1FF            BNE              SHIFT
+   29 00000022         
+   30 00000022         SHIFT
+   31 00000022 EA4F 0B5B       LSR              remainder, #1
+   32 00000026 E004            B                OUTOFIF
+   33 00000028         
+   34 00000028         SHIFTANDXOR
+   35 00000028 EA4F 0B5B       LSR              remainder, #1
+   36 0000002C EA8B 0B05       EOR              remainder, polynom
+   37 00000030 E7FF            B                OUTOFIF
+   38 00000032         
+   39 00000032         OUTOFIF
+   40 00000032 F106 0601       ADD              bitCounter, #1
+   41 00000036 2E08            CMP              bitCounter, #8
 
 
 
 ARM Macro Assembler    Page 2 
 
 
-   44 0000003C F100 0001       ADD              string, #1
-   45 00000040 458A            CMP              characterIndex, stringLength
-   46 00000042 D000            BEQ              CLOOPDONE
-   47 00000044 DBDE            BLT              CLOOP
-   48 00000046         CLOOPDONE
-   49 00000046 4658            MOV              R0, remainder ; Bring the remai
-                                                            nder into R0 (outpu
-                                                            t register)
-   50 00000048 4770            BX               LR          ;
-   51 0000004A                 END
+   42 00000038 D000            BEQ              BLOOPDONE
+   43 0000003A DBEC            BLT              BLOOP
+   44 0000003C         
+   45 0000003C         BLOOPDONE
+   46 0000003C F10A 0A01       ADD              characterIndex, #1
+   47 00000040 F101 0101       ADD              string, #1
+   48 00000044 4592            CMP              characterIndex, stringLength
+   49 00000046 D000            BEQ              CLOOPDONE
+   50 00000048 DBDE            BLT              CLOOP
+   51 0000004A         CLOOPDONE
+   52 0000004A 4658            MOV              crc, remainder ; Bring the rema
+                                                            inder into R0 (outp
+                                                            ut register)
+   53 0000004C EBA1 0102       SUB              string, stringLength
+   54 00000050         
+   55 00000050 E8BD 1FFE       POP              {R1-R12}
+   56 00000054         
+   57 00000054 4770            BX               LR          ;
+   58 00000056                 END
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\obj
-ect\crc.d -o.\object\crc.o -I"C:\Users\Vincent\Dropbox\ECSE 426 -- Micro Proces
-sor Systems\19 septembre\Lab 1 Base Project\Lab 1 Base Project\RTE" -I"C:\Users
-\Vincent\Dropbox\ECSE 426 -- Micro Processor Systems\19 septembre\Lab 1 Base Pr
-oject\Lab 1 Base Project\RTE\Device\STM32F407VG" -IC:\Keil_v5\ARM\PACK\ARM\CMSI
-S\4.1.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Inc
-lude --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --list=.\listi
-ngs\crc.lst crc.s
+ect\crc.d -o.\object\crc.o -I"C:\Users\mgrego29\Downloads\Lab 1 Base Project gi
+t\Lab 1 Base Project\RTE" -I"C:\Users\mgrego29\Downloads\Lab 1 Base Project git
+\Lab 1 Base Project\RTE\Device\STM32F407VG" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1
+.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include 
+--predefine="__MICROLIB SETA 1" --list=.\listings\crc.lst crc.s
 
 
 
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-BLOOP 00000012
+BLOOP 00000016
 
 Symbol: BLOOP
    Definitions
-      At line 20 in file crc.s
+      At line 23 in file crc.s
    Uses
-      At line 40 in file crc.s
+      At line 43 in file crc.s
 Comment: BLOOP used once
-BLOOPDONE 00000038
+BLOOPDONE 0000003C
 
 Symbol: BLOOPDONE
    Definitions
-      At line 42 in file crc.s
+      At line 45 in file crc.s
    Uses
-      At line 39 in file crc.s
+      At line 42 in file crc.s
 Comment: BLOOPDONE used once
-CLOOP 00000004
+CLOOP 00000008
 
 Symbol: CLOOP
    Definitions
-      At line 14 in file crc.s
+      At line 17 in file crc.s
    Uses
-      At line 47 in file crc.s
+      At line 50 in file crc.s
 Comment: CLOOP used once
-CLOOPDONE 00000046
+CLOOPDONE 0000004A
 
 Symbol: CLOOPDONE
    Definitions
-      At line 48 in file crc.s
+      At line 51 in file crc.s
    Uses
-      At line 46 in file crc.s
+      At line 49 in file crc.s
 Comment: CLOOPDONE used once
 CrcAssVersion 00000000
 
@@ -133,24 +140,24 @@ Symbol: CrcAssVersion
    Uses
       At line 2 in file crc.s
 Comment: CrcAssVersion used once
-OUTOFIF 0000002E
+OUTOFIF 00000032
 
 Symbol: OUTOFIF
    Definitions
-      At line 36 in file crc.s
+      At line 39 in file crc.s
    Uses
-      At line 29 in file crc.s
-      At line 34 in file crc.s
+      At line 32 in file crc.s
+      At line 37 in file crc.s
 
-SHIFT 0000001E
+SHIFT 00000022
 
 Symbol: SHIFT
    Definitions
-      At line 27 in file crc.s
+      At line 30 in file crc.s
    Uses
-      At line 25 in file crc.s
+      At line 28 in file crc.s
 Comment: SHIFT used once
-SHIFTANDXOR 00000024
+SHIFTANDXOR 00000028
 
 
 
@@ -160,9 +167,9 @@ Relocatable symbols
 
 Symbol: SHIFTANDXOR
    Definitions
-      At line 31 in file crc.s
+      At line 34 in file crc.s
    Uses
-      At line 23 in file crc.s
+      At line 26 in file crc.s
 Comment: SHIFTANDXOR used once
 text 00000000
 

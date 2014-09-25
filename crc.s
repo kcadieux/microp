@@ -2,9 +2,12 @@
 	EXPORT CrcAssVersion
 CrcAssVersion
 
-string RN R0
-stringLength RN R1
-polynom RN R4
+	PUSH {R1-R12} ; Save the registers value
+
+crc RN R0
+string RN R1
+stringLength RN R2
+polynom RN R5
 bitCounter RN R6
 character RN R7
 characterIndex RN R10
@@ -46,6 +49,10 @@ BLOOPDONE
 	BEQ CLOOPDONE
 	BLT CLOOP
 CLOOPDONE	
-	MOV R0, remainder ; Bring the remainder into R0 (output register)
+	MOV crc, remainder ; Bring the remainder into R0 (output register)
+	SUB string, stringLength
+	
+	POP {R1-R12}
+	
 	BX LR ;
 	END
