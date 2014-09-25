@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define BYTES_IN_CRC 2
 #define BITS_PER_BYTE 8
@@ -10,7 +10,9 @@
 
 typedef signed long int32_t;
 
-extern unsigned short CrcAssVersion(unsigned short crc, char * characters, int stringLength);
+unsigned short crc_table[256];
+
+extern unsigned short CrcAssVersion(char * characters, int stringLength);
 
 /// <summary> 
 /// Generates a CRC for the given array of characters
@@ -24,14 +26,14 @@ extern unsigned short CrcAssVersion(unsigned short crc, char * characters, int s
 /// <returns>
 /// The CRC as an unsigned short (2 bytes)
 /// </returns>
-unsigned short CrcCVersion(unsigned short rem, char * characters, int stringLength)
+unsigned short CrcCVersion(char * characters, int stringLength)
 {	
 	if (stringLength <= 0)
 	{
 		return 0; //All your bases are belong to me
 	}
 	
-	rem = 0;
+	unsigned short rem = 0;
 	int charSelected;
 	int bitSelected;
 	for(charSelected = 0; charSelected < stringLength; charSelected++)
@@ -53,6 +55,15 @@ unsigned short CrcCVersion(unsigned short rem, char * characters, int stringLeng
 	return rem;
 }
 
+char * AppendCharsToString(char * string, int stringLength, char c1, char c2)
+{
+	char * newConcat = (char *) malloc(stringLength+BYTES_IN_CRC+1);
+	memcpy(newConcat, string, sizeof(char)*(stringLength));
+	newConcat[stringLength] = c1;
+	newConcat[stringLength+1] = c2;
+	return newConcat;
+}
+
 /// <summary> 
 /// Checks if the given CRC is consistent with the initial string 
 /// </summary>
@@ -68,19 +79,16 @@ unsigned short CrcCVersion(unsigned short rem, char * characters, int stringLeng
 /// <returns>
 /// SUCCESS if the CRC is valid, FAILURE otherwise
 /// </returns>
-int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunction)(unsigned short, char *,int))
+int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunction)(char *,int))
 {	
 	unsigned short crc;
-	crc = CrcFunction(crc, initialString, stringLength);
+	crc = CrcFunction(initialString, stringLength);
 	char first = (char)crc;
 	char second = (char)(crc>>BITS_PER_BYTE);
 	
-	char stringAndCrc[stringLength + BYTES_IN_CRC + 1]; // The 1 is due to the fact that the string must be null terminated
-	snprintf(stringAndCrc, sizeof stringAndCrc, "%s%c%c", initialString, first, second);
-	unsigned short zz;
-	zz = CrcFunction(crc, stringAndCrc, stringLength + BYTES_IN_CRC);
-	// If the CRC of the concat'd string isn't 0, it's a failure	
-	if(CrcFunction(crc, stringAndCrc, stringLength + BYTES_IN_CRC)) 
+	char * stringAndCrc = AppendCharsToString(initialString, stringLength, first, second);
+		
+	if(CrcFunction(stringAndCrc, stringLength + BYTES_IN_CRC)) 
 	{
 		return FAILURE;
 	}
@@ -95,15 +103,11 @@ int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunctio
 /// Zero
 /// </returns>
 int main()
-{
-	char * characters = "2014";	
+{	
+	char * characters = "2014";//"In Flanders fields the poppies blow, Between the crosses, row on row, That mark our place; and in the sky, The larks, still bravely singing, fly, Scarce heard amid the guns below. We are the Dead. Short days ago, We lived, felt dawn, saw sunset glow, Loved and were loved, and now we lie, In Flanders fields. Take up our quarrel with the foe, To you from failing hands we throw, The torch; be yours to hold it high. If ye break faith with us who die, We shall not sleep, though poppies grow, In Flanders fields.";
 	int stringLength = 4;	
 	int resultC = CrcCheck(characters, stringLength, CrcCVersion);
 	int resultAss = CrcCheck(characters, stringLength, CrcAssVersion);
-	unsigned short crc = 0;
-	CrcAssVersion(crc, characters, stringLength);
-	
-
 	return 0;
 }
 

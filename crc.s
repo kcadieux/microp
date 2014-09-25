@@ -2,55 +2,40 @@
 	EXPORT CrcAssVersion
 CrcAssVersion
 
-	PUSH {R1-R12} ; Save the registers value
-
-crc RN R0
-string RN R1
-stringLength RN R2
+string RN R0
+stringLength RN R1
 polynom RN R5
 bitCounter RN R6
 character RN R7
+temp RN R9
 characterIndex RN R10
 remainder RN R11
 
-	MOV polynom, #0x8408 ;can't XOR with more than 255 (constant)
-CLOOP
-	LDR character, [string] ;ask for one instruction (access pointed data)
-	AND character, #0xFF
-	EOR remainder, character
-	MOV bitCounter, #0 ;
+	PUSH {R1-R12} ; Save the registers value
+	MOV characterIndex, #0 ; Initialize char index at 0 (in case of multiple calls to fct)
+	MOV remainder, #0 ; Initialize remainder at 0 (in case of multiple calls to fct
+	MOV polynom, #0x8408 ; Can't XOR with more than 255 (constant)
 
-BLOOP
-	AND R9, remainder, #0x0001
-	CMP R9, #1
-	BEQ SHIFTANDXOR
-	
-	BNE SHIFT
-	
-SHIFT
-	LSR remainder, #1
-	B OUTOFIF
-	
-SHIFTANDXOR
-	LSR remainder, #1
-	EOR remainder, polynom
-	B OUTOFIF
-	
-OUTOFIF
-	ADD bitCounter, #1
-	CMP bitCounter, #8
-	BEQ BLOOPDONE
-	BLT BLOOP
-		
-BLOOPDONE	
-	ADD characterIndex, #1
-	ADD string, #1
+CLOOP
 	CMP characterIndex, stringLength
 	BEQ CLOOPDONE
-	BLT CLOOP
+	ADD characterIndex, #1
+	LDRB character, [string] ; ask for one instruction (access pointed data)
+	ADD string, #1
+	EOR remainder, character
+	AND bitCounter, #0 ; Initialize bitCounter to 0
+BLOOP
+	CMP bitCounter, #8
+	BEQ CLOOP
+	AND temp, remainder, #0x0001
+	CMP temp, #1
+	LSR remainder, #1
+	EOREQ remainder, polynom
+	ADD bitCounter, #1
+	B BLOOP	
+	
 CLOOPDONE	
-	MOV crc, remainder ; Bring the remainder into R0 (output register)
-	SUB string, stringLength
+	MOV string, remainder ; Bring the remainder into R0 (output register)
 	
 	POP {R1-R12}
 	
