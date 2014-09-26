@@ -1,0 +1,119 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             text, CODE, READONLY
+    2 00000000                 EXPORT           CrcAssVersionTable
+    3 00000000         CrcAssVersionTable
+    4 00000000         
+    5 00000000        0 
+                       string  RN               R0
+    6 00000000        1 
+                       stringLength
+                               RN               R1
+    7 00000000        2 
+                       table   RN               R2
+    8 00000000        4 
+                       polynom RN               R4
+    9 00000000        5 
+                       pointerEnd
+                               RN               R5
+   10 00000000        6 
+                       character
+                               RN               R6
+   11 00000000        7 
+                       tableValue
+                               RN               R7
+   12 00000000        8 
+                       temp    RN               R8
+   13 00000000        9 
+                       remainder
+                               RN               R9
+   14 00000000        A 
+                       mask    RN               R10
+   15 00000000         
+   16 00000000 E92D 07FE       PUSH             {R1-R10}    ; Save the register
+                                                            s value
+   17 00000004 F64F 7AFF       MOV              mask, #0xffff ; mask to get the
+                                                             16 rightmost bits
+   18 00000008 F04F 0900       MOV              remainder, #0 ; Initialize rema
+                                                            inder at 0 (in case
+                                                             of multiple calls 
+                                                            to fct
+   19 0000000C F248 4408       MOV              polynom, #0x8408 ; Polynom
+   20 00000010 EB00 0501       ADD              pointerEnd, string, stringLengt
+h 
+                                                            ; End loop conditio
+                                                            n
+   21 00000014         
+   22 00000014         CLOOP
+   23 00000014 F810 6B01       LDRB             character, [string], #1 ; Load 
+                                                            the value then add 
+                                                            1
+   24 00000018         
+   25 00000018 F009 08FF       AND              temp, remainder, #0xff
+   26 0000001C EA88 0806       EOR              temp, character
+   27 00000020 F852 7018       LDR              tableValue, [table, temp, LSL #
+1]
+   28 00000024 EA07 070A       AND              tableValue, mask
+   29 00000028 EA87 2919       EOR              remainder, tableValue, remainde
+r, LSR #8
+   30 0000002C         
+   31 0000002C 42A8            CMP              string, pointerEnd
+   32 0000002E D1F1            BNE              CLOOP
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   33 00000030         
+   34 00000030 4648            MOV              string, remainder ; Bring the r
+                                                            emainder into R0 (o
+                                                            utput register)
+   35 00000032         
+   36 00000032 E8BD 07FE       POP              {R1-R10}
+   37 00000036         
+   38 00000036 4770            BX               LR          ;
+   39 00000038                 END
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\obj
+ect\crctable.d -o.\object\crctable.o -I"C:\Users\mgrego29\Downloads\Lab 1 Base 
+Project git\Lab 1 Base Project\RTE" -I"C:\Users\mgrego29\Downloads\Lab 1 Base P
+roject git\Lab 1 Base Project\RTE\Device\STM32F407VG" -IC:\Keil_v5\ARM\PACK\ARM
+\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Devic
+e\Include --predefine="__MICROLIB SETA 1" --list=.\listings\crctable.lst crcTab
+le.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CLOOP 00000014
+
+Symbol: CLOOP
+   Definitions
+      At line 22 in file crcTable.s
+   Uses
+      At line 32 in file crcTable.s
+Comment: CLOOP used once
+CrcAssVersionTable 00000000
+
+Symbol: CrcAssVersionTable
+   Definitions
+      At line 3 in file crcTable.s
+   Uses
+      At line 2 in file crcTable.s
+Comment: CrcAssVersionTable used once
+text 00000000
+
+Symbol: text
+   Definitions
+      At line 1 in file crcTable.s
+   Uses
+      None
+Comment: text unused
+3 symbols
+345 symbols in table

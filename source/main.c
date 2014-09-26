@@ -11,7 +11,7 @@
 
 typedef signed long int32_t;
 
-static const unsigned short crcTable[256] =
+static unsigned short CrcTable[256] =
  {
  0x0000, 0x1189, 0x2312, 0x329b, 0x4624, 0x57ad, 0x6536, 0x74bf,
  0x8c48, 0x9dc1, 0xaf5a, 0xbed3, 0xca6c, 0xdbe5, 0xe97e, 0xf8f7,
@@ -50,8 +50,14 @@ static const unsigned short crcTable[256] =
 /// <summary> 
 /// Prototype function to call the assembly CRC function
 /// </summary>
-extern unsigned short CrcAssVersion(char * characters, int stringLength);
+extern unsigned short CrcAssVersion(char * characters, int stringLength, unsigned short * table);
 
+/// <summary> 
+/// Prototype function to call the assembly CRC function with the lookup table
+/// </summary>
+extern unsigned short CrcAssVersionTable(char * characters, int stringLength, unsigned short * table);
+
+ 
 /// <summary> 
 /// Generates a CRC for the given array of characters
 /// </summary>
@@ -64,7 +70,7 @@ extern unsigned short CrcAssVersion(char * characters, int stringLength);
 /// <returns>
 /// The CRC as an unsigned short (2 bytes)
 /// </returns>
-unsigned short CrcCVersion(char * characters, int stringLength)
+unsigned short CrcCVersion(char * characters, int stringLength, unsigned short * table)
 {	
 	if (stringLength <= 0)
 	{
@@ -105,7 +111,7 @@ unsigned short CrcCVersion(char * characters, int stringLength)
 /// <returns>
 /// The CRC as an unsigned short (2 bytes)
 /// </returns>
-unsigned short CrcCVersionLookup(char * characters, int stringLength)
+unsigned short CrcCVersionLookup(char * characters, int stringLength, unsigned short * table)
 {	
 	if (stringLength <= 0)
 	{
@@ -117,7 +123,7 @@ unsigned short CrcCVersionLookup(char * characters, int stringLength)
 	
 	for(charSelected = 0; charSelected < stringLength; charSelected++)
 	{
-		rem = (rem >> 8) ^ crcTable[characters[charSelected] ^ (rem & 0x00FF)];
+		rem = (rem >> 8) ^ table[characters[charSelected] ^ (rem & 0x00FF)];
 	}
 	
 	return rem;
@@ -138,12 +144,12 @@ unsigned short CrcCVersionLookup(char * characters, int stringLength)
 /// <returns>
 /// SUCCESS if the CRC is valid, FAILURE otherwise
 /// </returns>
-int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunction)(char *,int))
+int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunction)(char *,int, unsigned short *))
 {	
 	unsigned short crc = 0;	
 	
 	
-	crc = CrcFunction(initialString, stringLength);
+	crc = CrcFunction(initialString, stringLength, CrcTable);
 	
 	char first = (char)crc;
 	char second = (char)(crc>>BITS_PER_BYTE);
@@ -151,7 +157,7 @@ int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunctio
 	char str[BUFFER_SIZE];
 	snprintf(str, BUFFER_SIZE, "%s%c%c", initialString, first, second);
 		
-	if(CrcFunction(str, stringLength + BYTES_IN_CRC)) 
+	if(CrcFunction(str, stringLength + BYTES_IN_CRC, CrcTable)) 
 	{
 		return FAILURE;
 	}
@@ -167,11 +173,12 @@ int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunctio
 /// </returns>
 int main()
 {		
-	char * characters = "In Flanders fields the poppies blow, Between the crosses, row on row, That mark our place; and in the sky, The larks, still bravely singing, fly, Scarce heard amid the guns below. We are the Dead. Short days ago, We lived, felt dawn, saw sunset glow, Loved and were loved, and now we lie, In Flanders fields. Take up our quarrel with the foe, To you from failing hands we throw, The torch; be yours to hold it high. If ye break faith with us who die, We shall not sleep, though poppies grow, In Flanders fields.";
+	char * characters = "2014";//"In Flanders fields the poppies blow, Between the crosses, row on row, That mark our place; and in the sky, The larks, still bravely singing, fly, Scarce heard amid the guns below. We are the Dead. Short days ago, We lived, felt dawn, saw sunset glow, Loved and were loved, and now we lie, In Flanders fields. Take up our quarrel with the foe, To you from failing hands we throw, The torch; be yours to hold it high. If ye break faith with us who die, We shall not sleep, though poppies grow, In Flanders fields.";
 	int stringLength = strlen(characters);
 	int resultC = CrcCheck(characters, stringLength, CrcCVersion);
 	int resultCLookUp = CrcCheck(characters, stringLength, CrcCVersionLookup);
 	int resultAss = CrcCheck(characters, stringLength, CrcAssVersion);
+	int resultAssLookUp = CrcCheck(characters, stringLength, CrcAssVersionTable);
 	return 0;
 }
 
