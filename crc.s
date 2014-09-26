@@ -20,8 +20,7 @@ CLOOP
 	CMP characterIndex, stringLength
 	BEQ CLOOPDONE
 	ADD characterIndex, #1
-	LDRB character, [string] ; ask for one instruction (access pointed data)
-	ADD string, #1
+	LDRB character, [string], #1 ;
 	EOR remainder, character
 	AND bitCounter, #0 ; Initialize bitCounter to 0
 BLOOP
