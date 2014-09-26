@@ -16,7 +16,6 @@ mask RN R10
 	PUSH {R1-R10} ; Save the registers value
 	MOV mask, #0xffff ; mask to get the 16 rightmost bits
 	MOV remainder, #0 ; Initialize remainder at 0 (in case of multiple calls to fct
-	MOV polynom, #0x8408 ; Polynom
 	ADD pointerEnd, string, stringLength ; End loop condition
 	
 CLOOP	

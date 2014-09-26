@@ -429,6 +429,11 @@
               <FileType>2</FileType>
               <FilePath>.\crc.s</FilePath>
             </File>
+            <File>
+              <FileName>crcTable.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\crcTable.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

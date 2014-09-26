@@ -56,7 +56,6 @@ extern unsigned short CrcAssVersion(char * characters, int stringLength, unsigne
 /// Prototype function to call the assembly CRC function with the lookup table
 /// </summary>
 extern unsigned short CrcAssVersionTable(char * characters, int stringLength, unsigned short * table);
-
  
 /// <summary> 
 /// Generates a CRC for the given array of characters
@@ -156,7 +155,7 @@ int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunctio
 	
 	char str[BUFFER_SIZE];
 	snprintf(str, BUFFER_SIZE, "%s%c%c", initialString, first, second);
-		
+
 	if(CrcFunction(str, stringLength + BYTES_IN_CRC, CrcTable)) 
 	{
 		return FAILURE;
@@ -173,8 +172,8 @@ int CrcCheck(char * initialString, int stringLength, unsigned short (*CrcFunctio
 /// </returns>
 int main()
 {		
-	char * characters = "2014";//"In Flanders fields the poppies blow, Between the crosses, row on row, That mark our place; and in the sky, The larks, still bravely singing, fly, Scarce heard amid the guns below. We are the Dead. Short days ago, We lived, felt dawn, saw sunset glow, Loved and were loved, and now we lie, In Flanders fields. Take up our quarrel with the foe, To you from failing hands we throw, The torch; be yours to hold it high. If ye break faith with us who die, We shall not sleep, though poppies grow, In Flanders fields.";
-	int stringLength = strlen(characters);
+	char * characters = "In Flanders fields the poppies blow, Between the crosses, row on row, That mark our place; and in the sky, The larks, still bravely singing, fly, Scarce heard amid the guns below. We are the Dead. Short days ago, We lived, felt dawn, saw sunset glow, Loved and were loved, and now we lie, In Flanders fields. Take up our quarrel with the foe, To you from failing hands we throw, The torch; be yours to hold it high. If ye break faith with us who die, We shall not sleep, though poppies grow, In Flanders fields.";
+	int stringLength = strlen(characters);		
 	int resultC = CrcCheck(characters, stringLength, CrcCVersion);
 	int resultCLookUp = CrcCheck(characters, stringLength, CrcCVersionLookup);
 	int resultAss = CrcCheck(characters, stringLength, CrcAssVersion);
