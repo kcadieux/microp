@@ -79,12 +79,11 @@ ARM Macro Assembler    Page 2
    41 00000046 4770            BX               LR          ;
    42 00000048                 END
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\obj
-ect\crc.d -o.\object\crc.o -I"C:\Users\Max\Dropbox\ECSE 426 -- Micro Processor 
-Systems\September 25\Lab 1 Base Project\RTE" -I"C:\Users\Max\Dropbox\ECSE 426 -
-- Micro Processor Systems\September 25\Lab 1 Base Project\RTE\Device\STM32F407V
-G" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Ke
-il\STM32F4xx_DFP\1.0.8\Device\Include --predefine="__EVAL SETA 1" --predefine="
-__MICROLIB SETA 1" --list=.\listings\crc.lst crc.s
+ect\crc.d -o.\object\crc.o -I"C:\Users\mgrego29\Downloads\Lab 1 Base Project gi
+t\Lab 1 Base Project\RTE" -I"C:\Users\mgrego29\Downloads\Lab 1 Base Project git
+\Lab 1 Base Project\RTE\Device\STM32F407VG" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1
+.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include 
+--predefine="__MICROLIB SETA 1" --list=.\listings\crc.lst crc.s
 
 
 
@@ -132,4 +131,4 @@ Symbol: text
       None
 Comment: text unused
 5 symbols
-346 symbols in table
+345 symbols in table
