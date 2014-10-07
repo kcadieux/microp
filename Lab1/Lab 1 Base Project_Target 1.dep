@@ -1,0 +1,30 @@
+Dependencies for Project 'Lab 1 Base Project', Target 'Target 1': (DO NOT MODIFY !)
+F (.\source\fputc_debug.c)(0x5413C7C2)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork -I.\source --c99-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER -o .\object\fputc_debug.o --omf_browse .\object\fputc_debug.crf --depend .\object\fputc_debug.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FE894E)
+I (source\stm32f4xx.h)(0x5110C076)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FE894E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F71F2)
+I (source\stm32f4xx_conf.h)(0x5413B02E)
+F (.\source\main.c)(0x5425B157)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork -I.\source --c99-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER -o .\object\main.o --omf_browse .\object\main.crf --depend .\object\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x52FE894E)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x52FE894E)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x52FE894E)
+F (.\source\stm32f4xx.h)(0x5110C076)()
+F (.\source\stm32f4xx_conf.h)(0x5413B02E)()
+F (.\crc.s)(0x54259528)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include--list .\listings\crc.lst --xref -o .\object\crc.o --depend .\object\crc.d)
+F (.\crcTable.s)(0x5425B343)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include--list .\listings\crctable.lst --xref -o .\object\crctable.o --depend .\object\crctable.d)
+F (RTE\Device\STM32F407VG\RTE_Device.h)(0x5417933E)()
+F (RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s)(0x541A1A30)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include--list .\listings\startup_stm32f40_41xxx.lst --xref -o .\object\startup_stm32f40_41xxx.o --depend .\object\startup_stm32f40_41xxx.d)
+F (RTE\Device\STM32F407VG\system_stm32f4xx.c)(0x54179314)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork -I.\source --c99-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE"-I "C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER -o .\object\system_stm32f4xx.o --omf_browse .\object\system_stm32f4xx.crf --depend .\object\system_stm32f4xx.d)
+I (.\source\stm32f4xx.h)(0x5110C076)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384CF86)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x52FE894E)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x530359A0)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F71F2)
+I (.\source\stm32f4xx_conf.h)(0x5413B02E)
