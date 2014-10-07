@@ -7,8 +7,8 @@
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h
-.\object\stm32f4xx_adc.o: C:\Users\mgrego29\Downloads\Lab 2 Base Project\Lab 2 Base Project\RTE\Device\STM32F407VG\stm32f4xx_conf.h
-.\object\stm32f4xx_adc.o: C:\Users\mgrego29\Downloads\Lab 2 Base Project\Lab 2 Base Project\RTE\RTE_Components.h
+.\object\stm32f4xx_adc.o: C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE\Device\STM32F407VG\stm32f4xx_conf.h
+.\object\stm32f4xx_adc.o: C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE\RTE_Components.h
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
 .\object\stm32f4xx_adc.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h

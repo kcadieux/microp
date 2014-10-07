@@ -3,14 +3,28 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\mgrego29\Downloads\Lab 2 Base Project\Lab 2 Base Project\Lab 2 Base Project.uvprojx
-Project File Date:  10/02/2014
+C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\Lab 2 Base Project.uvprojx
+Project File Date:  10/07/2014
 
 <h2>Output:</h2>
 Build target 'Target 1'
+compiling main.c...
+source\main.c(44): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        voltageValue /= 1000.0; //Reading in Volts
+source\main.c(45): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        voltageValue -= 0.760; // Subtract the reference voltage at 25°C
+source\main.c(46): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        voltageValue /= .0025; // Divide by slope 2.5mV
+source\main.c(47): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        voltageValue += 25.0; // Add the 25°C
+source\main.c(208): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                someValue = 107.84*(temperature*4.25 - 80) + 5809.7;
+source\main.c(215): warning:  #111-D: statement is unreachable
+        return 0;
+source\main.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=7576 RO-data=424 RW-data=40 ZI-data=1024  
-".\object\Lab 2 Base Project.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=9060 RO-data=424 RW-data=56 ZI-data=1152  
+".\object\Lab 2 Base Project.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,8 +67,8 @@ Package Vendor: Keil
    * Component: WWDG Version: 1.3.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\mgrego29\Downloads\Lab 2 Base Project\Lab 2 Base Project\RTE
-  C:\Users\mgrego29\Downloads\Lab 2 Base Project\Lab 2 Base Project\RTE\Device\STM32F407VG
+  C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE
+  C:\Users\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE\Device\STM32F407VG
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc
@@ -182,11 +196,14 @@ Package Vendor: Keil
    * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
-Load "C:\\Users\\mgrego29\\Downloads\\Lab 2 Base Project\\Lab 2 Base Project\\object\\Lab 2 Base Project.axf" 
+Load "C:\\Users\\mgrego29\\Downloads\\Lab 1 Base Project git\\Lab 1 Base Project\\Lab2\\object\\Lab 2 Base Project.axf" 
 Erase Done.
 Programming Done.
 Verify OK.
- Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
+.
+ been cancelled
+lude file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
 
    * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
@@ -199,20 +216,4 @@ Verify OK.
    * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
-Load "C:\\Users\\mgrego29\\Downloads\\Lab 2 Base Project\\Lab 2 Base Project\\object\\Lab 2 Base Project.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-compiling main.c...
-source\main.c(34): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        voltageValue /= 1000.0; //Reading in Volts
-source\main.c(35): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        voltageValue -= 0.760; // Subtract the reference voltage at 25°C
-source\main.c(36): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        voltageValue /= .0025; // Divide by slope 2.5mV
-source\main.c(37): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-        voltageValue += 25.0; // Add the 25°C
-source\main.c(84): warning:  #111-D: statement is unreachable
-        return 0;
-source\main.c: 5 warnings, 0 errors
-"source\main.c" - 0 Error(s), 5 Warning(s).
+Target not created
