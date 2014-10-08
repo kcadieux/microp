@@ -12,11 +12,11 @@
 #define ALARM_TEMPERATURE 		60
 #define TICK_MULTIPLE 				8
 #define FREQUENCY 						50
-#define AVERAGE_WINDOW_SIZE 	31
+#define AVERAGE_WINDOW_SIZE 	51
 
 static volatile uint_fast16_t Ticks; // Ticks for the SysTicks
 uint_fast32_t AlarmFlag;
-uint32_t BufferIndex;
+uint32_t BufferIndex = 0;
 float Buffer[AVERAGE_WINDOW_SIZE];
 uint16_t IsBufferFull;
 
@@ -78,7 +78,7 @@ void AddValueToBuffer(float temp)
 {
 	Buffer[BufferIndex % AVERAGE_WINDOW_SIZE] = temp;
 	BufferIndex++;
-	if (BufferIndex == AVERAGE_WINDOW_SIZE)
+	if (BufferIndex == AVERAGE_WINDOW_SIZE-1)
 	{
 		IsBufferFull = 1;
 	}
@@ -88,7 +88,12 @@ float GetAverageTemperature()
 {
 	if (!IsBufferFull)
 	{
-		return Buffer[BufferIndex - 1];
+		float notFullSum = 0;
+		for (int i = 0; i < BufferIndex; i++) {
+			notFullSum += Buffer[i];
+		}
+		return notFullSum / (BufferIndex);
+		//return Buffer[BufferIndex - 1];
 	}
 	
 	int i;
@@ -191,6 +196,7 @@ int main(){
 	SysTick_Config(SystemCoreClock / FREQUENCY); // Systick init 10ms		
 	AlarmFlag = 0;
 	int someValue = 0;
+	int someInt;
 	
 	while(1){
 		
@@ -213,10 +219,12 @@ int main(){
 		
 		// Move the servo to the right position
 		GPIO_SetBits(GPIOB, Motor_Pin);
-		someValue = 107.84*(temperature*4.25 - 80) + 5809.7;
+		//someValue = 112.34*(temperature*4.25 - 80) + 5567.9;
+		someValue = 356.25*(temperature*4.25 -80) + 18106;
 		for (int i = 0; i < someValue; i++) 
 		{
-			GPIO_ToggleBits(GPIOB, GPIO_Pin_8);
+			//GPIO_ToggleBits(GPIOB, GPIO_Pin_8);
+			someInt = 0;
 		}
 		GPIO_ResetBits(GPIOB, Motor_Pin);
 	}
