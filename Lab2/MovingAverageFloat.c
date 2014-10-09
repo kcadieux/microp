@@ -43,7 +43,12 @@ float GetAverageWindow()
 {
 	if (!IsBufferFull)
 	{
-		return Buffer[BufferIndex - 1];
+		float notFullSum = 0;
+		for (int i = 0; i < BufferIndex; i++) {
+			notFullSum += Buffer[i];
+		}
+		return notFullSum / (BufferIndex);
+		//return Buffer[BufferIndex - 1];
 	}
 	
 	int i;
