@@ -856,14 +856,13 @@ ARM Macro Assembler    Page 14
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\obj
-ect\startup_stm32f40_41xxx.d -o.\object\startup_stm32f40_41xxx.o -I"C:\Users\mg
-rego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE" -I"C:\User
-s\mgrego29\Downloads\Lab 1 Base Project git\Lab 1 Base Project\Lab2\RTE\Device\
-STM32F407VG" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v5\A
-RM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include -IC:\Keil_v5\ARM\PACK\Keil\STM3
-2F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc --predefine="__MICROLIB SETA 1" --l
-ist=.\listings\startup_stm32f40_41xxx.lst RTE\Device\STM32F407VG\startup_stm32f
-40_41xxx.s
+ect\startup_stm32f40_41xxx.d -o.\object\startup_stm32f40_41xxx.o -IC:\Users\mgr
+ego29\Downloads\microp\microp\Lab2\RTE -IC:\Users\mgrego29\Downloads\microp\mic
+rop\Lab2\RTE\Device\STM32F407VG -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Inc
+lude -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include -IC:\Keil_v5
+\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc --predefine="__M
+ICROLIB SETA 1" --list=.\listings\startup_stm32f40_41xxx.lst RTE\Device\STM32F4
+07VG\startup_stm32f40_41xxx.s
 
 
 

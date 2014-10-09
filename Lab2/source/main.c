@@ -1,24 +1,33 @@
 #include <stdio.h>
+//#include "movingAverage"
 #include "stm32f4xx.h"
 #include "stm32f4xx_conf.h"
 
-#define LED_GREEN      				GPIO_Pin_12
-#define LED_ORANGE     				GPIO_Pin_13
-#define LED_RED        				GPIO_Pin_14
-#define LED_BLUE       				GPIO_Pin_15
-#define Motor_Pin							GPIO_Pin_11
+#define LED_GREEN      							GPIO_Pin_12
+#define LED_ORANGE     							GPIO_Pin_13
+#define LED_RED        							GPIO_Pin_14
+#define LED_BLUE       							GPIO_Pin_15
+#define MOTOR_PIN										GPIO_Pin_7
 
-#define NUMBER_OF_LED					4
-#define ALARM_TEMPERATURE 		60
-#define TICK_MULTIPLE 				8
-#define FREQUENCY 						50
-#define AVERAGE_WINDOW_SIZE 	31
+#define NUMBER_OF_LED								4
+#define ALARM_TEMPERATURE 					30
+#define TICK_MULTIPLE 							8
+#define FREQUENCY 									50
+
+// Voltage to temperature conversion constants
+#define VREF												3000
+#define MV_CONVERSION								0xfff
+#define VOLT_IN_MV									1000
+#define REFERENCE_VOLTAGE_AT_25C		0.760
+#define SLOPE25											0.0025
+#define TEMPERATURE_OFFSET					25
+
 
 static volatile uint_fast16_t Ticks; // Ticks for the SysTicks
 uint_fast32_t AlarmFlag;
-uint32_t BufferIndex;
-float Buffer[AVERAGE_WINDOW_SIZE];
-uint16_t IsBufferFull;
+
+extern void AddValueToWindow(float val);
+extern float GetAverageWindow();
 
 /// <summary>
 /// Converts a given voltage value read from ADC to 
@@ -39,12 +48,12 @@ uint16_t IsBufferFull;
 /// </returns>
 float ConvertToTemperature(float voltageValue)
 {	
-	voltageValue *= 3000; // VREF = 3mV
-	voltageValue /= 0xfff; //Reading in mV
-	voltageValue /= 1000.0; //Reading in Volts
-	voltageValue -= 0.760; // Subtract the reference voltage at 25°C
-	voltageValue /= .0025; // Divide by slope 2.5mV
-	voltageValue += 25.0; // Add the 25°C
+	voltageValue *= VREF; // VREF = 3mV
+	voltageValue /= MV_CONVERSION; //Reading in mV
+	voltageValue /= VOLT_IN_MV; //Reading in Volts
+	voltageValue -= REFERENCE_VOLTAGE_AT_25C; // Subtract the reference voltage at 25°C
+	voltageValue /= SLOPE25; // Divide by slope 2.5mV
+	voltageValue += TEMPERATURE_OFFSET; // Add the 25°C
 	
 	return voltageValue;
 }
@@ -57,10 +66,10 @@ void InitializeAdcTemperatureSensor()
 	ADC_InitTypeDef adc_init_s;
 	ADC_CommonInitTypeDef adc_common_init_s;
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //Clock Gating
-	adc_common_init_s.ADC_Mode = ADC_Mode_Independent;
-	adc_common_init_s.ADC_Prescaler = ADC_Prescaler_Div2;
-	adc_common_init_s.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
-	adc_common_init_s.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
+	//adc_common_init_s.ADC_Mode = ADC_Mode_Independent;
+	//adc_common_init_s.ADC_Prescaler = ADC_Prescaler_Div2;
+	//adc_common_init_s.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
+	//adc_common_init_s.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
 	ADC_CommonInit(&adc_common_init_s); //Initialization
 	adc_init_s.ADC_Resolution = ADC_Resolution_12b;
 	adc_init_s.ADC_ScanConvMode = DISABLE;
@@ -72,33 +81,6 @@ void InitializeAdcTemperatureSensor()
 	ADC_TempSensorVrefintCmd(ENABLE);
 	ADC_Cmd(ADC1, ENABLE); //Enable Module
 	ADC_RegularChannelConfig(ADC1, ADC_Channel_16, 1, ADC_SampleTime_480Cycles); //Setting Channel and ADC
-}
-
-void AddValueToBuffer(float temp)
-{
-	Buffer[BufferIndex % AVERAGE_WINDOW_SIZE] = temp;
-	BufferIndex++;
-	if (BufferIndex == AVERAGE_WINDOW_SIZE)
-	{
-		IsBufferFull = 1;
-	}
-}
-
-float GetAverageTemperature()
-{
-	if (!IsBufferFull)
-	{
-		return Buffer[BufferIndex - 1];
-	}
-	
-	int i;
-	float sum = 0;
-	for (i = 0; i < AVERAGE_WINDOW_SIZE; i++)
-	{
-		sum += Buffer[i];
-	}
-	
-	return sum / AVERAGE_WINDOW_SIZE;
 }
 
 /// <summary>
@@ -122,9 +104,9 @@ void InitializeGPIO()
 	GPIO_InitTypeDef gpio_init_s;
 	GPIO_StructInit(&gpio_init_s);
 	gpio_init_s.GPIO_Mode = GPIO_Mode_OUT; // Set as output
-	gpio_init_s.GPIO_Speed = GPIO_Speed_100MHz; // Don't limit slew rate
-	gpio_init_s.GPIO_OType = GPIO_OType_PP; // Push-pull
-	gpio_init_s.GPIO_PuPd = GPIO_PuPd_NOPULL; // Not input, don't pull
+	//gpio_init_s.GPIO_Speed = GPIO_Speed_100MHz; // Don't limit slew rate
+//	gpio_init_s.GPIO_OType = GPIO_OType_PP; // Push-pull
+//	gpio_init_s.GPIO_PuPd = GPIO_PuPd_NOPULL; // Not input, don't pull
 	
 	// Initialization of the LEDs
 	gpio_init_s.GPIO_Pin = LED_GREEN;
@@ -137,12 +119,12 @@ void InitializeGPIO()
 	GPIO_Init(GPIOD, &gpio_init_s);
 	
 	// Initialization of the servo
-	gpio_init_s.GPIO_Pin = Motor_Pin;
-	GPIO_Init(GPIOB, &gpio_init_s);
+	gpio_init_s.GPIO_Pin = MOTOR_PIN;
+	GPIO_Init(GPIOD, &gpio_init_s);
 }
 
 /// <summary>
-/// Sets the alarm
+/// Sets the LED alarm, in a circular fashion, from red to orange
 /// </summary>
 void Alarm()
 {
@@ -198,9 +180,9 @@ int main(){
 		Ticks = 0;
 		
 		// Check temperature and go into alarm mode if needed
-		AddValueToBuffer(ReadTemperature());
+		AddValueToWindow(ReadTemperature());
 		
-		float temperature = GetAverageTemperature();
+		float temperature = GetAverageWindow();
 		printf("%f\n", temperature);
 		if (temperature >= ALARM_TEMPERATURE)
 		{
@@ -212,13 +194,13 @@ int main(){
 		}
 		
 		// Move the servo to the right position
-		GPIO_SetBits(GPIOB, Motor_Pin);
+		GPIO_SetBits(GPIOB, MOTOR_PIN);
 		someValue = 107.84*(temperature*4.25 - 80) + 5809.7;
 		for (int i = 0; i < someValue; i++) 
 		{
 			GPIO_ToggleBits(GPIOB, GPIO_Pin_8);
 		}
-		GPIO_ResetBits(GPIOB, Motor_Pin);
+		GPIO_ResetBits(GPIOB, MOTOR_PIN);
 	}
 	
 	return 0;
