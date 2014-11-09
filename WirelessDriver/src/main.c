@@ -1,13 +1,21 @@
+#define osObjectsPublic
 #include <stdio.h>
 #include "stm32f4xx.h"                  // Device header
 #include "stm32f4xx_conf.h"
 #include "cc2500.h"
+#include "osObjects.h" 
+
+#include "GUI.h"
+#include "LCD.h"
+
 
 static const uint32_t PRESCALER = 10000;
 static const uint32_t PERIOD = 9000;
 
 static int ticks = 0;
-
+void keypad_thread (void const *argument);
+osThreadDef(keypad_thread, osPriorityBelowNormal, 1, 0);
+osThreadId tid_keypad;
 
 void TIM3_IRQHandler()
 {
@@ -54,9 +62,27 @@ static void InitMainTimer()
 
 static uint8_t regs[50];
 
+void keypad_thread(void const *argument){
+	int xPos;
+	int yPos;
+
+	LCD_Init();
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_CRC, ENABLE);
+ GUI_Init();
+ GUI_SetColor(GUI_RED);
+ xPos = LCD_GetXSize() / 2;
+ yPos = LCD_GetYSize() / 3;
+ GUI_SetFont(GUI_FONT_COMIC24B_ASCII);
+ GUI_DispStringHCenterAt("Hello world!", xPos, yPos);
+ printf("lol\n");
+ 
+	while(1);
+}
+
+
 int main(void)
 {
-	static int status = 0;
+	/*static int status = 0;
 	uint8_t* p = regs;
 	
 	InitMainTimer();
@@ -84,7 +110,14 @@ int main(void)
 	status = CC2500_SendCommandStrobe(CC2500_SNOP_W);
 	
 	while (1) {
-	}
+	}*/
+	
+	
+	osKernelInitialize();
+	
+	tid_keypad = osThreadCreate(osThread(keypad_thread), NULL);
+	osKernelStart ();  
+	
 	
 	
 }

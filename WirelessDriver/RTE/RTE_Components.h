@@ -42,5 +42,6 @@
 #define RTE_DEVICE_STDPERIPH_TIM
 #define RTE_DEVICE_STDPERIPH_USART
 #define RTE_DEVICE_STDPERIPH_WWDG
+#define RTE_Graphics_Core               /* Graphics Core */
 
 #endif /* RTE_COMPONENTS_H */
