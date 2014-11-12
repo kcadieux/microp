@@ -7,7 +7,9 @@
 
 #define CC2500_RW_READ 	0x80
 #define CC2500_RW_WRITE	0x00
+#define CC2500_BURST		0x40
 
+#define CC2500_PATABLE_SIZE 8
 
 //GDO Configuration
 typedef enum
@@ -485,8 +487,13 @@ typedef enum
 #define CS2500_RCCTRL0_STATUS(rcctrl0_register_value)						(rcctrl0_register_value & 0x7F)
 
 
-
-//                       Name       Addr  	Default value (From Datasheet)          
+//CONFIGURATION REGISTERS
+//This is a list of entries of the form CC2500_CONFIG_REGISTER(name, addr, default_value) where
+//CC2500_CONFIG_REGISTER is an undefined macro. This macro will be difined and expanded on demand
+//later for achieving code generation. See examples in this file and in CC2500_StrucInit().
+//...............................................................................................
+//                       Name       Addr  	Default value (From Datasheet)    
+//...............................................................................................
 #define CC2500_CONFIG_REGISTERS \
 	CC2500_CONFIG_REGISTER(IOCFG2, 		0x00, 	CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_CHIP_RDYN) \
 	CC2500_CONFIG_REGISTER(IOCFG1, 		0x01, 	CC2500_GDO_DriveStength_LOW | CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_TRI_STATE) \
@@ -535,7 +542,11 @@ typedef enum
 	CC2500_CONFIG_REGISTER(TEST0, 		0x2E, 	0x0B)
 //end of CC2500_CONFIG_REGISTERS
 
+
+//STATUS REGISTERS
+//.............................................
 //                       Name,            Addr
+//.............................................
 #define CC2500_STATUS_REGISTERS \
 	CC2500_STATUS_REGISTER(PARTNUM,					0x30) \
 	CC2500_STATUS_REGISTER(VERSION,					0x31) \
@@ -552,7 +563,11 @@ typedef enum
 	CC2500_STATUS_REGISTER(RCCTRL0_STATUS,	0x3D)
 //end of CC2500_STATUS_REGISTERS
 
+
+//COMMAND STROBES
+//.....................................
 //                      Name,     Addr
+//.....................................
 #define CC2500_COMMAND_STROBES \
 	CC2500_COMMAND_STROBE(SRES,			0x30) \
 	CC2500_COMMAND_STROBE(SFSTXON,	0x31) \
@@ -570,9 +585,12 @@ typedef enum
 // end of CC2500_COMMAND_STROBES
 
 
-//Code expansion for configuration registers
+//--------------------------------------------
+//CODE GENERATION USING THE ABOVE MACROS
+//--------------------------------------------
 
-//Expand the addresses
+//Expand the addresses. This creates an enum entry of the form CC2500_REGISTERNAME for
+//every configuration register. (e.g. CC2500_PKTCTRL1)
 #define CC2500_CONFIG_REGISTER(name, addr, def_val) CC2500_##name = addr,
 typedef enum
 {
@@ -580,7 +598,8 @@ typedef enum
 } CC2500_ConfigRegisterAddr_TypeDef;
 #undef CC2500_CONFIG_REGISTER
 
-//Expand the init structure
+//Expand the init structure. This creates a structure with a member for every configuration
+//register. 
 #define CC2500_CONFIG_REGISTER(name, addr, def_val) uint8_t name;
 typedef struct
 {
@@ -606,12 +625,49 @@ typedef enum
 } CC2500_CommandStrobeAddr_TypeDef;
 #undef CC2500_COMMAND_STROBE
 
+typedef struct
+{
+	uint8_t data[CC2500_PATABLE_SIZE];
+} CC2500_PATABLETypeDef;
+
+typedef enum
+{
+	CC2500_StatusState_IDLE = 						0x0 << 4,
+	CC2500_StatusState_RX = 							0x1 << 4,
+	CC2500_StatusState_TX = 							0x2 << 4,
+	CC2500_StatusState_FSTXON = 					0x3 << 4,
+	CC2500_StatusState_CALIBRATE = 				0x4 << 4,
+	CC2500_StatusState_SETTLING = 				0x5 << 4,
+	CC2500_StatusState_RXFIFO_OVERFLOW = 	0x6 << 4,
+	CC2500_StatusState_TXFIFO_UNDERFLOW = 0x7 << 4
+} CC2500_StatusStateTypeDef;
+
+typedef struct
+{
+	uint8_t											chipReady;
+	CC2500_StatusStateTypeDef		state;
+	uint8_t											fifoBytesAvailable;
+} CC2500_StatusTypeDef;
+
+#define CC2500_STATUS_CHIPREADY 	0x80
+#define CC2500_STATUS_STATE				0x70
+#define CC2500_STATUS_FIFOBYTES		0x0F
 
 void		CC2500_Init(void);
+void    CC2500_WriteConfig(CC2500_InitTypeDef* init_s);
 void		CC2500_StructInit(CC2500_InitTypeDef* init_s);
-uint8_t CC2500_WriteConfigRegister(uint8_t addr, uint8_t byte);
-uint8_t CC2500_ReadConfigRegister(uint8_t addr);
-uint8_t CC2500_ReadStatusRegister(uint8_t addr);
-uint8_t CC2500_SendCommandStrobe(uint8_t strobe);
+
+CC2500_StatusTypeDef CC2500_ReadConfigRegister(uint8_t addr, uint8_t* register_data);
+CC2500_StatusTypeDef CC2500_ReadRxFIFO(uint8_t* fifo_data, uint8_t nbBytes);
+CC2500_StatusTypeDef CC2500_ReadStatusRegister(uint8_t addr, uint8_t* register_data);
+CC2500_StatusTypeDef CC2500_ReadPATABLE(CC2500_PATABLETypeDef* patable);
+CC2500_StatusTypeDef CC2500_ReadConfiguration(CC2500_InitTypeDef* init_s);
+
+CC2500_StatusTypeDef CC2500_WriteConfigRegister(uint8_t addr, uint8_t byte);
+CC2500_StatusTypeDef CC2500_WriteTxFIFO(uint8_t* write_in, uint8_t nbBytes);
+CC2500_StatusTypeDef CC2500_WritePATABLE(CC2500_PATABLETypeDef* patable);
+
+CC2500_StatusTypeDef CC2500_SendCommandStrobe(uint8_t strobe);
+
 
 #endif
