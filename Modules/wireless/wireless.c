@@ -1,72 +1,19 @@
 #include <string.h>
+#include <stdio.h>
 #include "wireless.h"
 #include "cc2500.h"
 #include "stm32f4xx.h"                  // Device header
 #include "stm32f4xx_conf.h"
 
+static const uint8_t ACTUAL_PACKET_SIZE_TX = WLESS_PACKET_SIZE + 1;
+static const uint8_t ACTUAL_PACKET_SIZE_RX = ACTUAL_PACKET_SIZE_TX + 2;
+
 static int packet_count = 0;
 static int packet_event = 0;
+static uint8_t rssi = 0;
 
-#ifndef SMARTRF_CC2500_H
-#define SMARTRF_CC2500_H
-
-#define SMARTRF_RADIO_CC2500
-#define SMARTRF_SETTING_IOCFG0     0x06
-#define SMARTRF_SETTING_PKTCTRL1   0x00
-#define SMARTRF_SETTING_PKTCTRL0   0x04
-#define SMARTRF_SETTING_FSCTRL1    0x0A
-#define SMARTRF_SETTING_FREQ2      0x5D
-#define SMARTRF_SETTING_FREQ1      0x93
-#define SMARTRF_SETTING_FREQ0      0xB1
-#define SMARTRF_SETTING_MDMCFG4    0x2D
-#define SMARTRF_SETTING_MDMCFG3    0x3B
-#define SMARTRF_SETTING_MDMCFG2    0x73
-#define SMARTRF_SETTING_DEVIATN    0x00
-#define SMARTRF_SETTING_MCSM0      0x18
-#define SMARTRF_SETTING_FOCCFG     0x1D
-#define SMARTRF_SETTING_BSCFG      0x1C
-#define SMARTRF_SETTING_AGCCTRL2   0xC7
-#define SMARTRF_SETTING_AGCCTRL1   0x00
-#define SMARTRF_SETTING_AGCCTRL0   0xB0
-#define SMARTRF_SETTING_FREND1     0xB6
-#define SMARTRF_SETTING_FSCAL3     0xEA
-#define SMARTRF_SETTING_FSCAL1     0x00
-#define SMARTRF_SETTING_FSCAL0     0x11
-
-#endif
-
-static void InitInterrupt()
-{
-	EXTI_InitTypeDef 	 EXTI_init_s;
-  NVIC_InitTypeDef 	 NVIC_init_s;
-	GPIO_InitTypeDef	 gpio_init_s;
-	
-	//GPIO pin for capturing interrupts
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-	gpio_init_s.GPIO_Pin = GPIO_Pin_7;
-  gpio_init_s.GPIO_Mode = GPIO_Mode_IN;
-  gpio_init_s.GPIO_OType = GPIO_OType_PP;
-  gpio_init_s.GPIO_Speed = GPIO_Speed_50MHz;
-  gpio_init_s.GPIO_PuPd  = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOD, &gpio_init_s);
-	
-	//EXTI Configuration
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOD, EXTI_PinSource7);
-	
-	EXTI_init_s.EXTI_Line = EXTI_Line7;
-	EXTI_init_s.EXTI_LineCmd = ENABLE;
-	EXTI_init_s.EXTI_Mode = EXTI_Mode_Interrupt;
-	EXTI_init_s.EXTI_Trigger = EXTI_Trigger_Rising;
-	EXTI_Init(&EXTI_init_s);
-	
-	//NVIC config
-	NVIC_init_s.NVIC_IRQChannel = EXTI9_5_IRQn;
-	NVIC_init_s.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_init_s.NVIC_IRQChannelPreemptionPriority = 0;
-	NVIC_init_s.NVIC_IRQChannelSubPriority = 0;
-	NVIC_Init(&NVIC_init_s);
-}
+static void WaitForPacketEvent(void);
+static void InitInterrupt(void);
 
 void EXTI9_5_IRQHandler(void)
 {
@@ -75,49 +22,10 @@ void EXTI9_5_IRQHandler(void)
 	packet_count++;
 }
 
-void WLESS_SmartRF_Init()
-{
-	CC2500_PATABLETypeDef patable;
-	patable.data[0]= 0xFE;
-	CC2500_Init();
-
-	CC2500_WriteConfigRegister(CC2500_IOCFG0, SMARTRF_SETTING_IOCFG0);
-	CC2500_WriteConfigRegister(CC2500_PKTCTRL1, SMARTRF_SETTING_PKTCTRL1);
-	CC2500_WriteConfigRegister(CC2500_PKTCTRL0, SMARTRF_SETTING_PKTCTRL0);
-	CC2500_WriteConfigRegister(CC2500_PKTLEN, 0xA);
-	CC2500_WriteConfigRegister(CC2500_FSCTRL1, SMARTRF_SETTING_FSCTRL1);
-	CC2500_WriteConfigRegister(CC2500_FREQ2, SMARTRF_SETTING_FREQ2);
-	CC2500_WriteConfigRegister(CC2500_FREQ1, SMARTRF_SETTING_FREQ1);
-	CC2500_WriteConfigRegister(CC2500_FREQ0, SMARTRF_SETTING_FREQ0);
-	CC2500_WriteConfigRegister(CC2500_MDMCFG4, SMARTRF_SETTING_MDMCFG4);
-	CC2500_WriteConfigRegister(CC2500_MDMCFG3, SMARTRF_SETTING_MDMCFG3);
-	CC2500_WriteConfigRegister(CC2500_MDMCFG2, SMARTRF_SETTING_MDMCFG2);
-	CC2500_WriteConfigRegister(CC2500_DEVIATN, SMARTRF_SETTING_DEVIATN);
-	CC2500_WriteConfigRegister(CC2500_MCSM0, SMARTRF_SETTING_MCSM0);
-	CC2500_WriteConfigRegister(CC2500_FOCCFG, SMARTRF_SETTING_FOCCFG);
-	CC2500_WriteConfigRegister(CC2500_BSCFG, SMARTRF_SETTING_BSCFG);
-	CC2500_WriteConfigRegister(CC2500_AGCTRL2, SMARTRF_SETTING_AGCCTRL2);
-	CC2500_WriteConfigRegister(CC2500_AGCTRL1, SMARTRF_SETTING_AGCCTRL1);
-	CC2500_WriteConfigRegister(CC2500_AGCTRL0, SMARTRF_SETTING_AGCCTRL0);
-	CC2500_WriteConfigRegister(CC2500_FREND1, SMARTRF_SETTING_FREND1);
-	CC2500_WriteConfigRegister(CC2500_FSCAL3, SMARTRF_SETTING_FSCAL3);
-	CC2500_WriteConfigRegister(CC2500_FSCAL1, SMARTRF_SETTING_FSCAL1);
-	CC2500_WriteConfigRegister(CC2500_FSCAL0, SMARTRF_SETTING_FSCAL0);
-	
-	CC2500_WritePATABLE(&patable);
-	
-	InitInterrupt();
-	
-	CC2500_SendCommandStrobe(CC2500_SFRX_R);
-}
-
-void WLESS_Init()
+void WLESS_Init(WLESS_InitTypeDef* init_s)
 {
 	CC2500_InitTypeDef cc2500_init_s;
 	CC2500_PATABLETypeDef patable;
-	
-	//WLESS_SmartRF_Init();
-	//return;
 	
 	CC2500_StructInit(&cc2500_init_s);
 	memset(patable.data, 0, CC2500_PATABLE_SIZE);
@@ -166,19 +74,19 @@ void WLESS_Init()
 	cc2500_init_s.FSCAL0 = 0x19;
 	
 	//FIFO threshold configuration
-	cc2500_init_s.FIFOTHR = CC2500_FifoThreshold_TX33_RX32;
+	cc2500_init_s.FIFOTHR = CC2500_FifoThreshold_TX09_RX56;
 	
 	//GDO configuration
 	cc2500_init_s.IOCFG2 = CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_CHIP_RDYN;
-	cc2500_init_s.IOCFG0 = CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_FIFO_SYNCWORD;
+	cc2500_init_s.IOCFG0 = CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_TX_FIFO_THRESHOLD;
 	
 	//Packet control configuration
-	cc2500_init_s.PKTCTRL1 = CC2500_PKTCTRL1_PQT(0) | CC2500_PKTCTRL1_AddrCheck_NONE;
+	cc2500_init_s.PKTCTRL1 = CC2500_PKTCTRL1_PQT(0) | CC2500_PKTCTRL1_AddrCheck_BROADCAST_0_AND_255  | CC2500_PKTCTRL1_APPEND_STATUS;
 	cc2500_init_s.PKTCTRL0 = CC2500_PKTCTRL0_PacketFormat_FIFO | CC2500_PKTCTRL0_CRC_EN | CC2500_PKTCTRL0_Length_FIXED;
-	cc2500_init_s.PKTLEN = 10;
+	cc2500_init_s.PKTLEN = ACTUAL_PACKET_SIZE_TX;
 	
-	cc2500_init_s.ADDR = 1;
-	cc2500_init_s.CHANNR = 1;
+	cc2500_init_s.ADDR = init_s->address;
+	cc2500_init_s.CHANNR = 0;
 
 	CC2500_Init();
 	CC2500_WriteConfig(&cc2500_init_s);
@@ -189,7 +97,19 @@ void WLESS_Init()
 	CC2500_SendCommandStrobe(CC2500_SFRX_R);
 }
 
-WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes)
+WLESS_StatusCodeTypeDef WLESS_SendPacketBurst(uint8_t* packetBytes, uint8_t address, uint8_t burstSize)
+{
+	int i;
+	WLESS_StatusCodeTypeDef status = WLESS_StatusCode_TX_SUCCESS;
+	
+	for (i=0; i<burstSize && status == WLESS_StatusCode_TX_SUCCESS; ++i) {
+		status = WLESS_SendPacket(packetBytes, address);
+	}
+	
+	return status;
+}
+
+WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address)
 {
 	uint8_t txBytes;
 	CC2500_StatusTypeDef status;
@@ -197,53 +117,100 @@ WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes)
 	status = CC2500_ReadStatusRegister(CC2500_TXBYTES, &txBytes);
 	
 	if (txBytes == 0 && status.state == CC2500_StatusState_IDLE) {
-		CC2500_SendCommandStrobe(CC2500_SFSTXON_R);
-		CC2500_WriteTxFIFO(packetBytes, WLESS_PACKET_SIZE);
-		CC2500_SendCommandStrobe(CC2500_STX_W);
+		
+		//Switch to TX FIFO threshold reached trigger of packet TX trigger
+		CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_TX_FIFO_THRESHOLD);
+		
+		status = CC2500_WriteTxFIFO(&address, 1);
+		status = CC2500_WriteTxFIFO(packetBytes, WLESS_PACKET_SIZE);
+		status = CC2500_SendCommandStrobe(CC2500_STX_W);
+		
+		WaitForPacketEvent();
+		
 		return WLESS_StatusCode_TX_SUCCESS;
 	}
 	
 	return WLESS_StatusCode_CHIP_BUSY_ERROR;
 }
 
-WLESS_StatusCodeTypeDef WLESS_ListenForPacket()
+WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t* packetBytes)
 {
-	uint8_t rxBytes;
-	CC2500_StatusTypeDef status = CC2500_ReadStatusRegister(CC2500_RXBYTES, &rxBytes);
+	WLESS_StatusCodeTypeDef status = WLESS_ReceivePacket(packetBytes);
 	
-	//If there exists a packet in the RX FIFO, the user must read it before listening for another packet
-	if (rxBytes > 0) return WLESS_statusCode_RX_FIFO_NOT_EMPTY_ERROR;
-	if (status.state != CC2500_StatusState_IDLE) return WLESS_StatusCode_CHIP_BUSY_ERROR;
+	while (status == WLESS_StatusCode_RX_CRC_ERROR) {
+		status = WLESS_ReceivePacket(packetBytes);
+	}
 	
-	CC2500_SendCommandStrobe(CC2500_SRX_R);
-	return WLESS_StatusCode_LISTEN_SUCCESS;
+	return status;
 }
 
 WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
 {
 	uint8_t rxBytes;
+	uint8_t appendedStatus[2];
 	CC2500_StatusTypeDef status = CC2500_ReadStatusRegister(CC2500_RXBYTES, &rxBytes);
 	
-	if (rxBytes < WLESS_PACKET_SIZE) return WLESS_StatusCode_RX_FIFO_NO_PACKET_AVAILABLE_ERROR;
 	if (status.state != CC2500_StatusState_IDLE) return WLESS_StatusCode_CHIP_BUSY_ERROR;
 	
-	CC2500_ReadRxFIFO(packetBytes, WLESS_PACKET_SIZE);
-	return WLESS_StatusCode_RX_SUCCESS;
-}
-
-int WLESS_PacketEventOccurred()
-{
-	if (packet_event) {
-		uint8_t rxBytes;
-		CC2500_StatusTypeDef status = CC2500_ReadStatusRegister(CC2500_RXBYTES, &rxBytes);
-		
-		//Trigger the packet event only when the chip is finished receiving or transmitting
-		if (status.state == CC2500_StatusState_IDLE) {
-			packet_event = 0;
-			return 1;
-		}
-	}
+	//Switch to end of packet RX trigger
+	CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_RX_FIFO_THRESHOLD_END_PACKET);
 	
-	return 0;
+	CC2500_SendCommandStrobe(CC2500_SRX_R);
+	WaitForPacketEvent();
+	
+	status = CC2500_ReadStatusRegister(CC2500_RXBYTES, &rxBytes);
+	if (rxBytes < ACTUAL_PACKET_SIZE_RX) return WLESS_StatusCode_RX_FIFO_NO_PACKET_AVAILABLE_ERROR;
+	
+	CC2500_ReadRxFIFO(packetBytes, 1); //Get rid of the address
+	CC2500_ReadRxFIFO(packetBytes, WLESS_PACKET_SIZE); //Grab packet
+	CC2500_ReadRxFIFO(appendedStatus, 2); //Grab status
+	
+	rssi = appendedStatus[0];
+	
+	if (appendedStatus[1] & 0x80) return WLESS_StatusCode_RX_SUCCESS;
+	else return WLESS_StatusCode_RX_CRC_ERROR;
 }
 
+uint8_t WLESS_GetLatestRSSI(void)
+{
+	return rssi;
+}
+
+static void WaitForPacketEvent()
+{
+	while (!packet_event);
+	while (CC2500_SendCommandStrobe(CC2500_SNOP_W).state != CC2500_StatusState_IDLE);
+}
+
+static void InitInterrupt()
+{
+	EXTI_InitTypeDef 	 EXTI_init_s;
+  NVIC_InitTypeDef 	 NVIC_init_s;
+	GPIO_InitTypeDef	 gpio_init_s;
+	
+	//GPIO pin for capturing interrupts
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+	gpio_init_s.GPIO_Pin = GPIO_Pin_7;
+  gpio_init_s.GPIO_Mode = GPIO_Mode_IN;
+  gpio_init_s.GPIO_OType = GPIO_OType_PP;
+  gpio_init_s.GPIO_Speed = GPIO_Speed_50MHz;
+  gpio_init_s.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+  GPIO_Init(GPIOD, &gpio_init_s);
+	
+	//EXTI Configuration
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOD, EXTI_PinSource7);
+	
+	EXTI_init_s.EXTI_Line = EXTI_Line7;
+	EXTI_init_s.EXTI_LineCmd = ENABLE;
+	EXTI_init_s.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_init_s.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_Init(&EXTI_init_s);
+	
+	//NVIC config
+	NVIC_init_s.NVIC_IRQChannel = EXTI9_5_IRQn;
+	NVIC_init_s.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_init_s.NVIC_IRQChannelPreemptionPriority = 0;
+	NVIC_init_s.NVIC_IRQChannelSubPriority = 0;
+	NVIC_Init(&NVIC_init_s);
+}

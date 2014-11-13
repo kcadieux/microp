@@ -115,7 +115,7 @@ CC2500_StatusTypeDef CC2500_SendCommandStrobe(uint8_t strobe)
 
 CC2500_StatusTypeDef CC2500_WritePATABLE(CC2500_PATABLETypeDef* patable)
 {
-	return RegisterToStatus(BurstTransfer(CC2500_PATABLE_ADDR, patable->data, patable->data, CC2500_PATABLE_SIZE));
+	return RegisterToStatus(BurstTransfer(CC2500_PATABLE_ADDR, patable->data, 0, CC2500_PATABLE_SIZE));
 }
 
 CC2500_StatusTypeDef CC2500_ReadPATABLE(CC2500_PATABLETypeDef* patable)
@@ -125,7 +125,7 @@ CC2500_StatusTypeDef CC2500_ReadPATABLE(CC2500_PATABLETypeDef* patable)
 
 CC2500_StatusTypeDef CC2500_WriteTxFIFO(uint8_t* fifo_data, uint8_t nbBytes)
 {
-	return RegisterToStatus(BurstTransfer(CC2500_FIFO_ADDR, fifo_data, fifo_data, nbBytes));
+	return RegisterToStatus(BurstTransfer(CC2500_FIFO_ADDR, fifo_data, 0, nbBytes));
 }
 
 CC2500_StatusTypeDef CC2500_ReadRxFIFO(uint8_t* fifo_data, uint8_t nbBytes)
@@ -165,7 +165,8 @@ static uint8_t BurstTransfer(uint8_t addr, uint8_t* data_in, uint8_t* data_out, 
 	status = SendByte(addr | CC2500_BURST);
 	
 	for (i=0; i < nbBytes; ++i) {
-		*data_out++ = SendByte(*data_in++);
+		uint8_t result = SendByte(*data_in++);
+		if (data_out) *data_out++ = result;
 	}
 	CSN_HI();
 	
