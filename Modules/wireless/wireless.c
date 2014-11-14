@@ -134,8 +134,6 @@ WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address)
 		WaitForIdle();
 		
 		return WLESS_StatusCode_TX_SUCCESS;
-	} else {
-		printf("Problem");
 	}
 	
 	return WLESS_StatusCode_CHIP_BUSY_ERROR;

@@ -1,0 +1,13 @@
+Packet Types
+
+-Badge broadcast command
+-Badge broadcast
+-RSSI  broadcast command
+-RSSI  broadcast (station identification parameter)
+-Alarm command
+
+
+5 packet types
+3 bits packet type + 5 bits data + 8 bits addr
+
+2 bytes packets 
