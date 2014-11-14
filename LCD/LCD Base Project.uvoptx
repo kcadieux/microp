@@ -195,10 +195,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>33</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>24</TopLine>
-      <CurrentLine>35</CurrentLine>
+      <TopLine>10</TopLine>
+      <CurrentLine>39</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -211,10 +211,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>81</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>676</TopLine>
-      <CurrentLine>677</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1162</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\stm32f429i_discovery_lcd.c</PathWithFileName>
       <FilenameWithoutPath>stm32f429i_discovery_lcd.c</FilenameWithoutPath>
@@ -291,10 +291,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>152</ColumnNumber>
+      <ColumnNumber>23</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>70</TopLine>
-      <CurrentLine>80</CurrentLine>
+      <TopLine>84</TopLine>
+      <CurrentLine>139</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lcd\src\lcd.c</PathWithFileName>
       <FilenameWithoutPath>lcd.c</FilenameWithoutPath>
@@ -307,10 +307,10 @@
       <FileType>5</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>34</ColumnNumber>
+      <ColumnNumber>53</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>6</TopLine>
-      <CurrentLine>24</CurrentLine>
+      <TopLine>4</TopLine>
+      <CurrentLine>42</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\lcd\inc\lcd.h</PathWithFileName>
       <FilenameWithoutPath>lcd.h</FilenameWithoutPath>
@@ -333,7 +333,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>211</TopLine>
+      <TopLine>197</TopLine>
       <CurrentLine>221</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>RTE\CMSIS\RTX_Conf_CM.c</PathWithFileName>

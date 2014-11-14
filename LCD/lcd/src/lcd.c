@@ -45,6 +45,13 @@ const char *aNewHope[A_NEW_HOPE_LINES] =
 	"                    "
 };
 
+void starWarsIntro()
+{
+	displayCenteredText(aLongTimeAgo, LONG_TIME_AGO_LINES, Font16x24);
+	osDelay(3000);
+	displayScrollingTextAndTitle(aNewHopeTitle, A_NEW_HOPE_TITLE_LINES, aNewHope, A_NEW_HOPE_LINES, A_NEW_HOPE_ROLL_TIME);
+}
+
 void displayScrollingText(const char** lines, int numberOfLines, int rollTime, sFONT font)
 {
 	uint16_t line;
@@ -101,7 +108,7 @@ void displayScrollingTextAndTitle(const char** titleLines, int titleNumberOfLine
 		osDelay(rollTime);		
 	}
 	
-	LCD_Clear(LCD_COLOR_BLACK);
+	LCD_Clear(SCROLLING_BACKGROUND_COLOR);
 }
 
 void displayCenteredText(const char** lines, int numberOfLines, sFONT font)
@@ -120,4 +127,25 @@ void displayCenteredText(const char** lines, int numberOfLines, sFONT font)
 	{
 		LCD_DisplayStringLine(heightStart + (line * (LCD_GetFont()->Height + PIXEL_BETWEEN_TEXT_LINES)), (uint8_t*)lines[line]);
 	}	
+}
+
+void clearBackground()
+{
+	LCD_Clear(CLEARING_COLOR);
+}
+
+void initCoords()
+{
+	LCD_SetColors(COORDS_TEXT_COLOR, LCD_COLOR_GREEN);
+	LCD_DrawFullRect(0, 0, COORDS_WIDTH, COORDS_HEIGHT); 
+	
+	LCD_SetFont(&Font16x24);
+	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+	LCD_DisplayStringLine(COORDS_TITLE_OFFSET, COORDS_TITLE);
+}
+
+void initMap()
+{	
+	LCD_SetColors(MAP_TEXT_COLOR, MAP_BACKGROUND_COLOR);
+	LCD_DrawRect(0, COORDS_HEIGHT, MAP_HEIGHT, MAP_WIDTH);
 }
