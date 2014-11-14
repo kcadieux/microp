@@ -660,6 +660,45 @@ void LCD_DrawChar(uint16_t Xpos, uint16_t Ypos, const uint16_t *c)
   }
 }
 
+void LCD_DrawCharNegative(int32_t Xpos, uint16_t Ypos, const uint16_t *c)
+{
+  uint32_t index = 0, counter = 0;
+  uint32_t  Xaddress = 0;
+	int32_t xpos = Xpos*LCD_PIXEL_WIDTH*2;
+	int32_t xposTracker = Xpos;
+  Xaddress += Ypos;
+  
+  for(index = 0; index < LCD_Currentfonts->Height; index++)
+  {
+    
+    for(counter = 0; counter < LCD_Currentfonts->Width; counter++)
+    {
+          
+      if((((c[index] & ((0x80 << ((LCD_Currentfonts->Width / 12 ) * 8 ) ) >> counter)) == 0x00) &&(LCD_Currentfonts->Width <= 12))||
+        (((c[index] & (0x1 << counter)) == 0x00)&&(LCD_Currentfonts->Width > 12 )))
+      {
+          /* Write data value to all SDRAM memory */
+				if (xposTracker >= 0)
+				{
+         *(__IO uint16_t*) (CurrentFrameBuffer + (2*Xaddress) + xpos) = CurrentBackColor;
+				}
+      }
+      else
+      {
+          /* Write data value to all SDRAM memory */
+				if (xposTracker >= 0)
+				{
+         *(__IO uint16_t*) (CurrentFrameBuffer + (2*Xaddress) + xpos) = CurrentTextColor;   
+					
+				}
+      }
+      Xaddress++;
+    }
+			xposTracker++;
+      Xaddress += (LCD_PIXEL_WIDTH - LCD_Currentfonts->Width);
+  }
+}
+
 /**
   * @brief  Displays one character (16dots width, 24dots height).
   * @param  Line: the Line where to display the character shape .
@@ -674,6 +713,13 @@ void LCD_DisplayChar(uint16_t Line, uint16_t Column, uint8_t Ascii)
   Ascii -= 32;
 
   LCD_DrawChar(Line, Column, &LCD_Currentfonts->table[Ascii * LCD_Currentfonts->Height]);
+}
+
+void LCD_DisplayCharNegative(int32_t Line, uint16_t Column, uint8_t Ascii)
+{
+  Ascii -= 32;
+
+  LCD_DrawCharNegative(Line, Column, &LCD_Currentfonts->table[Ascii * LCD_Currentfonts->Height]);
 }
 
 /**
@@ -692,6 +738,21 @@ void LCD_DisplayStringLine(uint16_t Line, uint8_t *ptr)
   {
     /* Display one character on LCD */
     LCD_DisplayChar(Line, refcolumn, *ptr);
+    /* Decrement the column position by width */
+    refcolumn += LCD_Currentfonts->Width;
+    /* Point on the next character */
+    ptr++;
+  }
+}
+
+void LCD_DisplayStringLineNegative(int32_t Line, uint8_t *ptr)
+{  
+  uint16_t refcolumn = 0;
+  /* Send the string character by character on lCD */
+  while ((refcolumn < LCD_PIXEL_WIDTH) && ((*ptr != 0) & (((refcolumn + LCD_Currentfonts->Width) & 0xFFFF) >= LCD_Currentfonts->Width)))
+  {
+    /* Display one character on LCD */
+    LCD_DisplayCharNegative(Line, refcolumn, *ptr);
     /* Decrement the column position by width */
     refcolumn += LCD_Currentfonts->Width;
     /* Point on the next character */

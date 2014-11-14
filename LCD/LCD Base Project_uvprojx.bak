@@ -74,8 +74,6 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopB1X>0</nStopB1X>
-            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
@@ -132,7 +130,6 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -144,7 +141,12 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>1</RestoreTracepoints>
+<<<<<<< HEAD
             <RestoreSysVw>1</RestoreSysVw>
+=======
+            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreTracepoints>1</RestoreTracepoints>
+>>>>>>> 21d0182444171c9b886af1ead4920b29f04639ea
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
           <TargetSelection>11</TargetSelection>
@@ -365,7 +367,11 @@
               <MiscControls>--c99</MiscControls>
               <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
+<<<<<<< HEAD
               <IncludePath>.\inc;.\src</IncludePath>
+=======
+              <IncludePath>.\inc;.\src;.\lcd\inc;.\lcd\src</IncludePath>
+>>>>>>> 21d0182444171c9b886af1ead4920b29f04639ea
             </VariousControls>
           </Cads>
           <Aads>
@@ -431,22 +437,36 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Images</GroupName>
-          <Files>
-            <File>
-              <FileName>background16bpp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\inc\background16bpp.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Gyroscope_Drivers</GroupName>
           <Files>
             <File>
               <FileName>stm32f429i_discovery_l3gd20.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\stm32f429i_discovery_l3gd20.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+<<<<<<< HEAD
+          <GroupName>Gyroscope_Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>stm32f429i_discovery_l3gd20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\stm32f429i_discovery_l3gd20.c</FilePath>
+=======
+          <GroupName>lcd</GroupName>
+          <Files>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lcd\src\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\lcd\inc\lcd.h</FilePath>
+>>>>>>> 21d0182444171c9b886af1ead4920b29f04639ea
             </File>
           </Files>
         </Group>
@@ -466,7 +486,11 @@
             <File>
               <FileName>RTX_CM4.lib</FileName>
               <FileType>4</FileType>
+<<<<<<< HEAD
               <FilePath>C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\LIB\ARM\RTX_CM4.lib</FilePath>
+=======
+              <FilePath>C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\LIB\ARM\RTX_CM4.lib</FilePath>
+>>>>>>> 21d0182444171c9b886af1ead4920b29f04639ea
             </File>
           </Files>
         </Group>
