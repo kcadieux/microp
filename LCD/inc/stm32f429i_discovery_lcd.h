@@ -308,6 +308,7 @@ void     LCD_CtrlLinesWrite(GPIO_TypeDef* GPIOx, uint16_t CtrlPins, BitAction Bi
 void     LCD_SPIConfig(void);
 
 void 		 LCD_DisplayStringLineNegative(int32_t Line, uint8_t *ptr);
+void 		 LCD_DisplayStringLineAtY(uint16_t Line, uint16_t Y, uint8_t *ptr);
 /**
   * @}
   */    

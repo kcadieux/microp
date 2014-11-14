@@ -23,7 +23,11 @@ void lcdDisplay(void const *argument)
 	clearBackground();
 	initCoords();
 	initMap();
-	
+	updateCoords(220, 430);
+	osDelay(1000);
+	updateCoords(420, 430);
+	osDelay(1000);
+	updateCoords(620, 430);
 	while(1);
 	
 }

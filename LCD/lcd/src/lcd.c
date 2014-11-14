@@ -134,18 +134,68 @@ void clearBackground()
 	LCD_Clear(CLEARING_COLOR);
 }
 
-void initCoords()
-{
-	LCD_SetColors(COORDS_TEXT_COLOR, LCD_COLOR_GREEN);
-	LCD_DrawFullRect(0, 0, COORDS_WIDTH, COORDS_HEIGHT); 
-	
-	LCD_SetFont(&Font16x24);
-	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
-	LCD_DisplayStringLine(COORDS_TITLE_OFFSET, COORDS_TITLE);
-}
-
 void initMap()
 {	
 	LCD_SetColors(MAP_TEXT_COLOR, MAP_BACKGROUND_COLOR);
-	LCD_DrawRect(0, COORDS_HEIGHT, MAP_HEIGHT, MAP_WIDTH);
+	LCD_DrawRect(0, COORDS_HEIGHT, MAP_HEIGHT, MAP_WIDTH - 1);
+	int32_t lineIndex;
+	
+	// Create the grid
+	for (lineIndex = 1; lineIndex < MAP_GRID_LINES; lineIndex++)
+	{
+		LCD_DrawLine(0, COORDS_HEIGHT + (lineIndex * MAP_LINES_HORIZONTAL_OFFSET), MAP_WIDTH, LCD_DIR_HORIZONTAL);
+		LCD_DrawLine(lineIndex * MAP_LINES_VERTICAL_OFFSET, COORDS_HEIGHT, MAP_HEIGHT, LCD_DIR_VERTICAL);
+	}
+	
+}
+
+void updateCoordsString(uint8_t* xCoord, uint8_t* yCoord)
+{
+	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+	LCD_DisplayStringLineAtY(LINE(3), 3 * Font12x12.Width, xCoord);
+	LCD_DisplayStringLineAtY(LINE(5), 3 * Font12x12.Width, yCoord);
+}
+
+void initCoords()
+{
+	LCD_SetColors(COORDS_TEXT_COLOR, COORDS_BACKGROUND_COLOR);
+	LCD_DrawFullRect(0, 0, COORDS_WIDTH, COORDS_HEIGHT); 
+	
+	// Title
+	LCD_SetFont(&Font16x24);
+	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+	LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)COORDS_TITLE);
+	
+	// X and Y
+	LCD_SetFont(&Font12x12);
+	LCD_DisplayStringLine(LINE(3), (uint8_t*)COORDS_X);
+	LCD_DisplayStringLine(LINE(5), (uint8_t*)COORDS_Y);	
+}
+
+void updateCoordsMap(int32_t xCoord, int32_t yCoord)
+{
+	float fractionX = (float)xCoord/(float)MAXIMUM_COORDINATES_POINT;
+	float fractionY = (float)yCoord/(float)MAXIMUM_COORDINATES_POINT;
+	
+	LCD_SetColors(BEACON_COLOR, BEACON_COLOR);
+	
+	LCD_DrawFullCircle(fractionX * MAP_WIDTH, COORDS_HEIGHT + (fractionY*MAP_HEIGHT), BEACON_RADIUS);
+}
+
+void updateCoords(int32_t xCoord, int32_t yCoord)
+{
+	// Check if the coordinates are within the valid range
+	if (xCoord < 0 || yCoord < 0 || xCoord > MAXIMUM_COORDINATES_POINT || yCoord > MAXIMUM_COORDINATES_POINT)
+	{
+		return;
+	}
+	
+	initMap();
+	char x[4];
+	char y[4];
+	sprintf(x, "%d", xCoord);
+	sprintf(y, "%d", yCoord);
+	
+	updateCoordsMap(xCoord, yCoord);
+	updateCoordsString((uint8_t*)x, (uint8_t*)y);
 }
