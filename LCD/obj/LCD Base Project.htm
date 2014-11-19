@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\obj\LCD Base Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\obj\LCD Base Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Fri Nov 14 17:38:03 2014
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Wed Nov 19 15:18:43 2014
 <BR><P>
 <H3>Maximum Stack Usage =        196 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -214,7 +214,7 @@ Global Symbols
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_systick
 </UL>
 
-<P><STRONG><a name="[74]"></a>lcdDisplay</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[74]"></a>lcdDisplay</STRONG> (Thumb, 74 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = lcdDisplay &rArr; updateCoords &rArr; updateCoordsMap &rArr; LCD_DrawFullCircle &rArr; LCD_DrawLine &rArr; DMA2D_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoords
@@ -378,7 +378,9 @@ Global Symbols
 <P><STRONG><a name="[8a]"></a>LCD_SetLayer</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f429i_discovery_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_SetLayer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMap
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoords
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[e6]"></a>LCD_SetColors</STRONG> (Thumb, 20 bytes, Stack size 12 bytes, stm32f429i_discovery_lcd.o(.text))
@@ -399,6 +401,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayScrollingText
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayScrollingTextAndTitle
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFullRect
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMap
 </UL>
 
 <P><STRONG><a name="[e3]"></a>LCD_SetBackColor</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32f429i_discovery_lcd.o(.text), UNUSED)
@@ -406,9 +409,13 @@ Global Symbols
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayScrollingTextAndTitle
 </UL>
 
-<P><STRONG><a name="[ad]"></a>LCD_SetTransparency</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, stm32f429i_discovery_lcd.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_ReloadConfig
+<P><STRONG><a name="[ad]"></a>LCD_SetTransparency</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, stm32f429i_discovery_lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_SetTransparency
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_ReloadConfig
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LTDC_LayerAlpha
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMap
 </UL>
 
 <P><STRONG><a name="[e4]"></a>LCD_GetFont</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f429i_discovery_lcd.o(.text))
@@ -557,7 +564,8 @@ Global Symbols
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA2D_DeInit
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTextColor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoords
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMap
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoords
 </UL>
 
 <P><STRONG><a name="[c9]"></a>LCD_DrawFullCircle</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, stm32f429i_discovery_lcd.o(.text))
@@ -704,15 +712,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdDisplay
 </UL>
 
-<P><STRONG><a name="[84]"></a>initMap</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, lcd.o(.text))
+<P><STRONG><a name="[84]"></a>initMap</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = initMap &rArr; LCD_DrawRect &rArr; LCD_DrawLine &rArr; DMA2D_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRect
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFullRect
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawRect
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawLine
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTransparency
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTextColor
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetColors
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLayer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoords
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdDisplay
+<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdDisplay
 </UL>
 
 <P><STRONG><a name="[e9]"></a>updateCoordsString</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, lcd.o(.text))
@@ -725,7 +736,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoords
 </UL>
 
-<P><STRONG><a name="[83]"></a>initCoords</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, lcd.o(.text))
+<P><STRONG><a name="[83]"></a>initCoords</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = initCoords &rArr; LCD_DrawFullRect &rArr; DMA2D_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFullRect
@@ -733,11 +744,12 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_GetFont
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetColors
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetFont
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetLayer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdDisplay
 </UL>
 
-<P><STRONG><a name="[ea]"></a>updateCoordsMap</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, lcd.o(.text))
+<P><STRONG><a name="[ea]"></a>updateCoordsMap</STRONG> (Thumb, 160 bytes, Stack size 24 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = updateCoordsMap &rArr; LCD_DrawFullCircle &rArr; LCD_DrawLine &rArr; DMA2D_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawFullCircle
@@ -746,12 +758,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoords
 </UL>
 
-<P><STRONG><a name="[85]"></a>updateCoords</STRONG> (Thumb, 72 bytes, Stack size 24 bytes, lcd.o(.text))
+<P><STRONG><a name="[85]"></a>updateCoords</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = updateCoords &rArr; updateCoordsMap &rArr; LCD_DrawFullCircle &rArr; LCD_DrawLine &rArr; DMA2D_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoordsMap
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCoordsString
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initMap
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdDisplay
@@ -1014,7 +1025,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetDisplayWindow
 </UL>
 
-<P><STRONG><a name="[ae]"></a>LTDC_LayerAlpha</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_ltdc.o(.text), UNUSED)
+<P><STRONG><a name="[ae]"></a>LTDC_LayerAlpha</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_ltdc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetTransparency
 </UL>
 

@@ -60,13 +60,13 @@ void ContinuousWirelessReception()
 	
 	//Sample program that continuously receives packets
 	while (1) {
-		WLESS_StatusCodeTypeDef status = WLESS_ReceivePacketVerified(packet);
+		WLESS_StatusCodeTypeDef status = WLESS_ReceivePacket(packet);
 		
 		if (status == WLESS_StatusCode_RX_SUCCESS || status == WLESS_StatusCode_RX_CRC_ERROR) {
 			int i=0;
-			printf("Packet received:");
+			printf("Packet received: ");
 			for (; i<WLESS_PACKET_SIZE; ++i) {
-				printf("%d, ", packet[i]);
+				printf("%X", packet[i]);
 			}
 			printf("\n");
 			
@@ -82,7 +82,7 @@ int main(void)
 	CC2500_PATABLETypeDef patable;
 	WLESS_InitTypeDef wless_init_s;
 	
-	wless_init_s.address = 2;
+	wless_init_s.address = 3;
 	
 	InitMainTimer();
 	while (ticks != 5);

@@ -33,23 +33,29 @@ extern const char *aNewHope[A_NEW_HOPE_LINES];
 #define COORDS_TITLE_OFFSET									5
 #define COORDS_X														" X:"
 #define COORDS_Y														" Y:"
+#define COORDS_FONT													Font16x24
 #define COORDS_BACKGROUND_COLOR							LCD_COLOR_BLACK
 #define COORDS_TEXT_COLOR										LCD_COLOR_GREEN
-#define COORDS_HEIGHT												90 - 2
+#define COORDS_HEIGHT												80 - 2
 #define COORDS_WIDTH												LCD_PIXEL_WIDTH
 
-#define MAP_BACKGROUND_COLOR								LCD_COLOR_GREY
+#define MAP_BACKGROUND_COLOR								LCD_COLOR_BLACK
 #define MAP_TEXT_COLOR											LCD_COLOR_GREEN
 #define MAP_HEIGHT													(LCD_PIXEL_HEIGHT - COORDS_HEIGHT - 2)
-#define MAP_WIDTH														(LCD_PIXEL_WIDTH)
+#define MAP_WIDTH														(LCD_PIXEL_WIDTH-1)
 #define MAP_GRID_LINES											10
-#define MAP_LINES_HORIZONTAL_OFFSET					((MAP_HEIGHT / MAP_GRID_LINES)+1)
+#define MAP_LINES_HORIZONTAL_OFFSET					((MAP_HEIGHT / MAP_GRID_LINES))
 #define MAP_LINES_VERTICAL_OFFSET						(MAP_WIDTH / MAP_GRID_LINES)
+#define HEIGHT_OFFSET 											6
+#define WIDTH_OFFSET 												8
 
-#define BEACON_COLOR												LCD_COLOR_RED
+#define BEACON_COLOR												LCD_COLOR_WHITE
 #define BEACON_RADIUS												5
 
 #define MAXIMUM_COORDINATES_POINT						1000
+
+#define FOREGROUND_TRANSPARENCY							0x50
+#define BACKGROUND_TRANSPARENCY							0xFF
 
 /// Font choices are
 /// - Font16x24

@@ -75,7 +75,7 @@
 //   <o>Total stack size [bytes] for threads with user-provided stack size <0-1048576:8><#/4>
 //   <i> Defines the combined stack size for threads with user-provided stack size.
 //   <i> Default: 0
-#ifn300ef OS_PRIVSTKSIZE
+#ifndef OS_PRIVSTKSIZE
  #define OS_PRIVSTKSIZE 0
 #endif
  

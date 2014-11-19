@@ -45,6 +45,9 @@ const char *aNewHope[A_NEW_HOPE_LINES] =
 	"                    "
 };
 
+int currentXcoord = 0;
+int currentYcoord = 0;
+
 void starWarsIntro()
 {
 	displayCenteredText(aLongTimeAgo, LONG_TIME_AGO_LINES, Font16x24);
@@ -136,17 +139,31 @@ void clearBackground()
 
 void initMap()
 {	
+	// The map is to be printed on the background layer
+	
+	LCD_SetLayer(LCD_BACKGROUND_LAYER);
+	LCD_SetTransparency(BACKGROUND_TRANSPARENCY);
+
+	// Background
+	LCD_SetTextColor(MAP_BACKGROUND_COLOR);
+	LCD_DrawFullRect(0, COORDS_HEIGHT, MAP_WIDTH +1, MAP_HEIGHT + 6);	
+		
+	// Sides
 	LCD_SetColors(MAP_TEXT_COLOR, MAP_BACKGROUND_COLOR);
-	LCD_DrawRect(0, COORDS_HEIGHT, MAP_HEIGHT, MAP_WIDTH - 1);
+	LCD_DrawRect(WIDTH_OFFSET/2, COORDS_HEIGHT + (HEIGHT_OFFSET/2), MAP_HEIGHT - HEIGHT_OFFSET, MAP_WIDTH - WIDTH_OFFSET);
 	int32_t lineIndex;
 	
 	// Create the grid
 	for (lineIndex = 1; lineIndex < MAP_GRID_LINES; lineIndex++)
-	{
-		LCD_DrawLine(0, COORDS_HEIGHT + (lineIndex * MAP_LINES_HORIZONTAL_OFFSET), MAP_WIDTH, LCD_DIR_HORIZONTAL);
-		LCD_DrawLine(lineIndex * MAP_LINES_VERTICAL_OFFSET, COORDS_HEIGHT, MAP_HEIGHT, LCD_DIR_VERTICAL);
+	{		
+		LCD_DrawLine((WIDTH_OFFSET/2), COORDS_HEIGHT + (lineIndex * MAP_LINES_HORIZONTAL_OFFSET) + (HEIGHT_OFFSET/2), MAP_WIDTH - WIDTH_OFFSET, LCD_DIR_HORIZONTAL);
+		LCD_DrawLine(lineIndex * MAP_LINES_VERTICAL_OFFSET + (WIDTH_OFFSET/2), COORDS_HEIGHT + (HEIGHT_OFFSET/2), MAP_HEIGHT - HEIGHT_OFFSET, LCD_DIR_VERTICAL);
 	}
-	
+		
+	LCD_SetLayer(LCD_FOREGROUND_LAYER);	
+	LCD_SetTransparency(FOREGROUND_TRANSPARENCY);
+	LCD_SetTextColor(MAP_BACKGROUND_COLOR);
+	LCD_DrawFullRect(0, COORDS_HEIGHT, MAP_WIDTH - 1, MAP_HEIGHT);
 }
 
 void updateCoordsString(uint8_t* xCoord, uint8_t* yCoord)
@@ -157,19 +174,29 @@ void updateCoordsString(uint8_t* xCoord, uint8_t* yCoord)
 }
 
 void initCoords()
-{
+{	
 	LCD_SetColors(COORDS_TEXT_COLOR, COORDS_BACKGROUND_COLOR);
 	LCD_DrawFullRect(0, 0, COORDS_WIDTH, COORDS_HEIGHT); 
 	
+	LCD_SetLayer(LCD_BACKGROUND_LAYER);
+	LCD_SetColors(COORDS_TEXT_COLOR, COORDS_BACKGROUND_COLOR);
+	LCD_DrawFullRect(0, 0, COORDS_WIDTH, COORDS_HEIGHT); 
+	LCD_SetLayer(LCD_FOREGROUND_LAYER);
+	
 	// Title
 	LCD_SetFont(&Font16x24);
+	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+	LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)COORDS_TITLE);
+	LCD_SetLayer(LCD_BACKGROUND_LAYER);	
+	LCD_SetFont(&Font16x24);
+	LCD_SetLayer(LCD_FOREGROUND_LAYER);	
 	LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
 	LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)COORDS_TITLE);
 	
 	// X and Y
 	LCD_SetFont(&Font12x12);
 	LCD_DisplayStringLine(LINE(3), (uint8_t*)COORDS_X);
-	LCD_DisplayStringLine(LINE(5), (uint8_t*)COORDS_Y);	
+	LCD_DisplayStringLine(LINE(5), (uint8_t*)COORDS_Y);
 }
 
 void updateCoordsMap(int32_t xCoord, int32_t yCoord)
@@ -177,9 +204,17 @@ void updateCoordsMap(int32_t xCoord, int32_t yCoord)
 	float fractionX = (float)xCoord/(float)MAXIMUM_COORDINATES_POINT;
 	float fractionY = (float)yCoord/(float)MAXIMUM_COORDINATES_POINT;
 	
-	LCD_SetColors(BEACON_COLOR, BEACON_COLOR);
+	if (currentXcoord)
+	{
+		LCD_SetColors(MAP_BACKGROUND_COLOR, MAP_BACKGROUND_COLOR);
+		LCD_DrawFullCircle(currentXcoord, currentYcoord, BEACON_RADIUS);
+		LCD_SetColors(BEACON_COLOR, BEACON_COLOR);
+	}
 	
-	LCD_DrawFullCircle(fractionX * MAP_WIDTH, COORDS_HEIGHT + (fractionY*MAP_HEIGHT), BEACON_RADIUS);
+	currentXcoord = (WIDTH_OFFSET/2) + (fractionX * (MAP_WIDTH - WIDTH_OFFSET));
+	currentYcoord = COORDS_HEIGHT + (HEIGHT_OFFSET/2) + (fractionY*(MAP_HEIGHT - HEIGHT_OFFSET));
+	
+	LCD_DrawFullCircle(currentXcoord, currentYcoord, BEACON_RADIUS);
 }
 
 void updateCoords(int32_t xCoord, int32_t yCoord)
@@ -190,7 +225,6 @@ void updateCoords(int32_t xCoord, int32_t yCoord)
 		return;
 	}
 	
-	initMap();
 	char x[4];
 	char y[4];
 	sprintf(x, "%d", xCoord);

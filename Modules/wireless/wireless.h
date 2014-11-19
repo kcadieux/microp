@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define WLESS_PACKET_SIZE 10
+#define WLESS_PACKET_SIZE 2
 
 typedef struct
 {

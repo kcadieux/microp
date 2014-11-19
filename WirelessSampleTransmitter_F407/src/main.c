@@ -56,17 +56,16 @@ static void InitMainTimer()
 
 void ContinuousWirelessTransmission()
 {
-	uint8_t packet[WLESS_PACKET_SIZE];
-	memset(packet, 10, WLESS_PACKET_SIZE);
+	uint8_t packet[WLESS_PACKET_SIZE] = {0xD, 0xE};
 	
 	//Sample program that continuously sends packets
 	while (1) {
 		WLESS_StatusCodeTypeDef status;
 		//Send a packet every 10 seconds
-		while (ticks != 1);
-		ticks = 0;
+		//while (ticks != 1);
+		//ticks = 0;
 		
-		status = WLESS_SendPacketBurst(packet, 2, 250);
+		status = WLESS_SendPacketBurst(packet, 0, 10);
 		
 		if (status != WLESS_StatusCode_TX_SUCCESS) {
 			printf("A packet could not be sent for this reason: %d\n", status);

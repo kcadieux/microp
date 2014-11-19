@@ -8,18 +8,23 @@
 static const uint8_t ACTUAL_PACKET_SIZE_TX = WLESS_PACKET_SIZE + 1;
 static const uint8_t ACTUAL_PACKET_SIZE_RX = ACTUAL_PACKET_SIZE_TX + 2;
 
-static int packet_count = 0;
 static int packet_event = 0;
+static uint8_t expected_trigger_level = 0;
 static uint8_t rssi = 0;
 
 static void WaitForPacketEvent(void);
+static void WaitForIdle(void);
+static void InitInterruptGPIO(void);
 static void InitInterrupt(void);
+static void TuneInterruptForRX(void);
+static void TuneInterruptForTX(void);
 
 void EXTI9_5_IRQHandler(void)
 {
+	uint8_t inputBit = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7);
 	EXTI_ClearITPendingBit(EXTI_Line7);
-	packet_event = 1;
-	packet_count++;
+	
+	packet_event = inputBit == expected_trigger_level;
 }
 
 void WLESS_Init(WLESS_InitTypeDef* init_s)
@@ -43,7 +48,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	cc2500_init_s.MDMCFG4 = CC2500_MDMCFG4_CHANBW_E(0) | CC2500_MDMCFG4_CHANBW_M(0) | CC2500_MDMCFG4_DRATE_E(14);
 	cc2500_init_s.MDMCFG3 = CC2500_MDMCFG3_DRATE_M(59);
 	cc2500_init_s.MDMCFG2 = CC2500_MDMCFG2_ModFormat_MSK | CC2500_MDMCFG2_SyncMode_30_32;
-	cc2500_init_s.MDMCFG1 = CC2500_MDMCFG1_NumPreamble_8 | CC2500_MDMCFG1_CHANSPC_E(2);
+	cc2500_init_s.MDMCFG1 = CC2500_MDMCFG1_NumPreamble_8 | CC2500_MDMCFG1_CHANSPC_E(2) | CC2500_MDMCFG1_FEC_EN;
 	cc2500_init_s.MDMCFG0 = CC2500_MDMCFG0_CHANSPC_M(248);
 	
 	cc2500_init_s.DEVIATN = CC2500_DEVIATN_E(0) | CC2500_DEVIATN_M(0);
@@ -74,7 +79,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	cc2500_init_s.FSCAL0 = 0x19;
 	
 	//FIFO threshold configuration
-	cc2500_init_s.FIFOTHR = CC2500_FifoThreshold_TX09_RX56;
+	cc2500_init_s.FIFOTHR = CC2500_FifoThreshold_TX01_RX64;
 	
 	//GDO configuration
 	cc2500_init_s.IOCFG2 = CC2500_GDO_Polarity_HIGH | CC2500_GDO_Trigger_CHIP_RDYN;
@@ -82,7 +87,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	
 	//Packet control configuration
 	cc2500_init_s.PKTCTRL1 = CC2500_PKTCTRL1_PQT(0) | CC2500_PKTCTRL1_AddrCheck_BROADCAST_0_AND_255  | CC2500_PKTCTRL1_APPEND_STATUS;
-	cc2500_init_s.PKTCTRL0 = CC2500_PKTCTRL0_PacketFormat_FIFO | CC2500_PKTCTRL0_CRC_EN | CC2500_PKTCTRL0_Length_FIXED;
+	cc2500_init_s.PKTCTRL0 = CC2500_PKTCTRL0_PacketFormat_FIFO | CC2500_PKTCTRL0_CRC_EN | CC2500_PKTCTRL0_Length_FIXED | CC2500_PKTCTRL0_WHITE_DATA;
 	cc2500_init_s.PKTLEN = ACTUAL_PACKET_SIZE_TX;
 	
 	cc2500_init_s.ADDR = init_s->address;
@@ -92,6 +97,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	CC2500_WriteConfig(&cc2500_init_s);
 	CC2500_WritePATABLE(&patable);
 	
+	InitInterruptGPIO();
 	InitInterrupt();
 	
 	CC2500_SendCommandStrobe(CC2500_SFRX_R);
@@ -118,14 +124,14 @@ WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address)
 	
 	if (txBytes == 0 && status.state == CC2500_StatusState_IDLE) {
 		
-		//Switch to TX FIFO threshold reached trigger of packet TX trigger
-		CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_TX_FIFO_THRESHOLD);
+		TuneInterruptForTX();
 		
 		status = CC2500_WriteTxFIFO(&address, 1);
 		status = CC2500_WriteTxFIFO(packetBytes, WLESS_PACKET_SIZE);
 		status = CC2500_SendCommandStrobe(CC2500_STX_W);
 		
 		WaitForPacketEvent();
+		WaitForIdle();
 		
 		return WLESS_StatusCode_TX_SUCCESS;
 	}
@@ -151,9 +157,9 @@ WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
 	CC2500_StatusTypeDef status = CC2500_ReadStatusRegister(CC2500_RXBYTES, &rxBytes);
 	
 	if (status.state != CC2500_StatusState_IDLE) return WLESS_StatusCode_CHIP_BUSY_ERROR;
+	if (rxBytes > 0) return WLESS_statusCode_RX_FIFO_NOT_EMPTY_ERROR;
 	
-	//Switch to end of packet RX trigger
-	CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_RX_FIFO_THRESHOLD_END_PACKET);
+	TuneInterruptForRX();
 	
 	CC2500_SendCommandStrobe(CC2500_SRX_R);
 	WaitForPacketEvent();
@@ -167,6 +173,8 @@ WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
 	
 	rssi = appendedStatus[0];
 	
+	WaitForIdle();
+	
 	if (appendedStatus[1] & 0x80) return WLESS_StatusCode_RX_SUCCESS;
 	else return WLESS_StatusCode_RX_CRC_ERROR;
 }
@@ -179,23 +187,31 @@ uint8_t WLESS_GetLatestRSSI(void)
 static void WaitForPacketEvent()
 {
 	while (!packet_event);
+	packet_event = 0;
+}
+
+static void WaitForIdle()
+{
 	while (CC2500_SendCommandStrobe(CC2500_SNOP_W).state != CC2500_StatusState_IDLE);
+}
+
+static void InitInterruptGPIO()
+{
+	GPIO_InitTypeDef	 gpio_init_s;
+	//GPIO pin for capturing interrupts
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+	gpio_init_s.GPIO_Pin = GPIO_Pin_7;
+  gpio_init_s.GPIO_Mode = GPIO_Mode_IN;
+  gpio_init_s.GPIO_OType = GPIO_OType_PP;
+  gpio_init_s.GPIO_Speed = GPIO_Speed_100MHz;
+  gpio_init_s.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+  GPIO_Init(GPIOD, &gpio_init_s);
 }
 
 static void InitInterrupt()
 {
 	EXTI_InitTypeDef 	 EXTI_init_s;
   NVIC_InitTypeDef 	 NVIC_init_s;
-	GPIO_InitTypeDef	 gpio_init_s;
-	
-	//GPIO pin for capturing interrupts
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
-	gpio_init_s.GPIO_Pin = GPIO_Pin_7;
-  gpio_init_s.GPIO_Mode = GPIO_Mode_IN;
-  gpio_init_s.GPIO_OType = GPIO_OType_PP;
-  gpio_init_s.GPIO_Speed = GPIO_Speed_50MHz;
-  gpio_init_s.GPIO_PuPd  = GPIO_PuPd_NOPULL;
-  GPIO_Init(GPIOD, &gpio_init_s);
 	
 	//EXTI Configuration
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
@@ -204,7 +220,7 @@ static void InitInterrupt()
 	EXTI_init_s.EXTI_Line = EXTI_Line7;
 	EXTI_init_s.EXTI_LineCmd = ENABLE;
 	EXTI_init_s.EXTI_Mode = EXTI_Mode_Interrupt;
-	EXTI_init_s.EXTI_Trigger = EXTI_Trigger_Rising;
+	EXTI_init_s.EXTI_Trigger = EXTI_Trigger_Rising_Falling;
 	EXTI_Init(&EXTI_init_s);
 	
 	//NVIC config
@@ -213,4 +229,18 @@ static void InitInterrupt()
 	NVIC_init_s.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_init_s.NVIC_IRQChannelSubPriority = 0;
 	NVIC_Init(&NVIC_init_s);
+	
+	packet_event = 0;
+}
+
+static void TuneInterruptForRX()
+{
+	CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_RX_FIFO_THRESHOLD_END_PACKET);
+	expected_trigger_level = 1;
+}
+
+static void TuneInterruptForTX()
+{
+	CC2500_WriteConfigRegister(CC2500_IOCFG0, CC2500_GDO_Trigger_TX_FIFO_THRESHOLD);
+	expected_trigger_level = 0;
 }
