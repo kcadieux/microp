@@ -28,8 +28,8 @@ WLESS_StatusCodeTypeDef WLESS_SendPacketBurst(uint8_t* packetBytes, uint8_t addr
 WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes);
 WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t* packetBytes);
 
-uint8_t WLESS_GetLatestRSSI(void);
-
+int8_t WLESS_GetLatestRSSI(void);
+int8_t WLESS_GetLatestDecibelRSSI(void);
 
 
 #endif

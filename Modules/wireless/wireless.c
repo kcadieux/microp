@@ -5,12 +5,14 @@
 #include "stm32f4xx.h"                  // Device header
 #include "stm32f4xx_conf.h"
 
+static const uint8_t WLESS_RSSI_OFFSET = 72;
+
 static const uint8_t ACTUAL_PACKET_SIZE_TX = WLESS_PACKET_SIZE + 1;
 static const uint8_t ACTUAL_PACKET_SIZE_RX = ACTUAL_PACKET_SIZE_TX + 2;
 
 static int packet_event = 0;
 static uint8_t expected_trigger_level = 0;
-static uint8_t rssi = 0;
+static int8_t rssi = 0;
 
 static void WaitForPacketEvent(void);
 static void WaitForIdle(void);
@@ -91,11 +93,11 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	cc2500_init_s.PKTLEN = ACTUAL_PACKET_SIZE_TX;
 	
 	cc2500_init_s.ADDR = init_s->address;
-	cc2500_init_s.CHANNR = 0;
+	cc2500_init_s.CHANNR = 5;
 
 	CC2500_Init();
 	CC2500_WriteConfig(&cc2500_init_s);
-	CC2500_WritePATABLE(&patable);
+	//CC2500_WritePATABLE(&patable);
 	
 	InitInterruptGPIO();
 	InitInterrupt();
@@ -179,9 +181,16 @@ WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
 	else return WLESS_StatusCode_RX_CRC_ERROR;
 }
 
-uint8_t WLESS_GetLatestRSSI(void)
+int8_t WLESS_GetLatestRSSI(void)
 {
 	return rssi;
+}
+
+int8_t WLESS_GetLatestDecibelRSSI(void)
+{
+	int8_t rssi = WLESS_GetLatestRSSI();
+	if (rssi >= 128) return ((rssi - 256) / 2) - WLESS_RSSI_OFFSET;
+	else return (rssi / 2) - WLESS_RSSI_OFFSET;
 }
 
 static void WaitForPacketEvent()
