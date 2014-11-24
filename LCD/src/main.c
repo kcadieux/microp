@@ -17,10 +17,21 @@
 
 void lcdDisplay(void const *argument)
 {
-	displayCenteredText(aLongTimeAgo, LONG_TIME_AGO_LINES, Font16x24);
-	osDelay(3000);
-	displayScrollingTextAndTitle(aNewHopeTitle, A_NEW_HOPE_TITLE_LINES, aNewHope, A_NEW_HOPE_LINES, A_NEW_HOPE_ROLL_TIME);
-	//displayScrollingText(aNewHope, A_NEW_HOPE_LINES, A_NEW_HOPE_ROLL_TIME, Font16x24);
+	//starWarsIntro();
+	//osDelay(400);
+	
+	clearBackground();
+	initCoords();
+	initMap();
+	while(1)
+	{
+		updateCoords(200, 400);
+		osDelay(1000);
+		updateCoords(420, 430);
+		osDelay(1000);
+		updateCoords(620, 430);
+		osDelay(1000);
+	}
 }
 
 osThreadDef(lcdDisplay, osPriorityNormal, 1, 0);

@@ -745,6 +745,21 @@ void LCD_DisplayStringLine(uint16_t Line, uint8_t *ptr)
   }
 }
 
+void LCD_DisplayStringLineAtY(uint16_t Line, uint16_t Y, uint8_t *ptr)
+{  
+  uint16_t refcolumn = Y;
+  /* Send the string character by character on lCD */
+  while ((refcolumn < LCD_PIXEL_WIDTH) && ((*ptr != 0) & (((refcolumn + LCD_Currentfonts->Width) & 0xFFFF) >= LCD_Currentfonts->Width)))
+  {
+    /* Display one character on LCD */
+    LCD_DisplayChar(Line, refcolumn, *ptr);
+    /* Decrement the column position by width */
+    refcolumn += LCD_Currentfonts->Width;
+    /* Point on the next character */
+    ptr++;
+  }
+}
+
 void LCD_DisplayStringLineNegative(int32_t Line, uint8_t *ptr)
 {  
   uint16_t refcolumn = 0;
