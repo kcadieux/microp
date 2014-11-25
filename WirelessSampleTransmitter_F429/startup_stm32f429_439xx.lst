@@ -898,9 +898,9 @@ ssSampleTransmitter_F429\RTE -IH:\microp\WirelessSampleTransmitter_F429\RTE\Dev
 ice\STM32F429ZI -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v
 5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_D
 FP\1.0.8\Device\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\S
-tdPeriph_Driver\inc --predefine="__RTX SETA 1" --predefine="__MICROLIB SETA 1" 
---list=.\startup_stm32f429_439xx.lst RTE\Device\STM32F429ZI\startup_stm32f429_4
-39xx.s
+tdPeriph_Driver\inc --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --pr
+edefine="__MICROLIB SETA 1" --list=.\startup_stm32f429_439xx.lst RTE\Device\STM
+32F429ZI\startup_stm32f429_439xx.s
 
 
 
@@ -2081,4 +2081,4 @@ Symbol: __main
       At line 193 in file RTE\Device\STM32F429ZI\startup_stm32f429_439xx.s
 Comment: __main used once
 2 symbols
-453 symbols in table
+454 symbols in table

@@ -10,19 +10,19 @@ uint8_t					CC2500_SPI_AF = 								GPIO_AF_SPI4;
 uint32_t 				CC2500_SPI_SCLK_GPIO_CLK =			RCC_AHB1Periph_GPIOE;
 GPIO_TypeDef* 	CC2500_SPI_SCLK_GPIO_PORT = 		GPIOE;
 uint16_t			 	CC2500_SPI_SCLK_GPIO_PIN =			GPIO_Pin_2;
-uint8_t 				CC2500_SPI_SCLK_AF_PIN_SOURCE	= GPIO_PinSource2;
+uint8_t 				CC2500_SPI_SCLK_AF_PIN_SOURCE	= GPIO_PinSource2;	//P16 on wireless board
 
 uint32_t 				CC2500_SPI_CSN_GPIO_CLK =				RCC_AHB1Periph_GPIOE;
 GPIO_TypeDef*		CC2500_SPI_CSN_GPIO_PORT =			GPIOE;
 uint16_t 				CC2500_SPI_CSN_GPIO_PIN =				GPIO_Pin_4;
-uint8_t 				CC2500_SPI_CSN_AF_PIN_SOURCE =	GPIO_PinSource4;
+uint8_t 				CC2500_SPI_CSN_AF_PIN_SOURCE =	GPIO_PinSource4;  //P17 on wireless board
 
 uint32_t 				CC2500_SPI_MISO_GPIO_CLK =			RCC_AHB1Periph_GPIOE;
 GPIO_TypeDef* 	CC2500_SPI_MISO_GPIO_PORT =			GPIOE;
 uint16_t 				CC2500_SPI_MISO_GPIO_PIN =			GPIO_Pin_5;
-uint8_t 				CC2500_SPI_MISO_AF_PIN_SOURCE =	GPIO_PinSource5;
+uint8_t 				CC2500_SPI_MISO_AF_PIN_SOURCE =	GPIO_PinSource5;  //P15 on wireless board
 
 uint32_t 				CC2500_SPI_MOSI_GPIO_CLK =			RCC_AHB1Periph_GPIOE;
 GPIO_TypeDef* 	CC2500_SPI_MOSI_GPIO_PORT =			GPIOE;
 uint16_t 				CC2500_SPI_MOSI_GPIO_PIN =			GPIO_Pin_6;
-uint8_t 				CC2500_SPI_MOSI_AF_PIN_SOURCE =	GPIO_PinSource6;
+uint8_t 				CC2500_SPI_MOSI_AF_PIN_SOURCE =	GPIO_PinSource6;  //P18 on wireless board

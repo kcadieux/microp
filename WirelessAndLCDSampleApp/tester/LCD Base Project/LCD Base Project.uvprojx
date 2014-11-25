@@ -361,7 +361,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\inc;.\src</IncludePath>
+              <IncludePath>.\inc;.\src;..\..\..\Modules\wireless;..\..\..\Drivers\CC2500</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -433,6 +433,31 @@
               <FileName>stm32f429i_discovery_l3gd20.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\stm32f429i_discovery_l3gd20.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>drivers\cc2500</GroupName>
+          <Files>
+            <File>
+              <FileName>cc2500.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Drivers\CC2500\cc2500.c</FilePath>
+            </File>
+            <File>
+              <FileName>cc2500_config_F429.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Drivers\CC2500\cc2500_config_F429.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>modules\wireless</GroupName>
+          <Files>
+            <File>
+              <FileName>wireless.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Modules\wireless\wireless.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -657,7 +682,7 @@
 
   <RTE>
     <apis>
-      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" Cvendor="ARM" exclusive="1">
+      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" exclusive="1">
         <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>

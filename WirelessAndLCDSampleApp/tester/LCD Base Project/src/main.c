@@ -89,7 +89,7 @@ void DisplayRSSIThread(void const *argument)
 		
 		SetRssi(rssi_db, packet[0]);
 		
-		osDelay(500);
+		osDelay(10);
 	}
 }
 

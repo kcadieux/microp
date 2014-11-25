@@ -64,10 +64,10 @@ void ContinuousWirelessTransmission()
 	while (1) {
 		WLESS_StatusCodeTypeDef status;
 		//Send a packet every 500
-		while (ticks != 1);
-		ticks = 0;
+		//while (ticks != 1);
+		//ticks = 0;
 		
-		status = WLESS_SendPacket(packet, 1);
+		status = WLESS_SendPacketBurst(packet, 1, 10);
 		
 		if (status != WLESS_StatusCode_TX_SUCCESS) {
 			printf("A packet could not be sent for this reason: %d\n", status);
