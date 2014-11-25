@@ -5,7 +5,7 @@
 #include "wireless.h"
 #include "cc2500.h"
 
-static const uint32_t PRESCALER = 10000;
+static const uint32_t PRESCALER = 5000;
 static const uint32_t PERIOD = 9000;
 
 static int ticks = 0;
@@ -54,28 +54,23 @@ static void InitMainTimer()
 	GPIO_Init(GPIOG, &gpio_init_s);
 }
 
+static const uint8_t ADDRESS = 2;
+
 void ContinuousWirelessTransmission()
 {
-	uint8_t packet[WLESS_PACKET_SIZE];
-	memset(packet, 10, WLESS_PACKET_SIZE);
-	if (WLESS_SendPacket(packet) != WLESS_StatusCode_TX_SUCCESS) {
-		printf("A packet could not be sent for this reason");
-	}
+	uint8_t packet[WLESS_PACKET_SIZE] = {ADDRESS};
 	
 	//Sample program that continuously sends packets
 	while (1) {
-		//Send a packet every 10 seconds
+		WLESS_StatusCodeTypeDef status;
+		//Send a packet every 500
 		while (ticks != 1);
 		ticks = 0;
-		if (WLESS_PacketEventOccurred()) {
-			WLESS_StatusCodeTypeDef status;
-			
-			memset(packet, 10, WLESS_PACKET_SIZE);
-			status = WLESS_SendPacket(packet);
-			
-			if (status != WLESS_StatusCode_TX_SUCCESS) {
-				printf("A packet could not be sent for this reason: %d\n", status);
-			}
+		
+		status = WLESS_SendPacket(packet, 1);
+		
+		if (status != WLESS_StatusCode_TX_SUCCESS) {
+			printf("A packet could not be sent for this reason: %d\n", status);
 		}
 	}
 }
@@ -84,12 +79,16 @@ int main(void)
 {
 	CC2500_InitTypeDef cc2500_init_s;
 	CC2500_PATABLETypeDef patable;
+	WLESS_InitTypeDef wless_init_s;
+	
+	wless_init_s.address = ADDRESS;
+	
 	InitMainTimer();
 	while (ticks != 5);
 	ticks = 0;
 	
 	//Init Wireless communication module
-	WLESS_Init();
+	WLESS_Init(&wless_init_s);
 	
 	CC2500_ReadConfiguration(&cc2500_init_s);
 	CC2500_ReadPATABLE(&patable);

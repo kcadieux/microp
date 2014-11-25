@@ -44,7 +44,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	//Frequency configuration
 	cc2500_init_s.FREQ2 = 0x5D;
 	cc2500_init_s.FREQ1 = 0x93;
-	cc2500_init_s.FREQ0 = 0xB1;
+	cc2500_init_s.FREQ0 = 0xC5;
 	
 	//Modem configuration
 	cc2500_init_s.MDMCFG4 = CC2500_MDMCFG4_CHANBW_E(0) | CC2500_MDMCFG4_CHANBW_M(0) | CC2500_MDMCFG4_DRATE_E(14);
