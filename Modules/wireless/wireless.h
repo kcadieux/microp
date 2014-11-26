@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#define WLESS_PACKET_SIZE 1
+#define WLESS_PACKET_SIZE 2
 
 typedef struct
 {
@@ -14,6 +14,7 @@ typedef struct
 typedef enum
 {
 	WLESS_StatusCode_TX_SUCCESS,
+	WLESS_StatusCode_TX_BURST_TOO_LARGE_ERROR,
 	WLESS_StatusCode_RX_SUCCESS,
 	WLESS_StatusCode_RX_CRC_ERROR,
 	WLESS_statusCode_RX_FIFO_NOT_EMPTY_ERROR,
