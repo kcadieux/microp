@@ -2,7 +2,7 @@
 #include "roles.h"
 #include "wireless.h"
 
-void ROLES_BadgeThread(const void* argument)
+void ROLES_SlaveStationThread(const void* argument)
 {
 	uint8_t packet[WLESS_PACKET_SIZE] = {ROLES_PacketType_BADGE_BROADCAST, 0x00};
 	
