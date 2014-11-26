@@ -5,12 +5,6 @@
 
 #define WLESS_PACKET_SIZE 2
 
-typedef struct
-{
-	uint8_t		address;
-	uint32_t 	carrierFrequency;
-} WLESS_InitTypeDef;
-
 typedef enum
 {
 	WLESS_StatusCode_TX_SUCCESS,
@@ -22,12 +16,12 @@ typedef enum
 	WLESS_StatusCode_CHIP_BUSY_ERROR
 } WLESS_StatusCodeTypeDef;
 
-void WLESS_Init(WLESS_InitTypeDef* init_s);
+void WLESS_Init(void);
 
 WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address);
 WLESS_StatusCodeTypeDef WLESS_SendPacketBurst(uint8_t* packetBytes, uint8_t address, uint8_t burstSize);
-WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes);
-WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t* packetBytes);
+WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t address, uint8_t* packetBytes);
+WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t address, uint8_t* packetBytes);
 
 int8_t WLESS_GetLatestRSSI(void);
 int8_t WLESS_GetLatestDecibelRSSI(void);

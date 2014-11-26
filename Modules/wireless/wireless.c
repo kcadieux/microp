@@ -29,7 +29,7 @@ void EXTI9_5_IRQHandler(void)
 	packet_event = inputBit == expected_trigger_level;
 }
 
-void WLESS_Init(WLESS_InitTypeDef* init_s)
+void WLESS_Init()
 {
 	CC2500_InitTypeDef cc2500_init_s;
 	CC2500_PATABLETypeDef patable;
@@ -92,7 +92,7 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 	cc2500_init_s.PKTCTRL0 = CC2500_PKTCTRL0_PacketFormat_FIFO | CC2500_PKTCTRL0_CRC_EN | CC2500_PKTCTRL0_Length_FIXED | CC2500_PKTCTRL0_WHITE_DATA;
 	cc2500_init_s.PKTLEN = ACTUAL_PACKET_SIZE_TX;
 	
-	cc2500_init_s.ADDR = init_s->address;
+	cc2500_init_s.ADDR = 0;
 	cc2500_init_s.CHANNR = 5;
 
 	CC2500_Init();
@@ -170,18 +170,18 @@ WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address)
 	return WLESS_StatusCode_CHIP_BUSY_ERROR;
 }
 
-WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t* packetBytes)
+WLESS_StatusCodeTypeDef WLESS_ReceivePacketVerified(uint8_t address, uint8_t* packetBytes)
 {
-	WLESS_StatusCodeTypeDef status = WLESS_ReceivePacket(packetBytes);
+	WLESS_StatusCodeTypeDef status = WLESS_ReceivePacket(address, packetBytes);
 	
 	while (status == WLESS_StatusCode_RX_CRC_ERROR) {
-		status = WLESS_ReceivePacket(packetBytes);
+		status = WLESS_ReceivePacket(address, packetBytes);
 	}
 	
 	return status;
 }
 
-WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
+WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t address, uint8_t* packetBytes)
 {
 	uint8_t rxBytes;
 	uint8_t appendedStatus[2];
@@ -189,6 +189,8 @@ WLESS_StatusCodeTypeDef WLESS_ReceivePacket(uint8_t* packetBytes)
 	
 	if (status.state != CC2500_StatusState_IDLE) return WLESS_StatusCode_CHIP_BUSY_ERROR;
 	if (rxBytes > 0) return WLESS_statusCode_RX_FIFO_NOT_EMPTY_ERROR;
+	
+	CC2500_WriteConfigRegister(CC2500_ADDR, address);
 	
 	TuneInterruptForRX();
 	
