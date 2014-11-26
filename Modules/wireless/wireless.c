@@ -5,12 +5,25 @@
 #include "stm32f4xx.h"                  // Device header
 #include "stm32f4xx_conf.h"
 
+#ifdef WLESS_RTX
+#define osObjectsPublic 
+#include "osObjects.h"
+
+#define WLESS_PACKET_EVENT_SIGNAL 			1
+#define WLESS_PACKET_EVENT_TIMEOUT_MS 	osWaitForever
+
+static osThreadId wless_thread_id;
+
+#else
+static int packet_event = 0;
+#endif
+
 static const uint8_t WLESS_RSSI_OFFSET = 72;
 
 static const uint8_t ACTUAL_PACKET_SIZE_TX = WLESS_PACKET_SIZE + 1;
 static const uint8_t ACTUAL_PACKET_SIZE_RX = ACTUAL_PACKET_SIZE_TX + 2;
 
-static int packet_event = 0;
+
 static uint8_t expected_trigger_level = 0;
 static int8_t rssi = 0;
 
@@ -21,12 +34,18 @@ static void InitInterrupt(void);
 static void TuneInterruptForRX(void);
 static void TuneInterruptForTX(void);
 
+
 void EXTI9_5_IRQHandler(void)
 {
 	uint8_t inputBit = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_7);
 	EXTI_ClearITPendingBit(EXTI_Line7);
 	
+#ifdef WLESS_RTX
+	if (inputBit == expected_trigger_level)
+		osSignalSet(wless_thread_id, WLESS_PACKET_EVENT_SIGNAL);
+#else
 	packet_event = inputBit == expected_trigger_level;
+#endif
 }
 
 void WLESS_Init()
@@ -224,11 +243,19 @@ int8_t WLESS_GetLatestDecibelRSSI(void)
 	else return (rssi / 2) - WLESS_RSSI_OFFSET;
 }
 
+#ifdef WLESS_RTX
+static void WaitForPacketEvent()
+{
+	wless_thread_id = osThreadGetId();
+	osSignalWait(WLESS_PACKET_EVENT_SIGNAL, WLESS_PACKET_EVENT_TIMEOUT_MS);
+}
+#else
 static void WaitForPacketEvent()
 {
 	while (!packet_event);
 	packet_event = 0;
 }
+#endif
 
 static void WaitForIdle()
 {
@@ -269,8 +296,6 @@ static void InitInterrupt()
 	NVIC_init_s.NVIC_IRQChannelPreemptionPriority = 0;
 	NVIC_init_s.NVIC_IRQChannelSubPriority = 0;
 	NVIC_Init(&NVIC_init_s);
-	
-	packet_event = 0;
 }
 
 static void TuneInterruptForRX()

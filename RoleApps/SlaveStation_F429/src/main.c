@@ -57,6 +57,8 @@ static void InitMainTimer()
 
 osThreadDef(ROLES_SlaveStationThread, osPriorityNormal, 1, 0);
 
+static uint8_t STATION_NUMBER = 1;
+
 int main(void)
 {
 	osKernelInitialize();
@@ -64,7 +66,7 @@ int main(void)
 	InitMainTimer();
 	WLESS_Init();
 	
-	osThreadCreate(osThread(ROLES_SlaveStationThread), NULL);
+	osThreadCreate(osThread(ROLES_SlaveStationThread), &STATION_NUMBER);
 	
 	osKernelStart();
 	

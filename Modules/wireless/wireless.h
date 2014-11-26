@@ -3,6 +3,11 @@
 
 #include <stdint.h>
 
+#ifdef WLESS_RTX
+#define osObjectsPublic
+#include "osObjects.h"
+#endif
+
 #define WLESS_PACKET_SIZE 2
 
 typedef enum
@@ -15,6 +20,7 @@ typedef enum
 	WLESS_StatusCode_RX_FIFO_NO_PACKET_AVAILABLE_ERROR,
 	WLESS_StatusCode_CHIP_BUSY_ERROR
 } WLESS_StatusCodeTypeDef;
+
 
 void WLESS_Init(void);
 
