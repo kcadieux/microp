@@ -108,13 +108,42 @@ void WLESS_Init(WLESS_InitTypeDef* init_s)
 WLESS_StatusCodeTypeDef WLESS_SendPacketBurst(uint8_t* packetBytes, uint8_t address, uint8_t burstSize)
 {
 	int i;
-	WLESS_StatusCodeTypeDef status = WLESS_StatusCode_TX_SUCCESS;
+	uint8_t txBytes;
+	CC2500_StatusTypeDef status;
 	
-	for (i=0; i<burstSize && status == WLESS_StatusCode_TX_SUCCESS; ++i) {
-		status = WLESS_SendPacket(packetBytes, address);
+	//The burst must fit in the TX FIFO
+	if (burstSize * ACTUAL_PACKET_SIZE_TX > 64) return WLESS_StatusCode_TX_BURST_TOO_LARGE_ERROR;
+	
+	status = CC2500_ReadStatusRegister(CC2500_TXBYTES, &txBytes);
+	
+	if (txBytes == 0 && status.state == CC2500_StatusState_IDLE) {
+		
+		//Configure CC2500 to stay in TX mode after a packet has been set
+		CC2500_WriteConfigRegister(CC2500_MCSM1, CC2500_MCMS1_CcaMode_RSSI_NO_PACKET | CC2500_MCMS1_RxOffMode_IDLE | CC2500_MCMS1_TxOffMode_TX);
+		TuneInterruptForTX();
+		
+		//Copy packet many times into the TX FIFO
+		for (i=0; i<burstSize; ++i) {
+			status = CC2500_WriteTxFIFO(&address, 1);
+			status = CC2500_WriteTxFIFO(packetBytes, WLESS_PACKET_SIZE);
+		}
+
+		//Transmit the burst
+		status = CC2500_SendCommandStrobe(CC2500_STX_W);		
+		WaitForPacketEvent();
+		
+		//Go back to IDLE
+		status = CC2500_SendCommandStrobe(CC2500_SIDLE_W);
+		WaitForIdle();
+		
+		//Flush TX FIFO and return configuration to normal
+		CC2500_SendCommandStrobe(CC2500_SFTX_W);
+		CC2500_WriteConfigRegister(CC2500_MCSM1, CC2500_MCMS1_CcaMode_RSSI_NO_PACKET | CC2500_MCMS1_RxOffMode_IDLE | CC2500_MCMS1_TxOffMode_IDLE);
+		
+		return WLESS_StatusCode_TX_SUCCESS;
 	}
 	
-	return status;
+	return WLESS_StatusCode_CHIP_BUSY_ERROR;
 }
 
 WLESS_StatusCodeTypeDef WLESS_SendPacket(uint8_t* packetBytes, uint8_t address)
