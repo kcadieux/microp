@@ -290,7 +290,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>23</TopLine>
+      <TopLine>34</TopLine>
       <CurrentLine>64</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\src\main.c</PathWithFileName>
@@ -352,10 +352,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>21</ColumnNumber>
+      <ColumnNumber>19</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>120</TopLine>
-      <CurrentLine>161</CurrentLine>
+      <TopLine>139</TopLine>
+      <CurrentLine>162</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\Modules\wireless\wireless.c</PathWithFileName>
       <FilenameWithoutPath>wireless.c</FilenameWithoutPath>
@@ -418,7 +418,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>247</TopLine>
+      <TopLine>256</TopLine>
       <CurrentLine>278</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>RTE\CMSIS\RTX_Conf_CM.c</PathWithFileName>
@@ -1002,7 +1002,7 @@
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>182</TopLine>
+      <TopLine>183</TopLine>
       <CurrentLine>191</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>RTE\Device\STM32F429ZI\startup_stm32f429_439xx.s</PathWithFileName>

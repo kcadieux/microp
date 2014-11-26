@@ -13,6 +13,8 @@
 #include "background16bpp.h"
 #include "wireless.h"
 #include "roles.h"
+#include "geometry.h"
+#include "movingAverageFloat.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -20,10 +22,11 @@
 
 static char RSSI[7][10];
 static unsigned int ticks = 0;
+static const int NB_SLAVE_STATIONS = 2;
 
-void SetRssi(int rssi, int rssiNb)
+void SetRssi(float rssi, int rssiNb)
 {
-	sprintf(RSSI[rssiNb], "   %d", rssi);
+	sprintf(RSSI[rssiNb], "   %f", rssi);
   LCD_DisplayStringLine(LINE(rssiNb*2), (uint8_t*)RSSI[rssiNb]);
 }
 
@@ -49,27 +52,37 @@ void DisplayRSSIThread(void const *argument)
 	
 	while (1)
 	{
+		int i;
 		unsigned int start = ticks;
 		unsigned int duration_ms;
 		
-		WLESS_ReceivePacketVerified(ROLES_Address_BADGE_BROADCAST_RECEIVER, packet);
+		if (WLESS_ReceivePacketVerified(ROLES_Address_BADGE_BROADCAST_RECEIVER, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
+		if (packet[0] != ROLES_PacketType_BADGE_BROADCAST) continue;
+		
 		rssi_db = WLESS_GetLatestDecibelRSSI();
+		AddValueToWindow(rssi_db, 1);
+		SetRssi(convertRSSIToDistance(GetAverageWindow(1)), 1);
+		//SetRssi(rssi_db, 1);
 		
-		SetRssi(rssi_db, 1);
-		
-		WLESS_ReceivePacketVerified(ROLES_Address_SLAVE_1_RSSI_RECEIVER, packet);
-		rssi_db = packet[1];
-		
-		SetRssi(rssi_db, 2);
+		/*
+		for (i=1; i<=NB_SLAVE_STATIONS; ++i) {
+			if (WLESS_ReceivePacketVerified(ROLES_Address_SLAVE_RSSI_RECEIVER_BASE_ADDR + i, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
+			if (packet[0] != ROLES_PacketType_STATION_RSSI) continue;
+			
+			rssi_db = packet[1];
+			AddValueToWindow(rssi_db, i+1);
+			SetRssi(convertRSSIToDistance(GetAverageWindow(i+1)), i+1);
+		}
+		*/
 		
 		duration_ms = ticks - start;
 		
+		/*
 		if (duration_ms > 20)
 		{
 			printf("Long delay...\n");
 		}
-		
-		//osDelay(100);
+		*/
 	}
 }
 
