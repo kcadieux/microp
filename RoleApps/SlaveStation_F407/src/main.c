@@ -70,6 +70,5 @@ int main(void)
 	
 	osKernelStart();
 	
-	while (1);
 }
 

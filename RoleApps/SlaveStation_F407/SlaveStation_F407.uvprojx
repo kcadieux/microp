@@ -359,9 +359,9 @@
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER</Define>
+              <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER WLESS_RTX</Define>
               <Undefine></Undefine>
-              <IncludePath>.\inc;..\..\Modules\wireless;..\..\Drivers\CC2500;..\..\Modules\roles</IncludePath>
+              <IncludePath>.\inc;..\..\Modules\wireless;..\..\Drivers\CC2500;..\..\Modules\roles;..\..\lab4\Moving_Average_Drivers\inc;..\..\lab4\Moving_Average_Drivers\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -413,6 +413,16 @@
               <FileName>fputc_debug.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\fputc_debug.c</FilePath>
+            </File>
+            <File>
+              <FileName>movingAverageFloat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\lab4\Moving_Average_Drivers\src\movingAverageFloat.c</FilePath>
+            </File>
+            <File>
+              <FileName>movingAverageFloat.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\lab4\Moving_Average_Drivers\inc\movingAverageFloat.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -657,7 +667,7 @@
 
   <RTE>
     <apis>
-      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" Cvendor="ARM" exclusive="1">
+      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" exclusive="1">
         <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
         <targetInfos>
           <targetInfo name="SlaveStation_F407"/>

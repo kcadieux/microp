@@ -11,14 +11,17 @@
 #include "stm32f4xx.h"
 #include "movingAverageFloat.h"
 
-uint32_t BufferIndex;
-float Buffer[AVERAGE_SINGLE_SIZE];
-uint16_t IsBufferFull;
-int BufferX[AVERAGE_COORDS_SIZE];
-int BufferY[AVERAGE_COORDS_SIZE];
-int BufferZ[AVERAGE_COORDS_SIZE];
-uint32_t CoordsIndex;
-uint16_t AreCoordsFull;
+static uint32_t BufferBaselineIndex;
+static uint32_t BufferSampleIndex;
+static int BufferBaseline[AVERAGE_SINGLE_SIZE];
+static int BufferSample[SAMPLE_SINGLE_SIZE];
+static uint16_t IsBufferBaselineFull;
+static uint16_t IsBufferSampleFull;
+
+uint16_t IsBaselineBufferFull()
+{
+	return IsBufferBaselineFull;
+}
 
 /// <summary>
 /// Adds a given value to the window to average
@@ -26,13 +29,29 @@ uint16_t AreCoordsFull;
 /// <param_name="val">
 /// The value to be added to the window
 /// </param>
-void AddValueToWindow(float val)
+void AddValueToWindowBaseline(int val)
 {
-	Buffer[BufferIndex % AVERAGE_SINGLE_SIZE] = val;
-	BufferIndex++;
-	if (BufferIndex == AVERAGE_SINGLE_SIZE)
+	BufferBaseline[BufferBaselineIndex % AVERAGE_SINGLE_SIZE] = val;
+	BufferBaselineIndex++;
+	if (BufferBaselineIndex == AVERAGE_SINGLE_SIZE)
 	{
-		IsBufferFull = 1;
+		IsBufferBaselineFull = 1;
+	}
+}
+
+/// <summary>
+/// Adds a given value to the window to average
+/// </summary>
+/// <param_name="val">
+/// The value to be added to the window
+/// </param>
+void AddValueToWindowSample(int val)
+{
+	BufferSample[BufferSampleIndex % SAMPLE_SINGLE_SIZE] = val;
+	BufferSampleIndex++;
+	if (BufferSampleIndex == SAMPLE_SINGLE_SIZE)
+	{
+		IsBufferSampleFull = 1;
 	}
 }
 
@@ -42,129 +61,54 @@ void AddValueToWindow(float val)
 /// <returns>
 /// The average of the window of values
 /// </returns>
-float GetAverageWindow()
+float GetAverageWindowBaseline()
 {
-	if (!IsBufferFull)
+	int i;
+	int sum;
+	
+	if (!IsBufferBaselineFull)
 	{
 		float notFullSum = 0;
-		for (int i = 0; i < BufferIndex; i++) {
-			notFullSum += Buffer[i];
+		for (i = 0; i < BufferBaselineIndex; i++) {
+			notFullSum += BufferBaseline[i];
 		}
-		return notFullSum / (BufferIndex);
+		return notFullSum / (float)(BufferBaselineIndex);
 	}
 	
-	int i;
-	float sum = 0;
+	sum = 0;
 	for (i = 0; i < AVERAGE_SINGLE_SIZE; i++)
 	{
-		sum += Buffer[i];
+		sum += BufferBaseline[i];
 	}
 	
-	return sum / AVERAGE_SINGLE_SIZE;
+	return sum / (float)AVERAGE_SINGLE_SIZE;
 }
 
 /// <summary>
-///	Add values to the coordinate windows
-/// </summary>		
-/// <param_name="x">
-/// The x coordinate
-/// </param>
-/// <param_name="y">
-/// The y coordinate
-/// </param>
-/// <param_name="z">
-/// The z coordinate
-/// </param>
-void AddValuesToWindows(int x, int y, int z)
-{
-	BufferX[CoordsIndex % AVERAGE_COORDS_SIZE] = x;
-	BufferY[CoordsIndex % AVERAGE_COORDS_SIZE] = y;
-	BufferZ[CoordsIndex % AVERAGE_COORDS_SIZE] = z;
-	
-	CoordsIndex++;
-	if (CoordsIndex == AVERAGE_COORDS_SIZE)
-	{
-		AreCoordsFull = 1;
-	}
-}
-
-/// <summary>
-///	Computes the average for the x coordinate
+/// Gets the average of the window of values
 /// </summary>
 /// <returns>
-/// The average for the x coordinate
+/// The average of the window of values
 /// </returns>
-int GetAverageX(void)
+float GetAverageWindowSample()
 {
-	if (!AreCoordsFull)
-	{
-		int notFullSum = 0;
-		for (int i = 0; i < CoordsIndex; i++) {
-			notFullSum += BufferX[i];
-		}
-		return notFullSum / (CoordsIndex);
-	}
-	
 	int i;
-	int sum = 0;
-	for (i = 0; i < AVERAGE_COORDS_SIZE; i++)
-	{
-		sum += BufferX[i];
-	}
+	int sum;
 	
-	return sum / AVERAGE_COORDS_SIZE;
-}
-
-/// <summary>
-///	Computes the average for the y coordinate
-/// </summary>
-/// <returns>
-/// The average for the y coordinate
-/// </returns>
-int GetAverageY(void)
-{
-	if (!AreCoordsFull)
+	if (!IsBufferSampleFull)
 	{
-		int notFullSum = 0;
-		for (int i = 0; i < CoordsIndex; i++) {
-			notFullSum += BufferY[i];
+		float notFullSum = 0;
+		for (i = 0; i < BufferSampleIndex; i++) {
+			notFullSum += BufferSample[i];
 		}
-		return notFullSum / (CoordsIndex);
+		return notFullSum / (float)(BufferSampleIndex);
 	}
 	
-	int i;
-	int sum = 0;
-	for (i = 0; i < AVERAGE_COORDS_SIZE; i++)
+	sum = 0;
+	for (i = 0; i < SAMPLE_SINGLE_SIZE; i++)
 	{
-		sum += BufferY[i];
+		sum += BufferSample[i];
 	}
 	
-	return sum / AVERAGE_COORDS_SIZE;
-}
-
-/// <summary>
-///	Computes the average for the z coordinate
-/// </summary>
-/// <returns>
-/// The average for the z coordinate
-/// </returns>
-int GetAverageZ(void)
-{
-	if (!AreCoordsFull)
-	{
-		int notFullSum = 0;
-		for (int i = 0; i < CoordsIndex; i++) {
-			notFullSum += BufferZ[i];
-		}
-		return notFullSum / (CoordsIndex);
-	}
-	
-	int i;
-	int sum = 0;
-	for (i = 0; i < AVERAGE_COORDS_SIZE; i++)
-	{
-		sum += BufferZ[i];
-	}
-	
-	return sum / AVERAGE_COORDS_SIZE;
+	return sum / (float)SAMPLE_SINGLE_SIZE;
 }

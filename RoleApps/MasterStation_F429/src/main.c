@@ -64,7 +64,7 @@ void DisplayRSSIThread(void const *argument)
 		SetRssi(rssi_db, 1);
 		//SetRssi(rssi_db, 1);
 		
-		
+		/*
 		for (i=1; i<=NB_SLAVE_STATIONS; ++i) {
 			if (WLESS_ReceivePacketVerified(ROLES_Address_SLAVE_RSSI_RECEIVER_BASE_ADDR + i, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
 			if (packet[0] != ROLES_PacketType_STATION_RSSI) continue;
@@ -73,6 +73,7 @@ void DisplayRSSIThread(void const *argument)
 			//AddValueToWindow(rssi_db, i+1);
 			SetRssi(rssi_db, i+1);
 		}
+		*/
 		
 		duration_ms = ticks - start;
 		

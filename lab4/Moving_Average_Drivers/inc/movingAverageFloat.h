@@ -10,14 +10,13 @@
 #include <stdio.h>
 #include "stm32f4xx.h"
 
-#define AVERAGE_SINGLE_SIZE 	31
+#define AVERAGE_SINGLE_SIZE 	100
+#define SAMPLE_SINGLE_SIZE 	5
 
-#define AVERAGE_COORDS_SIZE 	61
+uint16_t IsBaselineBufferFull(void);
 
-extern void AddValueToWindow(float val);
-extern float GetAverageWindow(void);
+void AddValueToWindowBaseline(int val);
+void AddValueToWindowSample(int val);
 
-extern void AddValuesToWindows(int x, int y, int z);
-extern int GetAverageX(void);
-extern int GetAverageY(void);
-extern int GetAverageZ(void);
+float GetAverageWindowBaseline(void);
+float GetAverageWindowSample(void);
