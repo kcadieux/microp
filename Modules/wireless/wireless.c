@@ -55,7 +55,7 @@ void WLESS_Init()
 	
 	CC2500_StructInit(&cc2500_init_s);
 	memset(patable.data, 0, CC2500_PATABLE_SIZE);
-	patable.data[0] = 0xFE; //Full power transmission
+	patable.data[0] = 0xFF; //Full power transmission
 	
 	cc2500_init_s.FSCTRL1 = 0x0C;
 	cc2500_init_s.FSCTRL0 = 0x00;
@@ -112,11 +112,11 @@ void WLESS_Init()
 	cc2500_init_s.PKTLEN = ACTUAL_PACKET_SIZE_TX;
 	
 	cc2500_init_s.ADDR = 0;
-	cc2500_init_s.CHANNR = 5;
+	cc2500_init_s.CHANNR = 0;
 
 	CC2500_Init();
 	CC2500_WriteConfig(&cc2500_init_s);
-	//CC2500_WritePATABLE(&patable);
+	CC2500_WritePATABLE(&patable);
 	
 	InitInterruptGPIO();
 	InitInterrupt();

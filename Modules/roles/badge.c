@@ -8,7 +8,7 @@ void ROLES_BadgeThread(const void* argument)
 	
 	while (1)
 	{
-		WLESS_SendPacketBurst(packet, ROLES_Address_BADGE_BROADCAST_RECEIVER, 10);
-		osDelay(50);
+		WLESS_SendPacket(packet, ROLES_Address_BADGE_BROADCAST_RECEIVER);
+		//osDelay(50);
 	}
 }
