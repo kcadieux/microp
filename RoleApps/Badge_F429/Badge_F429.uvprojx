@@ -7,29 +7,29 @@
 
   <Targets>
     <Target>
-      <TargetName>Badge_F407</TargetName>
+      <TargetName>Badge_F429</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>STM32F407VG</Device>
+          <Device>STM32F429ZI</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <Cpu>IROM(0x08000000,0x100000) IRAM(0x20000000,0x20000) IRAM2(0x10000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IROM(0x08000000,0x200000) IRAM(0x20000000,0x30000) IRAM2(0x10000000,0x10000) CPUTYPE("Cortex-M4") FPU2 CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_1024 -FS08000000 -FL0100000 -FP0($$Device:STM32F407VG$Flash\STM32F4xx_1024.FLM))</FlashDriverDll>
-          <DeviceId>6103</DeviceId>
-          <RegisterFile>$$Device:STM32F407VG$Device\Include\stm32f4xx.h</RegisterFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_2048 -FS08000000 -FL0200000 -FP0($$Device:STM32F429ZI$Flash\STM32F4xx_2048.FLM))</FlashDriverDll>
+          <DeviceId>7034</DeviceId>
+          <RegisterFile>$$Device:STM32F429ZI$Device\Include\stm32f4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
           <Linker></Linker>
           <OHString></OHString>
           <InfinionOptionDll></InfinionOptionDll>
-          <SLE66CMisc>-DSTM32F40_41xxx</SLE66CMisc>
+          <SLE66CMisc>-DSTM32F429_439xx</SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F407VG$SVD\STM32F40x.svd</SFDFile>
+          <SFDFile>$$Device:STM32F429ZI$SVD\STM32F429x.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\obj\</OutputDirectory>
-          <OutputName>Badge_F407</OutputName>
+          <OutputName>Badge_F429</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -209,7 +209,7 @@
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M4"</AdsCpuType>
             <RvctDeviceName></RvctDeviceName>
-            <mOS>1</mOS>
+            <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
             <hadIROM>1</hadIROM>
@@ -276,12 +276,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x30000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x100000</Size>
+                <Size>0x200000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -306,7 +306,7 @@
               <OCR_RVCT4>
                 <Type>1</Type>
                 <StartAddress>0x8000000</StartAddress>
-                <Size>0x100000</Size>
+                <Size>0x200000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -331,7 +331,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x20000</Size>
+                <Size>0x30000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -355,13 +355,13 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER WLESS_RTX</Define>
+              <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\inc;..\..\Modules\wireless;..\..\Drivers\CC2500;..\..\Modules\roles</IncludePath>
+              <IncludePath>.\inc;..\..\Drivers\CC2500;..\..\Modules\wireless;..\..\Modules\roles;..\..\Modules\misc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -405,14 +405,29 @@
           <GroupName>src</GroupName>
           <Files>
             <File>
+              <FileName>fput_debug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\fput_debug.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\main.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>drivers\cc2500</GroupName>
+          <Files>
             <File>
-              <FileName>fputc_debug.c</FileName>
+              <FileName>cc2500.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\fputc_debug.c</FilePath>
+              <FilePath>..\..\Drivers\CC2500\cc2500.c</FilePath>
+            </File>
+            <File>
+              <FileName>cc2500_config_F429.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\CC2500\cc2500_config_F429.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -427,21 +442,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>drivers\cc2500</GroupName>
-          <Files>
-            <File>
-              <FileName>cc2500.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\CC2500\cc2500.c</FilePath>
-            </File>
-            <File>
-              <FileName>cc2500_config_F407.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\CC2500\cc2500_config_F407.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>modules\roles</GroupName>
           <Files>
             <File>
@@ -452,24 +452,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>::CMSIS</GroupName>
+          <GroupName>modules\misc</GroupName>
           <Files>
             <File>
-              <FileName>arm_cortexM4lf_math.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib</FilePath>
-            </File>
-            <File>
-              <FileName>RTX_CM4.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\LIB\ARM\RTX_CM4.lib</FilePath>
-            </File>
-            <File>
-              <FileName>RTX_Conf_CM.c</FileName>
+              <FileName>mvavg.c</FileName>
               <FileType>1</FileType>
-              <FilePath>RTE\CMSIS\RTX_Conf_CM.c</FilePath>
+              <FilePath>..\..\Modules\misc\mvavg.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
         <Group>
           <GroupName>::Device</GroupName>
@@ -535,6 +528,11 @@
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dma.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f4xx_dma2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dma2d.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_exti.c</FilePath>
@@ -545,9 +543,9 @@
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_flash.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_fsmc.c</FileName>
+              <FileName>stm32f4xx_fmc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c</FilePath>
+              <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_fmc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_gpio.c</FileName>
@@ -580,6 +578,11 @@
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f4xx_ltdc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_ltdc.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_pwr.c</FileName>
               <FileType>1</FileType>
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_pwr.c</FilePath>
@@ -598,6 +601,11 @@
               <FileName>stm32f4xx_rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_sai.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_sai.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_sdio.c</FileName>
@@ -632,22 +640,22 @@
             <File>
               <FileName>RTE_Device.h</FileName>
               <FileType>5</FileType>
-              <FilePath>RTE\Device\STM32F407VG\RTE_Device.h</FilePath>
+              <FilePath>RTE\Device\STM32F429ZI\RTE_Device.h</FilePath>
             </File>
             <File>
-              <FileName>startup_stm32f40_41xxx.s</FileName>
+              <FileName>startup_stm32f429_439xx.s</FileName>
               <FileType>2</FileType>
-              <FilePath>RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s</FilePath>
+              <FilePath>RTE\Device\STM32F429ZI\startup_stm32f429_439xx.s</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_conf.h</FileName>
               <FileType>5</FileType>
-              <FilePath>RTE\Device\STM32F407VG\stm32f4xx_conf.h</FilePath>
+              <FilePath>RTE\Device\STM32F429ZI\stm32f4xx_conf.h</FilePath>
             </File>
             <File>
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>RTE\Device\STM32F407VG\system_stm32f4xx.c</FilePath>
+              <FilePath>RTE\Device\STM32F429ZI\system_stm32f4xx.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -656,236 +664,239 @@
   </Targets>
 
   <RTE>
-    <apis>
-      <api Capiversion="1.0" Cclass="CMSIS" Cgroup="RTOS" exclusive="1">
-        <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
-        <targetInfos>
-          <targetInfo name="Badge_F407"/>
-        </targetInfos>
-      </api>
-    </apis>
+    <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="3.30.0" condition="CMSIS Core">
         <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
-        </targetInfos>
-      </component>
-      <component Cclass="CMSIS" Cgroup="DSP" Cvendor="ARM" Cversion="1.4.2" condition="CMSIS DSP">
-        <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
-        <targetInfos>
-          <targetInfo name="Badge_F407"/>
-        </targetInfos>
-      </component>
-      <component Cclass="CMSIS" Cgroup="RTOS" Csub="Keil RTX" Cvendor="ARM" Cversion="4.74.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
-        <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4xx CMSIS Device">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="ADC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CAN" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRYP" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DAC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DBGMCU" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DCMI" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DMA" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DMA2D" Cvendor="Keil" Cversion="1.3.0" condition="STM32F42x_43x STDPERIPH RCC">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
+        <targetInfos>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="EXTI" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="FSMC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F40_41x STDPERIPH RCC">
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="FMC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F42x_43x STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Flash" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="GPIO" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="HASH" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="I2C" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="IWDG" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="LTDC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F429_439 STDPERIPH RCC">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
+        <targetInfos>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="PWR" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RNG" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RTC" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SAI" Cvendor="Keil" Cversion="1.3.0" condition="STM32F42x_43x STDPERIPH RCC">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
+        <targetInfos>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SDIO" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SPI" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SYSCFG" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="TIM" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="USART" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="WWDG" Cvendor="Keil" Cversion="1.3.0" condition="STM32F4 STDPERIPH RCC">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </component>
     </components>
     <files>
       <file attr="config" category="source" name="CMSIS_RTX\Templates\RTX_Conf_CM.c" version="4.70">
-        <instance index="0">RTE\CMSIS\RTX_Conf_CM.c</instance>
+        <instance index="0" removed="1">RTE\CMSIS\RTX_Conf_CM.c</instance>
         <component Cclass="CMSIS" Cgroup="RTOS" Csub="Keil RTX" Cvendor="ARM" Cversion="4.74.0" condition="CMSIS Core"/>
         <package name="CMSIS" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="4.1.1"/>
-        <targetInfos>
-          <targetInfo name="Badge_F407"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h" version="1.3.1">
-        <instance index="0">RTE\Device\STM32F407VG\RTE_Device.h</instance>
+        <instance index="0">RTE\Device\STM32F429ZI\RTE_Device.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4xx CMSIS Device"/>
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" condition="STM32F40_41x_ARMCC" name="Device\Source\ARM\startup_stm32f40_41xxx.s" version="1.0.0">
-        <instance index="0">RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s</instance>
+      <file attr="config" category="source" condition="STM32F429_439_ARMCC" name="Device\Source\ARM\startup_stm32f429_439xx.s" version="1.0.0">
+        <instance index="0">RTE\Device\STM32F429ZI\startup_stm32f429_439xx.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4xx CMSIS Device"/>
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f4xx_conf.h" version="1.3.0">
-        <instance index="0">RTE\Device\STM32F407VG\stm32f4xx_conf.h</instance>
+        <instance index="0">RTE\Device\STM32F429ZI\stm32f4xx_conf.h</instance>
         <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4 STDPERIPH"/>
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\Source\system_stm32f4xx.c" version="1.3.0">
-        <instance index="0">RTE\Device\STM32F407VG\system_stm32f4xx.c</instance>
+        <instance index="0">RTE\Device\STM32F429ZI\system_stm32f4xx.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.3.1" condition="STM32F4xx CMSIS Device"/>
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="1.0.8"/>
         <targetInfos>
-          <targetInfo name="Badge_F407"/>
+          <targetInfo name="Badge_F429"/>
         </targetInfos>
+      </file>
+      <file attr="config" category="source" name="emWin\Sample\Config\GUIConf.c" version="5.00">
+        <instance index="0" removed="1">RTE\Graphics\GUIConf.c</instance>
+        <component Cbundle="MDK-Pro" Cclass="Graphics" Cgroup="CORE" Cvendor="Segger" Cversion="5.26.1" condition="CMSIS Core with RTOS and Display"/>
+        <package name="MDK-Middleware" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="Keil" version="6.2.0"/>
+        <targetInfos/>
       </file>
     </files>
   </RTE>

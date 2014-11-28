@@ -1,5 +1,3 @@
-#define osObjectsPublic
-#include "osObjects.h"
 #include <stdio.h>
 #include <string.h>
 #include "stm32f4xx.h"                  // Device header
@@ -55,21 +53,13 @@ static void InitMainTimer()
 	GPIO_Init(GPIOD, &gpio_init_s);
 }
 
-osThreadDef(ROLES_SlaveStationThread, osPriorityNormal, 1, 0);
-
 static uint8_t STATION_NUMBER = 1;
 
 int main(void)
 {
-	osKernelInitialize();
-	
 	InitMainTimer();
 	WLESS_Init();
 	
-	osThreadCreate(osThread(ROLES_SlaveStationThread), &STATION_NUMBER);
-	
-	osKernelStart();
-	
-	while (1);
+	ROLES_SlaveStationThread(&STATION_NUMBER);
 }
 

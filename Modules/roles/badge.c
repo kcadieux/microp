@@ -1,4 +1,3 @@
-#include <cmsis_os.h>
 #include "roles.h"
 #include "wireless.h"
 

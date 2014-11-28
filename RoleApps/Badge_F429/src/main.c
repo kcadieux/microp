@@ -6,7 +6,7 @@
 #include "roles.h"
 
 static const uint32_t PRESCALER = 10000;
-static const uint32_t PERIOD = 8400;
+static const uint32_t PERIOD = 9000;
 
 static int ticks = 0;
 
@@ -53,13 +53,11 @@ static void InitMainTimer()
 	GPIO_Init(GPIOD, &gpio_init_s);
 }
 
-static uint8_t STATION_NUMBER = 2;
-
 int main(void)
 {
 	InitMainTimer();
 	WLESS_Init();
 	
-	ROLES_SlaveStationThread(&STATION_NUMBER);
+	ROLES_BadgeThread(NULL);
 }
 
