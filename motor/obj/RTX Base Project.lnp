@@ -9,6 +9,8 @@
 ".\obj\accelerometer.o"
 ".\obj\temperature.o"
 ".\obj\motor.o"
+".\obj\sweep.o"
+".\obj\proximitysensor.o"
 "C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
 "C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\LIB\ARM\RTX_CM4.lib"
 ".\obj\rtx_conf_cm.o"

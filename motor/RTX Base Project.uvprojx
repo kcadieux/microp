@@ -364,7 +364,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\src;.\inc;.\Accelerometer_Drivers\inc; .\segment_display_drivers\inc; .\Moving_Average_Drivers\inc; .\keypad_drivers\inc; .\Accelerometer\inc; .\Temperature\inc;  .\Alarm\inc</IncludePath>
+              <IncludePath>.\src;.\inc;.\Accelerometer_Drivers\inc;.\segment_display_drivers\inc;.\Moving_Average_Drivers\inc;.\keypad_drivers\inc;.\Accelerometer\inc;.\Temperature\inc;.\Alarm\inc;.\motor;.\proxy_sensor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -510,17 +510,42 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Alarm</GroupName>
+          <GroupName>Motor</GroupName>
           <Files>
             <File>
-              <FileName>alarm.c</FileName>
+              <FileName>motor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Alarm\src\alarm.c</FilePath>
+              <FilePath>.\motor\motor.c</FilePath>
             </File>
             <File>
-              <FileName>alarm.h</FileName>
+              <FileName>motor.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Alarm\inc\alarm.h</FilePath>
+              <FilePath>.\motor\motor.h</FilePath>
+            </File>
+            <File>
+              <FileName>sweep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motor\sweep.c</FilePath>
+            </File>
+            <File>
+              <FileName>sweep.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motor\sweep.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>proxy_sensor</GroupName>
+          <Files>
+            <File>
+              <FileName>ProximitySensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\proxy_sensor\ProximitySensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>ProximitySensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\proxy_sensor\ProximitySensor.h</FilePath>
             </File>
           </Files>
         </Group>

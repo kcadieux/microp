@@ -3,95 +3,61 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTX Base Project.uvprojx
-Project File Date:  11/10/2014
+C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTX Base Project.uvprojx
+Project File Date:  11/18/2014
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling main.c...
-.\Accelerometer\inc\accelerometer.h(23): warning:  #1295-D: Deprecated declaration getRoll - give arg types
-  extern float getRoll();
-.\Accelerometer\inc\accelerometer.h(25): warning:  #1-D: last line of file ends without a newline
-  extern void EXTI1_IRQHandler(void);
-.\Temperature\inc\temperature.h(16): warning:  #1295-D: Deprecated declaration initTemperatureSensor - give arg types
-  extern void initTemperatureSensor();
-.\Temperature\inc\temperature.h(17): warning:  #1295-D: Deprecated declaration readTemperature - give arg types
-  extern float readTemperature();
-.\motor\motor.h(15): warning:  #1295-D: Deprecated declaration initMotor - give arg types
-  extern void initMotor();
-.\motor\motor.h(16): warning:  #1-D: last line of file ends without a newline
-  extern void setMotorAngle(int angle);
-src\main.c: 6 warnings, 0 errors
-compiling motor.c...
-motor\motor.h(15): warning:  #1295-D: Deprecated declaration initMotor - give arg types
-  extern void initMotor();
-motor\motor.h(16): warning:  #1-D: last line of file ends without a newline
-  extern void setMotorAngle(int angle);
-motor\motor.c(13): warning:  #177-D: variable "GPIO_InitStructure" was declared but never referenced
-  static GPIO_InitTypeDef  GPIO_InitStructure;
-motor\motor.c(14): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
-  static NVIC_InitTypeDef NVIC_InitStructure;
-motor\motor.c(15): warning:  #177-D: variable "EXTI_InitStructure" was declared but never referenced
-  static EXTI_InitTypeDef   EXTI_InitStructure;
-motor\motor.c(16): warning:  #177-D: variable "TIM_InitStruct" was declared but never referenced
-  static TIM_TimeBaseInitTypeDef TIM_InitStruct;
-motor\motor.c(17): warning:  #177-D: variable "TIM_OCInitStructure" was declared but never referenced
-  static TIM_OCInitTypeDef  TIM_OCInitStructure;
-motor\motor.c(18): warning:  #177-D: variable "adc_init_s" was declared but never referenced
-  static ADC_InitTypeDef adc_init_s;
-motor\motor.c(19): warning:  #177-D: variable "adc_common_init_s" was declared but never referenced
-  static ADC_CommonInitTypeDef adc_common_init_s;
-motor\motor.c: 9 warnings, 0 errors
 linking...
-Program Size: Code=24000 RO-data=784 RW-data=548 ZI-data=16404  
-".\obj\RTX Base Project.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=25120 RO-data=800 RW-data=588 ZI-data=17276  
+".\obj\RTX Base Project.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.4.1.1.pack
-                ARM::CMSIS:DSP:1.4.2
+                ::CMSIS:RTOS:1.0 (API)
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: DSP Version: 1.4.2
-   * Component: Keil RTX Version: 4.74.0
-   * Component: CORE Version: 3.30.0
    * Component: RTOS Version: 1.0
+   * Component: Keil RTX Version: 4.74.0
+   * Component: DSP Version: 1.4.2
+   * Component: CORE Version: 3.30.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F4xx_DFP.1.0.8.pack
-                Keil::Device:StdPeriph Drivers:RNG:1.3.0
+                Keil::Device:StdPeriph Drivers:CRYP:1.3.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
-   * Component: RNG Version: 1.3.0
-   * Component: DMA Version: 1.3.0
-   * Component: I2C Version: 1.3.0
-   * Component: USART Version: 1.3.0
-   * Component: DAC Version: 1.3.0
-   * Component: DCMI Version: 1.3.0
-   * Component: FSMC Version: 1.3.0
-   * Component: PWR Version: 1.3.0
-   * Component: SDIO Version: 1.3.0
-   * Component: SYSCFG Version: 1.3.0
-   * Component: HASH Version: 1.3.0
-   * Component: WWDG Version: 1.3.0
-   * Component: EXTI Version: 1.3.0
-   * Component: GPIO Version: 1.3.0
-   * Component: Flash Version: 1.3.0
-   * Component: TIM Version: 1.3.0
-   * Component: RTC Version: 1.3.0
-   * Component: IWDG Version: 1.3.0
-   * Component: RCC Version: 1.3.0
-   * Component: SPI Version: 1.3.0
-   * Component: DBGMCU Version: 1.3.0
-   * Component: CRC Version: 1.3.0
    * Component: CRYP Version: 1.3.0
-   * Component: Startup Version: 1.3.1
-   * Component: Framework Version: 1.3.1
-   * Component: ADC Version: 1.3.0
    * Component: CAN Version: 1.3.0
+   * Component: DBGMCU Version: 1.3.0
+   * Component: DMA Version: 1.3.0
+   * Component: EXTI Version: 1.3.0
+   * Component: Framework Version: 1.3.1
+   * Component: Flash Version: 1.3.0
+   * Component: FSMC Version: 1.3.0
+   * Component: GPIO Version: 1.3.0
+   * Component: DCMI Version: 1.3.0
+   * Component: HASH Version: 1.3.0
+   * Component: I2C Version: 1.3.0
+   * Component: Startup Version: 1.3.1
+   * Component: CRC Version: 1.3.0
+   * Component: DAC Version: 1.3.0
+   * Component: ADC Version: 1.3.0
+   * Component: PWR Version: 1.3.0
+   * Component: SYSCFG Version: 1.3.0
+   * Component: SPI Version: 1.3.0
+   * Component: TIM Version: 1.3.0
+   * Component: SDIO Version: 1.3.0
+   * Component: WWDG Version: 1.3.0
+   * Component: RCC Version: 1.3.0
+   * Component: RTC Version: 1.3.0
+   * Component: RNG Version: 1.3.0
+   * Component: IWDG Version: 1.3.0
+   * Component: USART Version: 1.3.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE
-  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG
+  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE
+  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include
@@ -99,327 +65,450 @@ Package Vendor: Keil
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:DSP:1.4.2
-      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
-      Include file:  CMSIS\Include\arm_math.h
+   * Component: ::CMSIS:RTOS:1.0 (API)
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.74.0
-      Source file:   CMSIS_RTX\UserCodeTemplates\Semaphore.c
-      Library file:  CMSIS_RTX\LIB\ARM\RTX_CM4.lib
-      Source file:   CMSIS_RTX\UserCodeTemplates\MsgQueue.c
-      Source file:   CMSIS_RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS_RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS_RTX\SRC\ARM\SVC_Table.s
-      Include file:  CMSIS_RTX\INC\cmsis_os.h
-      Source file:   CMSIS_RTX\UserCodeTemplates\main.c
       Source file:   CMSIS_RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS_RTX\Templates\RTX_Conf_CM.c
-      Include file:  CMSIS_RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS_RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS_RTX\SRC\ARM\SVC_Table.s
       Source file:   CMSIS_RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\MsgQueue.c
+      Library file:  CMSIS_RTX\LIB\ARM\RTX_CM4.lib
+      Source file:   CMSIS_RTX\UserCodeTemplates\main.c
+      Include file:  CMSIS_RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS_RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS_RTX\INC\cmsis_os.h
+
+   * Component: ARM::CMSIS:DSP:1.4.2
+      Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
 
    * Component: ARM::CMSIS:CORE:3.30.0
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
 
-   * Component: ::CMSIS:RTOS:1.0 (API)
+   * Component: Keil::Device:StdPeriph Drivers:CRYP:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c
 
-   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
-
-   * Component: Keil::Device:StdPeriph Drivers:DMA:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dma.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dma.h
-
-   * Component: Keil::Device:StdPeriph Drivers:I2C:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_i2c.c
-
-   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
-
-   * Component: Keil::Device:StdPeriph Drivers:DAC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dac.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dac.c
-
-   * Component: Keil::Device:StdPeriph Drivers:DCMI:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-
-   * Component: Keil::Device:StdPeriph Drivers:FSMC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:PWR:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_pwr.c
-
-   * Component: Keil::Device:StdPeriph Drivers:SDIO:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_sdio.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h
-
-   * Component: Keil::Device:StdPeriph Drivers:SYSCFG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
-
-   * Component: Keil::Device:StdPeriph Drivers:HASH:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_hash.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c
-
-   * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
-
-   * Component: Keil::Device:StdPeriph Drivers:EXTI:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_exti.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_exti.h
-
-   * Component: Keil::Device:StdPeriph Drivers:GPIO:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_gpio.c
-
-   * Component: Keil::Device:StdPeriph Drivers:Flash:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_flash.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_flash.c
-
-   * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_tim.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
-
-   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
-
-   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:SPI:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_spi.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_spi.c
+   * Component: Keil::Device:StdPeriph Drivers:CAN:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_can.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_can.c
 
    * Component: Keil::Device:StdPeriph Drivers:DBGMCU:1.3.0
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h
 
-   * Component: Keil::Device:StdPeriph Drivers:CRC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_crc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:CRYP:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c
-
-   * Component: Keil::Device:Startup:1.3.1
-      Source file:   Device\Source\system_stm32f4xx.c
-      Include file:  Device\Include\stm32f4xx.h
-      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
-      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-
-   * Component: Keil::Device:StdPeriph Drivers:Framework:1.3.1
-      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_conf.h
-      Include file:  Device\StdPeriph_Driver\templates\stm32f4xx_it.h
-      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_it.c
-      Source file:   Device\StdPeriph_Driver\src\misc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:ADC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_adc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:CAN:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_can.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_can.c
-Load "C:\\Users\\Vincent\\Desktop\\Fall 2014\\Micro Processor Systems\\lab4\\lab 4\\obj\\RTX Base Project.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-b4\\lab 4\\obj\\RTX Base Project.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
-eriph_Driver\src\stm32f4xx_can.c
-Target not created
-onent: ARM::CMSIS:RTOS:Keil RTX:4.74.0
-      Source file:   CMSIS_RTX\UserCodeTemplates\Semaphore.c
-      Library file:  CMSIS_RTX\LIB\ARM\RTX_CM4.lib
-      Source file:   CMSIS_RTX\UserCodeTemplates\MsgQueue.c
-      Source file:   CMSIS_RTX\UserCodeTemplates\Thread.c
-      Source file:   CMSIS_RTX\UserCodeTemplates\Mutex.c
-      Source file:   CMSIS_RTX\SRC\ARM\SVC_Table.s
-      Include file:  CMSIS_RTX\INC\cmsis_os.h
-      Source file:   CMSIS_RTX\UserCodeTemplates\main.c
-      Source file:   CMSIS_RTX\UserCodeTemplates\MemPool.c
-      Source file:   CMSIS_RTX\Templates\RTX_Conf_CM.c
-      Include file:  CMSIS_RTX\UserCodeTemplates\osObjects.h
-      Source file:   CMSIS_RTX\UserCodeTemplates\MailQueue.c
-
-   * Component: ARM::CMSIS:CORE:3.30.0
-      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
-
-   * Component: ::CMSIS:RTOS:1.0 (API)
-
-   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
-
    * Component: Keil::Device:StdPeriph Drivers:DMA:1.3.0
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dma.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dma.h
 
-   * Component: Keil::Device:StdPeriph Drivers:I2C:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_i2c.c
-
-   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
-
-   * Component: Keil::Device:StdPeriph Drivers:DAC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dac.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dac.c
-
-   * Component: Keil::Device:StdPeriph Drivers:DCMI:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h
-
-   * Component: Keil::Device:StdPeriph Drivers:FSMC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c
-
-   * Component: Keil::Device:StdPeriph Drivers:PWR:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_pwr.c
-
-   * Component: Keil::Device:StdPeriph Drivers:SDIO:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_sdio.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h
-
-   * Component: Keil::Device:StdPeriph Drivers:SYSCFG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
-
-   * Component: Keil::Device:StdPeriph Drivers:HASH:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_hash.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c
-
-   * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
-
    * Component: Keil::Device:StdPeriph Drivers:EXTI:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_exti.c
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_exti.c
 
-   * Component: Keil::Device:StdPeriph Drivers:GPIO:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_gpio.c
+   * Component: Keil::Device:StdPeriph Drivers:Framework:1.3.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_conf.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f4xx_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_it.c
 
    * Component: Keil::Device:StdPeriph Drivers:Flash:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_flash.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_flash.c
 
-   * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_tim.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c
 
-   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_gpio.c
 
-   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
+   * Component: Keil::Device:StdPeriph Drivers:DCMI:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 
-   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
+   * Component: Keil::Device:StdPeriph Drivers:HASH:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_hash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash.c
 
-   * Component: Keil::Device:StdPeriph Drivers:SPI:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_spi.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_spi.c
+   * Component: Keil::Device:StdPeriph Drivers:I2C:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_i2c.c
 
-   * Component: Keil::Device:StdPeriph Drivers:DBGMCU:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h
+   * Component: Keil::Device:Startup:1.3.1
+      Source file:   Device\Source\system_stm32f4xx.c
+      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Include file:  Device\Include\stm32f4xx.h
+      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
 
    * Component: Keil::Device:StdPeriph Drivers:CRC:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_crc.c
 
-   * Component: Keil::Device:StdPeriph Drivers:CRYP:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c
-
-   * Component: Keil::Device:Startup:1.3.1
-      Source file:   Device\Source\system_stm32f4xx.c
-      Include file:  Device\Include\stm32f4xx.h
-      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
-      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-
-   * Component: Keil::Device:StdPeriph Drivers:Framework:1.3.1
-      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_conf.h
-      Include file:  Device\StdPeriph_Driver\templates\stm32f4xx_it.h
-      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_it.c
-      Source file:   Device\StdPeriph_Driver\src\misc.c
+   * Component: Keil::Device:StdPeriph Drivers:DAC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dac.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dac.c
 
    * Component: Keil::Device:StdPeriph Drivers:ADC:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_adc.c
 
-   * Component: Keil::Device:StdPeriph Drivers:CAN:1.3.0
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_can.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_can.c
-Target not created
-\\RTX Base Project.axf" 
+   * Component: Keil::Device:StdPeriph Drivers:PWR:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_pwr.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SYSCFG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_spi.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_spi.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_sdio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
+Load "C:\\Users\\Vincent\\Desktop\\Fall 2014\\Micro Processor Systems\\project\\motor\\obj\\RTX Base Project.axf" 
 Erase Done.
 Programming Done.
 Verify OK.
-    Source file:   Device\StdPeriph_Driver\src\stm32f4xx_crc.c
+</pre>
+</body>
+</html>
+   Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h
 
-   * Component: Keil::Device:StdPeriph Drivers:CRYP:1.3.0
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c
-      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c
-      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c
+   * Component: Keil::Device:StdPeriph Drivers:DMA:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dma.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dma.h
 
-   * Component: Keil::Device:Startup:1.3.1
-      Source file:   Device\Source\system_stm32f4xx.c
-      Include file:  Device\Include\stm32f4xx.h
-      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
-      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_exti.c
 
    * Component: Keil::Device:StdPeriph Drivers:Framework:1.3.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
       Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_conf.h
       Include file:  Device\StdPeriph_Driver\templates\stm32f4xx_it.h
       Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_it.c
-      Source file:   Device\StdPeriph_Driver\src\misc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_flash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_flash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DCMI:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:HASH:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_hash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_i2c.c
+
+   * Component: Keil::Device:Startup:1.3.1
+      Source file:   Device\Source\system_stm32f4xx.c
+      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Include file:  Device\Include\stm32f4xx.h
+      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
+
+   * Component: Keil::Device:StdPeriph Drivers:CRC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_crc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DAC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dac.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dac.c
 
    * Component: Keil::Device:StdPeriph Drivers:ADC:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_adc.c
 
+   * Component: Keil::Device:StdPeriph Drivers:PWR:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_pwr.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SYSCFG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_spi.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_spi.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_sdio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
+Load "C:\\Users\\Vincent\\Desktop\\Fall 2014\\Micro Processor Systems\\project\\motor\\obj\\RTX Base Project.axf" 
+Erase Done.
+Programming Done.
+Verify OK.
+  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
+Target not created
+on: 1.3.0
+   * Component: ADC Version: 1.3.0
+   * Component: PWR Version: 1.3.0
+   * Component: SYSCFG Version: 1.3.0
+   * Component: SPI Version: 1.3.0
+   * Component: TIM Version: 1.3.0
+   * Component: SDIO Version: 1.3.0
+   * Component: WWDG Version: 1.3.0
+   * Component: RCC Version: 1.3.0
+   * Component: RTC Version: 1.3.0
+   * Component: RNG Version: 1.3.0
+   * Component: IWDG Version: 1.3.0
+   * Component: USART Version: 1.3.0
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE
+  C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS:RTOS:1.0 (API)
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX:4.74.0
+      Source file:   CMSIS_RTX\UserCodeTemplates\MemPool.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS_RTX\SRC\ARM\SVC_Table.s
+      Source file:   CMSIS_RTX\UserCodeTemplates\MailQueue.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Mutex.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\Thread.c
+      Source file:   CMSIS_RTX\UserCodeTemplates\MsgQueue.c
+      Library file:  CMSIS_RTX\LIB\ARM\RTX_CM4.lib
+      Source file:   CMSIS_RTX\UserCodeTemplates\main.c
+      Include file:  CMSIS_RTX\UserCodeTemplates\osObjects.h
+      Source file:   CMSIS_RTX\Templates\RTX_Conf_CM.c
+      Include file:  CMSIS_RTX\INC\cmsis_os.h
+
+   * Component: ARM::CMSIS:DSP:1.4.2
+      Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
+
+   * Component: ARM::CMSIS:CORE:3.30.0
+      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
+
+   * Component: Keil::Device:StdPeriph Drivers:CRYP:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c
+
    * Component: Keil::Device:StdPeriph Drivers:CAN:1.3.0
       Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_can.h
       Source file:   Device\StdPeriph_Driver\src\stm32f4xx_can.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DBGMCU:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dma.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dma.h
+
+   * Component: Keil::Device:StdPeriph Drivers:EXTI:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_exti.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_exti.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:1.3.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_conf.h
+      Include file:  Device\StdPeriph_Driver\templates\stm32f4xx_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f4xx_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:Flash:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_flash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_flash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:FSMC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DCMI:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h
+
+   * Component: Keil::Device:StdPeriph Drivers:HASH:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_hash.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_hash.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_i2c.c
+
+   * Component: Keil::Device:Startup:1.3.1
+      Source file:   Device\Source\system_stm32f4xx.c
+      Source file:   Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f40_41xxx.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Include file:  Device\Include\stm32f4xx.h
+      Source file:   Device\Source\ARM\STM32F4xx_OTP.s
+
+   * Component: Keil::Device:StdPeriph Drivers:CRC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_crc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:DAC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_dac.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_dac.c
+
+   * Component: Keil::Device:StdPeriph Drivers:ADC:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_adc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:PWR:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_pwr.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SYSCFG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_spi.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_spi.c
+
+   * Component: Keil::Device:StdPeriph Drivers:TIM:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_tim.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_tim.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SDIO:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_sdio.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h
+
+   * Component: Keil::Device:StdPeriph Drivers:WWDG:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rcc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RTC:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rtc.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RNG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_rng.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_rng.h
+
+   * Component: Keil::Device:StdPeriph Drivers:IWDG:1.3.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:1.3.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f4xx_usart.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f4xx_usart.c
 Target not created

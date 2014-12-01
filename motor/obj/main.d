@@ -10,8 +10,8 @@
 .\obj\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h
 .\obj\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h
 .\obj\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h
-.\obj\main.o: C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h
-.\obj\main.o: C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h
+.\obj\main.o: C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h
+.\obj\main.o: C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h
 .\obj\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h
 .\obj\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h
 .\obj\main.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h
@@ -50,3 +50,5 @@
 .\obj\main.o: .\Temperature\inc\temperature.h
 .\obj\main.o: .\Moving_Average_Drivers\inc\movingAverageFloat.h
 .\obj\main.o: .\motor\motor.h
+.\obj\main.o: .\motor\sweep.h
+.\obj\main.o: .\proxy_sensor\ProximitySensor.h

@@ -1,5 +1,5 @@
 Dependencies for Project 'RTX Base Project', Target 'Target 1': (DO NOT MODIFY !)
-F (.\src\main.c)(0x546BC6A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (.\src\main.c)(0x547CB573)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (src\osObjects.h)(0x51AE2DE0)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
@@ -11,8 +11,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -47,8 +47,10 @@ I (.\keypad_drivers\inc\keypad.h)(0x545BD67E)
 I (.\Moving_Average_Drivers\inc\movingAverageFloat.h)(0x54494D31)
 I (.\Accelerometer\inc\accelerometer.h)(0x545BC2C7)
 I (.\Temperature\inc\temperature.h)(0x545BC64B)
-I (.\motor\motor.h)(0x546BBA24)
-F (.\src\fputc_debug.c)(0x5435C4A7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\fputc_debug.o --omf_browse .\obj\fputc_debug.crf --depend .\obj\fputc_debug.d)
+I (.\motor\motor.h)(0x5477A61B)
+I (.\motor\sweep.h)(0x5477D52B)
+I (.\proxy_sensor\ProximitySensor.h)(0x5475F20A)
+F (.\src\fputc_debug.c)(0x5435C4A7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\fputc_debug.o --omf_browse .\obj\fputc_debug.crf --depend .\obj\fputc_debug.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -57,8 +59,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -85,7 +87,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (.\Accelerometer_Drivers\src\lis3dsh.c)(0x54340C10)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\lis3dsh.o --omf_browse .\obj\lis3dsh.crf --depend .\obj\lis3dsh.d)
+F (.\Accelerometer_Drivers\src\lis3dsh.c)(0x54340C10)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\lis3dsh.o --omf_browse .\obj\lis3dsh.crf --depend .\obj\lis3dsh.d)
 I (.\Accelerometer_Drivers\inc\lis3dsh.h)(0x5433FB61)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -94,8 +96,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -122,7 +124,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (.\Accelerometer_Drivers\src\lis302dl.c)(0x5433FAB9)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\lis302dl.o --omf_browse .\obj\lis302dl.crf --depend .\obj\lis302dl.d)
+F (.\Accelerometer_Drivers\src\lis302dl.c)(0x5433FAB9)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\lis302dl.o --omf_browse .\obj\lis302dl.crf --depend .\obj\lis302dl.d)
 I (.\Accelerometer_Drivers\inc\lis302dl.h)(0x5433FAF7)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -131,8 +133,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -159,7 +161,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (.\keypad_drivers\src\keypad.c)(0x545BE775)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\keypad.o --omf_browse .\obj\keypad.crf --depend .\obj\keypad.d)
+F (.\keypad_drivers\src\keypad.c)(0x545BE775)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\keypad.o --omf_browse .\obj\keypad.crf --depend .\obj\keypad.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -168,8 +170,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -201,7 +203,7 @@ I (.\src\osObjects.h)(0x51AE2DE0)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
 F (.\keypad_drivers\inc\keypad.h)(0x545BD67E)()
-F (.\segment_display_drivers\src\segmentDisplay.c)(0x545CFFBA)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\segmentdisplay.o --omf_browse .\obj\segmentdisplay.crf --depend .\obj\segmentdisplay.d)
+F (.\segment_display_drivers\src\segmentDisplay.c)(0x545CFFBA)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\segmentdisplay.o --omf_browse .\obj\segmentdisplay.crf --depend .\obj\segmentdisplay.d)
 I (.\segment_display_drivers\inc\segmentDisplay.h)(0x545BD6B5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
@@ -211,8 +213,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -247,7 +249,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
 F (.\segment_display_drivers\inc\segmentDisplay.h)(0x545BD6B5)()
 F (.\Moving_Average_Drivers\inc\movingAverageFloat.h)(0x54494D31)()
-F (.\Moving_Average_Drivers\src\movingAverageFloat.c)(0x5449439A)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\movingaveragefloat.o --omf_browse .\obj\movingaveragefloat.crf --depend .\obj\movingaveragefloat.d)
+F (.\Moving_Average_Drivers\src\movingAverageFloat.c)(0x5449439A)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\movingaveragefloat.o --omf_browse .\obj\movingaveragefloat.crf --depend .\obj\movingaveragefloat.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -256,8 +258,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -286,7 +288,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
 I (.\Moving_Average_Drivers\inc\movingAverageFloat.h)(0x54494D31)
 F (.\Accelerometer\inc\accelerometer.h)(0x545BC2C7)()
-F (.\Accelerometer\src\accelerometer.c)(0x545BC2C7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\accelerometer.o --omf_browse .\obj\accelerometer.crf --depend .\obj\accelerometer.d)
+F (.\Accelerometer\src\accelerometer.c)(0x545BC2C7)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\accelerometer.o --omf_browse .\obj\accelerometer.crf --depend .\obj\accelerometer.d)
 I (.\Accelerometer\inc\accelerometer.h)(0x545BC2C7)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
@@ -296,8 +298,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -331,7 +333,7 @@ I (.\Moving_Average_Drivers\inc\movingAverageFloat.h)(0x54494D31)
 I (.\src\osObjects.h)(0x51AE2DE0)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
-F (.\Temperature\src\temperature.c)(0x545BC64B)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\temperature.o --omf_browse .\obj\temperature.crf --depend .\obj\temperature.d)
+F (.\Temperature\src\temperature.c)(0x545BC64B)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\temperature.o --omf_browse .\obj\temperature.crf --depend .\obj\temperature.d)
 I (.\Temperature\inc\temperature.h)(0x545BC64B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
@@ -341,8 +343,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -374,7 +376,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
 I (.\Moving_Average_Drivers\inc\movingAverageFloat.h)(0x54494D31)
 F (.\Temperature\inc\temperature.h)(0x545BC64B)()
-F (.\motor\motor.c)(0x546BC60E)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\motor.o --omf_browse .\obj\motor.crf --depend .\obj\motor.d)
+F (.\motor\motor.c)(0x546BC60E)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\motor.o --omf_browse .\obj\motor.crf --depend .\obj\motor.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -383,8 +385,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -411,19 +413,102 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-I (motor\motor.h)(0x546BBA24)
+I (motor\motor.h)(0x5477A61B)
 I (.\src\osObjects.h)(0x51AE2DE0)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
-F (.\motor\motor.h)(0x546BBA24)()
+F (.\motor\motor.h)(0x5477A61B)()
+F (.\motor\sweep.c)(0x547CB56D)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\sweep.o --omf_browse .\obj\sweep.crf --depend .\obj\sweep.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
+I (motor\motor.h)(0x5477A61B)
+I (.\src\osObjects.h)(0x51AE2DE0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
+I (motor\sweep.h)(0x5477D52B)
+I (.\proxy_sensor\ProximitySensor.h)(0x5475F20A)
+F (.\motor\sweep.h)(0x5477D52B)()
+F (.\proxy_sensor\ProximitySensor.c)(0x5477C01A)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\proximitysensor.o --omf_browse .\obj\proximitysensor.crf --depend .\obj\proximitysensor.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5346D4F4)
+I (proxy_sensor\ProximitySensor.h)(0x5475F20A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
+I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
+F (.\proxy_sensor\ProximitySensor.h)(0x5475F20A)()
 F (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib)(0x5373B662)()
 F (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\LIB\ARM\RTX_CM4.lib)(0x52812238)()
-F (RTE\CMSIS\RTX_Conf_CM.c)(0x545BF216)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\rtx_conf_cm.o --omf_browse .\obj\rtx_conf_cm.crf --depend .\obj\rtx_conf_cm.d)
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x545BF216)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\rtx_conf_cm.o --omf_browse .\obj\rtx_conf_cm.crf --depend .\obj\rtx_conf_cm.d)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\cmsis_os.h)(0x52812238)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5346D4F4)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC\RTX_CM_lib.h)(0x52D925E8)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\misc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\misc.o --omf_browse .\obj\misc.crf --depend .\obj\misc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\misc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\misc.o --omf_browse .\obj\misc.crf --depend .\obj\misc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\misc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -432,8 +517,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -459,7 +544,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_adc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_adc.o --omf_browse .\obj\stm32f4xx_adc.crf --depend .\obj\stm32f4xx_adc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_adc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_adc.o --omf_browse .\obj\stm32f4xx_adc.crf --depend .\obj\stm32f4xx_adc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -468,8 +553,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
@@ -495,7 +580,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_can.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_can.o --omf_browse .\obj\stm32f4xx_can.crf --depend .\obj\stm32f4xx_can.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_can.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_can.o --omf_browse .\obj\stm32f4xx_can.crf --depend .\obj\stm32f4xx_can.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -504,8 +589,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -531,7 +616,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_crc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_crc.o --omf_browse .\obj\stm32f4xx_crc.crf --depend .\obj\stm32f4xx_crc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_crc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_crc.o --omf_browse .\obj\stm32f4xx_crc.crf --depend .\obj\stm32f4xx_crc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -540,8 +625,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
@@ -567,7 +652,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp.o --omf_browse .\obj\stm32f4xx_cryp.crf --depend .\obj\stm32f4xx_cryp.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp.o --omf_browse .\obj\stm32f4xx_cryp.crf --depend .\obj\stm32f4xx_cryp.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -576,8 +661,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -603,7 +688,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_aes.o --omf_browse .\obj\stm32f4xx_cryp_aes.crf --depend .\obj\stm32f4xx_cryp_aes.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_aes.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_aes.o --omf_browse .\obj\stm32f4xx_cryp_aes.crf --depend .\obj\stm32f4xx_cryp_aes.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -612,8 +697,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -639,7 +724,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_des.o --omf_browse .\obj\stm32f4xx_cryp_des.crf --depend .\obj\stm32f4xx_cryp_des.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_des.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_des.o --omf_browse .\obj\stm32f4xx_cryp_des.crf --depend .\obj\stm32f4xx_cryp_des.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -648,8 +733,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -675,7 +760,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_tdes.o --omf_browse .\obj\stm32f4xx_cryp_tdes.crf --depend .\obj\stm32f4xx_cryp_tdes.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_cryp_tdes.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_cryp_tdes.o --omf_browse .\obj\stm32f4xx_cryp_tdes.crf --depend .\obj\stm32f4xx_cryp_tdes.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_cryp.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -684,8 +769,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -711,7 +796,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dac.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dac.o --omf_browse .\obj\stm32f4xx_dac.crf --depend .\obj\stm32f4xx_dac.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dac.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dac.o --omf_browse .\obj\stm32f4xx_dac.crf --depend .\obj\stm32f4xx_dac.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -720,8 +805,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -747,7 +832,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dbgmcu.o --omf_browse .\obj\stm32f4xx_dbgmcu.crf --depend .\obj\stm32f4xx_dbgmcu.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dbgmcu.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dbgmcu.o --omf_browse .\obj\stm32f4xx_dbgmcu.crf --depend .\obj\stm32f4xx_dbgmcu.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -756,8 +841,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
@@ -783,7 +868,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dcmi.o --omf_browse .\obj\stm32f4xx_dcmi.crf --depend .\obj\stm32f4xx_dcmi.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dcmi.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dcmi.o --omf_browse .\obj\stm32f4xx_dcmi.crf --depend .\obj\stm32f4xx_dcmi.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -792,8 +877,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -819,7 +904,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dma.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dma.o --omf_browse .\obj\stm32f4xx_dma.crf --depend .\obj\stm32f4xx_dma.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_dma.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_dma.o --omf_browse .\obj\stm32f4xx_dma.crf --depend .\obj\stm32f4xx_dma.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dma.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -828,8 +913,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -855,7 +940,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_exti.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_exti.o --omf_browse .\obj\stm32f4xx_exti.crf --depend .\obj\stm32f4xx_exti.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_exti.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_exti.o --omf_browse .\obj\stm32f4xx_exti.crf --depend .\obj\stm32f4xx_exti.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_exti.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -864,8 +949,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -891,7 +976,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_flash.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_flash.o --omf_browse .\obj\stm32f4xx_flash.crf --depend .\obj\stm32f4xx_flash.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_flash.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_flash.o --omf_browse .\obj\stm32f4xx_flash.crf --depend .\obj\stm32f4xx_flash.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_flash.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -900,8 +985,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -927,7 +1012,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_fsmc.o --omf_browse .\obj\stm32f4xx_fsmc.crf --depend .\obj\stm32f4xx_fsmc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_fsmc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_fsmc.o --omf_browse .\obj\stm32f4xx_fsmc.crf --depend .\obj\stm32f4xx_fsmc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -936,8 +1021,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -963,7 +1048,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_can.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_gpio.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_gpio.o --omf_browse .\obj\stm32f4xx_gpio.crf --depend .\obj\stm32f4xx_gpio.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_gpio.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_gpio.o --omf_browse .\obj\stm32f4xx_gpio.crf --depend .\obj\stm32f4xx_gpio.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_gpio.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -972,8 +1057,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -999,7 +1084,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash.o --omf_browse .\obj\stm32f4xx_hash.crf --depend .\obj\stm32f4xx_hash.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash.o --omf_browse .\obj\stm32f4xx_hash.crf --depend .\obj\stm32f4xx_hash.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1008,8 +1093,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1035,7 +1120,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash_md5.o --omf_browse .\obj\stm32f4xx_hash_md5.crf --depend .\obj\stm32f4xx_hash_md5.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash_md5.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash_md5.o --omf_browse .\obj\stm32f4xx_hash_md5.crf --depend .\obj\stm32f4xx_hash_md5.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1044,8 +1129,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1071,7 +1156,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash_sha1.o --omf_browse .\obj\stm32f4xx_hash_sha1.crf --depend .\obj\stm32f4xx_hash_sha1.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_hash_sha1.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_hash_sha1.o --omf_browse .\obj\stm32f4xx_hash_sha1.crf --depend .\obj\stm32f4xx_hash_sha1.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_hash.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1080,8 +1165,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1107,7 +1192,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_i2c.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_i2c.o --omf_browse .\obj\stm32f4xx_i2c.crf --depend .\obj\stm32f4xx_i2c.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_i2c.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_i2c.o --omf_browse .\obj\stm32f4xx_i2c.crf --depend .\obj\stm32f4xx_i2c.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_i2c.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1116,8 +1201,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1143,7 +1228,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_iwdg.o --omf_browse .\obj\stm32f4xx_iwdg.crf --depend .\obj\stm32f4xx_iwdg.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_iwdg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_iwdg.o --omf_browse .\obj\stm32f4xx_iwdg.crf --depend .\obj\stm32f4xx_iwdg.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_iwdg.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1152,8 +1237,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1179,7 +1264,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_pwr.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_pwr.o --omf_browse .\obj\stm32f4xx_pwr.crf --depend .\obj\stm32f4xx_pwr.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_pwr.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_pwr.o --omf_browse .\obj\stm32f4xx_pwr.crf --depend .\obj\stm32f4xx_pwr.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_pwr.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1188,8 +1273,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1215,7 +1300,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rcc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rcc.o --omf_browse .\obj\stm32f4xx_rcc.crf --depend .\obj\stm32f4xx_rcc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rcc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rcc.o --omf_browse .\obj\stm32f4xx_rcc.crf --depend .\obj\stm32f4xx_rcc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rcc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1224,8 +1309,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1251,7 +1336,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rng.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rng.o --omf_browse .\obj\stm32f4xx_rng.crf --depend .\obj\stm32f4xx_rng.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rng.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rng.o --omf_browse .\obj\stm32f4xx_rng.crf --depend .\obj\stm32f4xx_rng.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rng.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1260,8 +1345,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1287,7 +1372,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rtc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rtc.o --omf_browse .\obj\stm32f4xx_rtc.crf --depend .\obj\stm32f4xx_rtc.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_rtc.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_rtc.o --omf_browse .\obj\stm32f4xx_rtc.crf --depend .\obj\stm32f4xx_rtc.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_rtc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1296,8 +1381,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1323,7 +1408,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_sdio.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_sdio.o --omf_browse .\obj\stm32f4xx_sdio.crf --depend .\obj\stm32f4xx_sdio.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_sdio.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_sdio.o --omf_browse .\obj\stm32f4xx_sdio.crf --depend .\obj\stm32f4xx_sdio.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_sdio.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1332,8 +1417,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1359,7 +1444,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_spi.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_spi.o --omf_browse .\obj\stm32f4xx_spi.crf --depend .\obj\stm32f4xx_spi.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_spi.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_spi.o --omf_browse .\obj\stm32f4xx_spi.crf --depend .\obj\stm32f4xx_spi.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_spi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1368,8 +1453,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1395,7 +1480,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_syscfg.o --omf_browse .\obj\stm32f4xx_syscfg.crf --depend .\obj\stm32f4xx_syscfg.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_syscfg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_syscfg.o --omf_browse .\obj\stm32f4xx_syscfg.crf --depend .\obj\stm32f4xx_syscfg.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_syscfg.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1404,8 +1489,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1431,7 +1516,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_tim.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_tim.o --omf_browse .\obj\stm32f4xx_tim.crf --depend .\obj\stm32f4xx_tim.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_tim.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_tim.o --omf_browse .\obj\stm32f4xx_tim.crf --depend .\obj\stm32f4xx_tim.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_tim.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1440,8 +1525,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1467,7 +1552,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_usart.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_usart.o --omf_browse .\obj\stm32f4xx_usart.crf --depend .\obj\stm32f4xx_usart.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_usart.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_usart.o --omf_browse .\obj\stm32f4xx_usart.crf --depend .\obj\stm32f4xx_usart.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_usart.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1476,8 +1561,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1503,7 +1588,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dac.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
-F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_wwdg.o --omf_browse .\obj\stm32f4xx_wwdg.crf --depend .\obj\stm32f4xx_wwdg.d)
+F (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\src\stm32f4xx_wwdg.c)(0x52B455A6)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\stm32f4xx_wwdg.o --omf_browse .\obj\stm32f4xx_wwdg.crf --depend .\obj\stm32f4xx_wwdg.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_wwdg.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
@@ -1512,8 +1597,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
@@ -1540,9 +1625,9 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm3
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dcmi.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x52B455A6)
 F (RTE\Device\STM32F407VG\RTE_Device.h)(0x5435BD5A)()
-F (RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s)(0x529F71F2)(--cpu Cortex-M4.fp --pd "__RTX SETA 1" --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc--list .\lst\startup_stm32f40_41xxx.lst --xref -o .\obj\startup_stm32f40_41xxx.o --depend .\obj\startup_stm32f40_41xxx.d)
+F (RTE\Device\STM32F407VG\startup_stm32f40_41xxx.s)(0x529F71F2)(--cpu Cortex-M4.fp --pd "__RTX SETA 1" --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc--list .\lst\startup_stm32f40_41xxx.lst --xref -o .\obj\startup_stm32f40_41xxx.o --depend .\obj\startup_stm32f40_41xxx.d)
 F (RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)()
-F (RTE\Device\STM32F407VG\system_stm32f4xx.c)(0x5435BD43)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\system_stm32f4xx.o --omf_browse .\obj\system_stm32f4xx.crf --depend .\obj\system_stm32f4xx.d)
+F (RTE\Device\STM32F407VG\system_stm32f4xx.c)(0x5435BD43)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I.\src -I.\inc -I.\Accelerometer_Drivers\inc -I.\segment_display_drivers\inc -I.\Moving_Average_Drivers\inc -I.\keypad_drivers\inc -I.\Accelerometer\inc -I.\Temperature\inc -I.\Alarm\inc -I.\motor -I.\proxy_sensor --c99-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE"-I "C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG"-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-I C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc-D_RTE_ -DSTM32F40_41xxx -DHSE_VALUE="8000000" -DUSE_STDPERIPH_DRIVER-o .\obj\system_stm32f4xx.o --omf_browse .\obj\system_stm32f4xx.crf --depend .\obj\system_stm32f4xx.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\stm32f4xx.h)(0x529F63E2)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4.h)(0x5384C176)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5346D4F4)
@@ -1550,8 +1635,8 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmInstr.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cmFunc.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include\core_cm4_simd.h)(0x53034B90)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include\system_stm32f4xx.h)(0x529F63E2)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
-I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\RTE_Components.h)(0x5435BD25)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407VG\stm32f4xx_conf.h)(0x52E68218)
+I (C:\Users\Vincent\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\RTE_Components.h)(0x5435BD25)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_adc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_crc.h)(0x52B455A6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc\stm32f4xx_dbgmcu.h)(0x52B455A6)
