@@ -3,11 +3,10 @@
 
 void ROLES_BadgeThread(const void* argument)
 {
-	uint8_t packet[WLESS_PACKET_SIZE] = {ROLES_PacketType_BADGE_BROADCAST, 0x00};
+	uint8_t packet[WLESS_PACKET_SIZE] = {ROLES_PacketType_DETECTOR_BROADCAST, 0x00};
 	
 	while (1)
 	{
-		WLESS_SendPacket(packet, ROLES_Address_BADGE_BROADCAST_RECEIVER);
-		//osDelay(50);
+		WLESS_SendPacket(packet, ROLES_Address_DETECTOR_BROADCAST_RECEIVER);
 	}
 }
