@@ -22,7 +22,6 @@
 
 static char RSSI[7][10];
 static unsigned int ticks = 0;
-static const int NB_SLAVE_STATIONS = 2;
 
 void SetRssi(float rssi, int rssiNb)
 {
@@ -33,9 +32,6 @@ void SetRssi(float rssi, int rssiNb)
 
 void DisplayRSSIThread(void const *argument)
 {
-	signed char rssi_db;
-	uint8_t packet[WLESS_PACKET_SIZE];
-	
 	/* Clear the LCD */ 
 	LCD_Clear(LCD_COLOR_WHITE);
 
@@ -52,37 +48,7 @@ void DisplayRSSIThread(void const *argument)
 	
 	while (1)
 	{
-		int i;
-		unsigned int start = ticks;
-		unsigned int duration_ms;
 		
-		if (WLESS_ReceivePacketVerified(ROLES_Address_BADGE_BROADCAST_RECEIVER, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
-		if (packet[0] != ROLES_PacketType_BADGE_BROADCAST) continue;
-		
-		rssi_db = WLESS_GetLatestDecibelRSSI();
-		//AddValueToWindow(rssi_db, 1);
-		SetRssi(rssi_db, 1);
-		//SetRssi(rssi_db, 1);
-		
-		/*
-		for (i=1; i<=NB_SLAVE_STATIONS; ++i) {
-			if (WLESS_ReceivePacketVerified(ROLES_Address_SLAVE_RSSI_RECEIVER_BASE_ADDR + i, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
-			if (packet[0] != ROLES_PacketType_STATION_RSSI) continue;
-			
-			rssi_db = packet[1];
-			//AddValueToWindow(rssi_db, i+1);
-			SetRssi(rssi_db, i+1);
-		}
-		*/
-		
-		duration_ms = ticks - start;
-		
-		/*
-		if (duration_ms > 20)
-		{
-			printf("Long delay...\n");
-		}
-		*/
 	}
 }
 

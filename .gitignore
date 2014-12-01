@@ -1,3 +1,6 @@
 obj/
 *.uvguix*
 *.bak
+*.map
+*.lst
+*.dep

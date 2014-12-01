@@ -5,10 +5,18 @@
 void ROLES_MasterStationThread(const void* argument)
 {
 	//signed char rssi_db;
-	//uint8_t packet[WLESS_PACKET_SIZE] = {ROLES_PacketType_BADGE_BROADCAST, 0x00};
+	uint8_t packet[WLESS_PACKET_SIZE];
+	int lastCounter = -1;
 	
 	while (1)
 	{
+		if (WLESS_ReceivePacketVerified(ROLES_Address_PERSON_DETECTED_RECEIVER, packet) != WLESS_StatusCode_RX_SUCCESS) continue;
+		if (packet[0] != ROLES_PacketType_PERSON_DETECTED) continue;
 		
+		//Protection against receiving multiple packets that are part of the same burst
+		if (packet[1] == lastCounter) continue;
+		lastCounter = packet[1];
+		
+		//A person has been detected. Do something here.
 	}
 }
