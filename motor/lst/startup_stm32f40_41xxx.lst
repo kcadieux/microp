@@ -857,14 +857,14 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=.\obj
 \startup_stm32f40_41xxx.d -o.\obj\startup_stm32f40_41xxx.o -I"C:\Users\Vincent\
-Desktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE" -I"C:\Users\Vincent\D
-esktop\Fall 2014\Micro Processor Systems\lab4\lab 4\RTE\Device\STM32F407VG" -IC
-:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\ARM\CMSI
-S\4.1.1\CMSIS_RTX\INC -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Inc
-lude -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driver\inc
- --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefine="__MICROLIB
- SETA 1" --list=.\lst\startup_stm32f40_41xxx.lst RTE\Device\STM32F407VG\startup
-_stm32f40_41xxx.s
+Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE" -I"C:\Users\Vincen
+t\Desktop\Fall 2014\Micro Processor Systems\project\motor\RTE\Device\STM32F407V
+G" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.1\CMSIS\Include -IC:\Keil_v5\ARM\PACK\AR
+M\CMSIS\4.1.1\CMSIS_RTX\INC -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Devi
+ce\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\StdPeriph_Driv
+er\inc --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefine="__MI
+CROLIB SETA 1" --list=.\lst\startup_stm32f40_41xxx.lst RTE\Device\STM32F407VG\s
+tartup_stm32f40_41xxx.s
 
 
 

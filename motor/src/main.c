@@ -20,6 +20,8 @@
 #include "temperature.h"
 //#include "alarm.h"
 #include "motor.h"
+#include "sweep.h"
+#include "ProximitySensor.h"
 
 #define NO_ALARM_STATE					0
 #define ALARM_STATE							1
@@ -63,6 +65,7 @@ void display_thread (void const *argument);
 void temp_thread (void const *argument);
 void alarm_thread (void const *argument);
 void motor_thread (void const *argument);
+void sweep_thread (void const *argument);
 
 // Thread definition baby
 osThreadDef(acc_thread, osPriorityNormal, 1, 0);
@@ -71,6 +74,7 @@ osThreadDef(display_thread, osPriorityNormal, 1, 0);
 osThreadDef(temp_thread, osPriorityNormal, 1, 0);
 osThreadDef(alarm_thread, osPriorityNormal, 1, 0);
 osThreadDef(motor_thread, osPriorityNormal, 1, 0);
+osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
 
 // Thread ID (NOWAY!)
 osThreadId tid_keypad;
@@ -79,6 +83,7 @@ osThreadId tid_accel;
 osThreadId tid_temperature;
 osThreadId tid_alarm;
 osThreadId tid_motor;
+osThreadId tid_sweep;
 
 /// <summary>
 /// The alarm thread
@@ -233,6 +238,15 @@ void motor_thread(void const *argument)
 	initMotor();
 }
 
+void sweep_thread(void const *argument)
+{
+	//while(1) {
+	//osSignalWait(0x2, osWaitForever);
+		zerosweep();
+		sweep180();
+	//}
+}
+
 /// <summary>
 /// The entry point of the code
 /// </summary>
@@ -242,19 +256,23 @@ int main (void) {
   // OMG Initialization be happening
 	initMutex();
 	initMotor();
+	initSweepTIM();
+	InitProximitySensor();
 	//tid_motor = osThreadCreate(osThread(motor_thread), NULL);
   // create 'thread' functions that start executing,
 	//tid_alarm = osThreadCreate(osThread(alarm_thread), NULL);
 	//tid_accel = osThreadCreate(osThread(acc_thread), NULL);
 	//tid_temperature = osThreadCreate(osThread(temp_thread), NULL);
-	tid_keypad = osThreadCreate(osThread(keypad_thread), NULL);
+	//tid_keypad = osThreadCreate(osThread(keypad_thread), NULL);
 	//tid_display = osThreadCreate(osThread(display_thread), NULL);
+	tid_sweep = osThreadCreate(osThread(sweep_thread), NULL);
 	osKernelStart ();                         // start thread execution 
 }
 
 /// <summary>
 /// The IRQ handler for timer 2
 /// </summary>
+/*
 void TIM2_IRQHandler(void)
 {
   if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
@@ -263,6 +281,19 @@ void TIM2_IRQHandler(void)
         osSignalSet(tid_temperature, 0x2);
         //Clear interrupt set bit.
         TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
+  }
+}
+*/
+
+void TIM2_IRQHandler(void)
+{
+  if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
+  {
+			//Set the temperature routine signal.
+			RequestData();	
+			osSignalSet(tid_sweep, 0x3);
+			//Clear interrupt set bit.
+			TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
   }
 }
 
@@ -286,7 +317,7 @@ void TIM5_IRQHandler(void)
   if (TIM_GetITStatus(TIM5, TIM_IT_CC1) != RESET)
   {
     osSignalSet(tid_keypad, 0x5);
-		TIM_ClearITPendingBit(TIM5, TIM_IT_CC1);		
+		TIM_ClearITPendingBit(TIM5, TIM_IT_CC1);	
   }
 }
 
