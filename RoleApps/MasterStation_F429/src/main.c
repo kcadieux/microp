@@ -18,6 +18,7 @@
 #include "motor.h"
 #include "sweep.h"
 #include "ProximitySensor.h"
+#include "lcd.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -58,7 +59,13 @@ void TIM2_IRQHandler(void)
 {
   if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
   {
+			ticks++;
 			//Set the temperature routine signal.
+			GPIO_ToggleBits(GPIOG, GPIO_Pin_13);
+			if (ticks == 50) {
+				//
+				ticks = 0;
+			}
 			RequestData();	
 			osSignalSet(tid_sweep, MOTOR_TICK_SIGNAL);
 			//Clear interrupt set bit.
@@ -94,16 +101,28 @@ void DisplayRSSIThread(void const *argument)
 	}
 }
 
+#define PI 3.14159265
+
+void updatePosition(position * pos)
+{
+	double angleRadian = pos->angle * PI / 180.0;
+	updateCoords(150 + (cos(angleRadian) * pos->distance), sin(angleRadian) * pos->distance);
+}
+
 void sweep_thread(void const *argument)
 {
 	position pos;
+	
+	clearBackground();
+	initCoords();
+	initMap();
+	
 	zerosweep();
 	while(1)
 	{
 		osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
 		sweep180(&pos);
-		ObjectAngle = pos.angle;
-		ObjectAngle = pos.distance;
+		updatePosition(&pos);
 	}
 }
 
@@ -111,6 +130,8 @@ void sweep_thread(void const *argument)
 static void InitMainTimer()
 {
 	GPIO_InitTypeDef	gpio_init_s;
+	
+	/*
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 	NVIC_InitTypeDef 				NVIC_InitStructure;
 	
@@ -133,6 +154,7 @@ static void InitMainTimer()
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 	// TIM3 enable counter
 	TIM_Cmd(TIM3, ENABLE);
+	*/
 	
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
 	
@@ -166,7 +188,7 @@ int main (void) {
 	
   //Init wireless communication module	
 	WLESS_Init();
-	//InitMainTimer();
+	InitMainTimer();
 	initMotor();
 	initSweepTIM();
 	InitProximitySensor();

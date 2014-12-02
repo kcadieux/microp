@@ -28,7 +28,7 @@ void initSweepTIM() {
     //Effective prescaler value for clock frequency
     PrescalerValue = (uint16_t) ((SystemCoreClock / 2) / 20000) - 1;
      
-    uint32_t tim_period = 400;
+    uint32_t tim_period = 800;
     //Timer peripheral clock setup 
     TIM_InitStruct.TIM_Prescaler = 0;               
     TIM_InitStruct.TIM_CounterMode = TIM_CounterMode_Up;            // Count-up timer mode (justa matter of choice)
@@ -42,20 +42,20 @@ void initSweepTIM() {
  
     /* Output Compare Timing Mode configuration: Channel1 */
     //Simply use the timer as a timer.
-    TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_Timing;
+    //TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_Timing;
     //Eable the output state
-    TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+    //TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
     //CC1 update rate = TIM3 counter clock / CCR1_Val = ... Hz
     //Where TIM3 counter clock = (SystemCoreClock/2)/PrescalerValue
     //1 tenth of the timer period is more than enough to be detected.
-    TIM_OCInitStructure.TIM_Pulse = tim_period/10;          //Used to control output waveform
+    //TIM_OCInitStructure.TIM_Pulse = tim_period/10;          //Used to control output waveform
     //Required for input capture.
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+    //TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
  
-    TIM_OC1Init(TIM2, &TIM_OCInitStructure);
+    //TIM_OC1Init(TIM2, &TIM_OCInitStructure);
  
     //We wish the capture be performed at valid transition, so prescaler is disabled
-    TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Disable);
+    //TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Disable);
  
     //Enable specified TIM interrupt.
     TIM_ITConfig(TIM2, TIM_IT_CC1, ENABLE);
@@ -81,10 +81,10 @@ int compareWithZero(int distance, int angle) {
 		difference = 0;
 	}
 	if (difference > DETECTION_THRESHOLD) {
-		printf("Difference: %d\n", difference);
+		//printf("Difference: %d\n", difference);
 		return 1; //found something
 	}
-	printf("Difference: %d\n", difference);
+	//printf("Difference: %d\n", difference);
 	return 0;
 }
 
@@ -116,9 +116,9 @@ void zerosweep() {
 		
 		some_angle += angle_modifier;
 		count++;
-		if (count > 362) {
+		if (count > 181) {
 			NOT_DONE = 0;
-			some_angle = 0;
+			some_angle = Default_Angle;
 			setMotorAngle(some_angle);
 		}
 	}
@@ -126,8 +126,8 @@ void zerosweep() {
 
 void sweep180(position * pos) {
 	int somethingIsThere, sumDistance, numDistances, sumAngle, count;
-	setMotorAngle(-90);
-	osDelay(200);
+	setMotorAngle(Default_Angle);
+	osDelay(1000);
 	for(count = 0; count < 181; count++) 
 	{
 		osSignalWait(MOTOR_TICK_SIGNAL, osWaitForever);
@@ -158,7 +158,12 @@ void sweep180(position * pos) {
 		if (somethingIsThere == 1) {
 			sumDistance += distance;
 			numDistances++;
-			sumAngle += some_angle;
+			sumAngle += (some_angle + 90);
+			
+			if (distance > 200)
+			{
+				printf("ERROR");
+			}
 		}
 		
 		//printf("Angle: %d, Distance: %d\n", some_angle, distance);
@@ -167,8 +172,9 @@ void sweep180(position * pos) {
 		//return 
 		//compare with zero values//
 	}
-	
+	printf("done sweep 180\n");
 	pos->angle = sumAngle / numDistances;
 	pos->distance = sumDistance / numDistances;
+	some_angle = Default_Angle;
 	
 }

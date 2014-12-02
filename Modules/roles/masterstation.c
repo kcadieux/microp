@@ -8,6 +8,7 @@ void ROLES_MasterStationThread(const void* sweepThreadId)
 	//signed char rssi_db;
 	uint8_t packet[WLESS_PACKET_SIZE];
 	int lastCounter = -1;
+	//osSignalSet(*((osThreadId*)sweepThreadId), SWEEP_START_SIGNAL);
 	
 	while (1)
 	{
