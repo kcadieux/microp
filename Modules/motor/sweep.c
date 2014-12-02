@@ -103,15 +103,14 @@ void zerosweep() {
 		
 		//read distance//
 		
-		while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);
-		//if(ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) != RESET) {
-				
-			distance = GetFilteredData();
-			distance = 77504/distance;
-		//}
+		while (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET) continue;
+		distance = GetFilteredData();
+		distance = 77504/distance;
+		
 		if (distance >= MAX_DISTANCE) {
 			distance = MAX_DISTANCE;
 		}
+		
 		printf("Angle: %d, Distance: %d\n", some_angle, distance);
 		zero_vector[some_angle+ANGLE_OFFSET] = distance;
 		

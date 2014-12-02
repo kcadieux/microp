@@ -1,8 +1,9 @@
 #include <cmsis_os.h>
 #include "roles.h"
 #include "wireless.h"
+#include "sweep.h"
 
-void ROLES_MasterStationThread(const void* argument)
+void ROLES_MasterStationThread(const void* sweepThreadId)
 {
 	//signed char rssi_db;
 	uint8_t packet[WLESS_PACKET_SIZE];
@@ -18,5 +19,6 @@ void ROLES_MasterStationThread(const void* argument)
 		lastCounter = packet[1];
 		
 		//A person has been detected. Do something here.
+		osSignalSet(*((osThreadId*)sweepThreadId), SWEEP_START_SIGNAL);
 	}
 }

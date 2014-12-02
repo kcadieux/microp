@@ -91,18 +91,6 @@ void TIM4_Configuration(void)
   TIM_OC1Init(TIM4, &TIM_OCInitStructure);
   TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);
  
-  /* Output Compare PWM1 Mode configuration: Channel2 PD.13 */
-  TIM_OC2Init(TIM4, &TIM_OCInitStructure);
-  TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);
- 
-  /* Output Compare PWM1 Mode configuration: Channel3 PD.14 */
-  TIM_OC3Init(TIM4, &TIM_OCInitStructure);
-  TIM_OC3PreloadConfig(TIM4, TIM_OCPreload_Enable);
- 
-  /* Output Compare PWM1 Mode configuration: Channel4 PD.15 */
-  TIM_OC4Init(TIM4, &TIM_OCInitStructure);
-  TIM_OC4PreloadConfig(TIM4, TIM_OCPreload_Enable);
- 
   /* TIM Interrupts enable */
   TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);
  
@@ -111,15 +99,7 @@ void TIM4_Configuration(void)
 }
 
 void initMotor()
-{
-//	GPIO_InitTypeDef gpio_init_s;
-//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-//	gpio_init_s.GPIO_Pin = Motor_Pin;
-//	GPIO_Init(GPIOB, &gpio_init_s);
-	//initializeLEDs();
-  //initializeTimer();
-  //initializePWMChannel();
-	
+{	
 	RCC_Configuration();
  
   GPIO_Configuration();
@@ -142,10 +122,6 @@ void TIM4_IRQHandler(void)
  
     // minimum high of 600 us for -90 degrees, with +90 degrees at 2400 us, 10 us per degree
     //  timer timebase set to us units to simplify the configuration/math
- 
     TIM_SetCompare1(TIM4, 1500 + (int)(servo_angle * 10.0f) ); // PD.12
-    TIM_SetCompare2(TIM4, 1500 + (int)(servo_angle * 10.0f) ); // PD.13
-    TIM_SetCompare3(TIM4, 1500 + (int)(servo_angle * 10.0f) ); // PD.14
-    TIM_SetCompare4(TIM4, 1500 + (int)(servo_angle * 10.0f) ); // PD.15
     }
 }

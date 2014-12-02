@@ -35,10 +35,12 @@ static unsigned int ticks = 0;
 static const uint32_t PRESCALER = 10000;
 static const uint32_t PERIOD = 9;
 
+osThreadDef(ROLES_MasterStationThread, osPriorityNormal, 1, 0);
 osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
 osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
 
 // ID for theads
+osThreadId masterStationThreadId;
 osThreadId example_1a_thread;
 osThreadId tid_sweep;
 
@@ -72,7 +74,6 @@ void DisplayRSSIThread(void const *argument)
 {
 	/* Clear the LCD */ 
 	LCD_Clear(LCD_COLOR_WHITE);
-
 	
 	LCD_SetFont(&Font12x12);
 
@@ -164,8 +165,9 @@ int main (void) {
 	InitProximitySensor();
 	
 	
-	example_1a_thread = osThreadCreate(osThread(DisplayRSSIThread), NULL);
+	//example_1a_thread = osThreadCreate(osThread(DisplayRSSIThread), NULL);
 	tid_sweep = osThreadCreate(osThread(sweep_thread), NULL);
+	masterStationThreadId = osThreadCreate(osThread(ROLES_MasterStationThread), &tid_sweep);
 	
 	osKernelStart ();                         // start thread execution 
 }
