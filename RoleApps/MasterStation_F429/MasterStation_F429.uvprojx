@@ -361,7 +361,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER WLESS_RTX</Define>
               <Undefine></Undefine>
-              <IncludePath>.\inc;.\src;..\..\Drivers\CC2500;..\..\Modules\roles;..\..\Modules\wireless</IncludePath>
+              <IncludePath>.\inc;.\src;..\..\Drivers\CC2500;..\..\Modules\roles;..\..\Modules\wireless;..\..\Modules\motor;..\..\Modules\proximity</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -483,6 +483,31 @@
               <FileName>masterstation.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Modules\roles\masterstation.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>modules\motor</GroupName>
+          <Files>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Modules\motor\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>sweep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Modules\motor\sweep.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>modules\proximity</GroupName>
+          <Files>
+            <File>
+              <FileName>ProximitySensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Modules\proximity\ProximitySensor.c</FilePath>
             </File>
           </Files>
         </Group>

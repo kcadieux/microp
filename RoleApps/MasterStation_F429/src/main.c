@@ -15,13 +15,51 @@
 #include "roles.h"
 #include "geometry.h"
 #include "movingAverageFloat.h"
+#include "motor.h"
+#include "sweep.h"
+#include "ProximitySensor.h"
 
 #include <stdio.h>
 #include <string.h>
 
+#define MAXIMUM_ANGLE						180
+
+static void DisplayRSSIThread(void const *argument);
+static void sweep_thread(void const *argument);
+
+int currentAngle = 0.0;
 
 static char RSSI[7][10];
 static unsigned int ticks = 0;
+
+static const uint32_t PRESCALER = 10000;
+static const uint32_t PERIOD = 9;
+
+osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
+osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
+
+// ID for theads
+osThreadId example_1a_thread;
+osThreadId tid_sweep;
+
+void TIM3_IRQHandler()
+{
+	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+	GPIO_ToggleBits(GPIOG, GPIO_Pin_13);
+	++ticks;
+}
+
+void TIM2_IRQHandler(void)
+{
+  if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
+  {
+			//Set the temperature routine signal.
+			RequestData();	
+			osSignalSet(tid_sweep, MOTOR_TICK_SIGNAL);
+			//Clear interrupt set bit.
+			TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
+  }
+}
 
 void SetRssi(float rssi, int rssiNb)
 {
@@ -48,21 +86,19 @@ void DisplayRSSIThread(void const *argument)
 	
 	while (1)
 	{
-		
+		osDelay(100);
 	}
 }
 
-
-static const uint32_t PRESCALER = 10000;
-static const uint32_t PERIOD = 9;
-
-
-void TIM3_IRQHandler()
+void sweep_thread(void const *argument)
 {
-	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_12);
-	++ticks;
+	zerosweep();
+	while(1) {
+	  osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
+		sweep180();
+	}
 }
+
 
 static void InitMainTimer()
 {
@@ -90,21 +126,15 @@ static void InitMainTimer()
 	// TIM3 enable counter
 	TIM_Cmd(TIM3, ENABLE);
 	
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
 	
 	gpio_init_s.GPIO_Mode = GPIO_Mode_OUT;
 	gpio_init_s.GPIO_OType = GPIO_OType_PP;
 	gpio_init_s.GPIO_Speed = GPIO_Speed_50MHz;
-	gpio_init_s.GPIO_Pin = GPIO_Pin_12;
+	gpio_init_s.GPIO_Pin = GPIO_Pin_13;
 	
-	GPIO_Init(GPIOD, &gpio_init_s);
+	GPIO_Init(GPIOG, &gpio_init_s);
 }
-
-
-osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
-
-// ID for theads
-osThreadId example_1a_thread;
 
 /*
  * main: initialize and start the system
@@ -128,12 +158,15 @@ int main (void) {
 	
   //Init wireless communication module	
 	WLESS_Init();
-	InitMainTimer();
+	//InitMainTimer();
+	initMotor();
+	initSweepTIM();
+	InitProximitySensor();
 	
 	
 	example_1a_thread = osThreadCreate(osThread(DisplayRSSIThread), NULL);
+	tid_sweep = osThreadCreate(osThread(sweep_thread), NULL);
 	
 	osKernelStart ();                         // start thread execution 
 }
-
 

@@ -24,11 +24,42 @@
 
 #define MAXIMUM_ANGLE						180
 
-int currentAngle = 0.0;
+static void DisplayRSSIThread(void const *argument);
+static void sweep_thread(void const *argument);
 
+int currentAngle = 0.0;
 
 static char RSSI[7][10];
 static unsigned int ticks = 0;
+
+static const uint32_t PRESCALER = 10000;
+static const uint32_t PERIOD = 9;
+
+osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
+osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
+
+// ID for theads
+osThreadId example_1a_thread;
+osThreadId tid_sweep;
+
+void TIM3_IRQHandler()
+{
+	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+	GPIO_ToggleBits(GPIOG, GPIO_Pin_13);
+	++ticks;
+}
+
+void TIM2_IRQHandler(void)
+{
+  if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
+  {
+			//Set the temperature routine signal.
+			RequestData();	
+			osSignalSet(tid_sweep, 0x3);
+			//Clear interrupt set bit.
+			TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
+  }
+}
 
 void SetRssi(float rssi, int rssiNb)
 {
@@ -69,17 +100,6 @@ void sweep_thread(void const *argument)
 }
 
 
-static const uint32_t PRESCALER = 10000;
-static const uint32_t PERIOD = 9;
-
-
-void TIM3_IRQHandler()
-{
-	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-	GPIO_ToggleBits(GPIOG, GPIO_Pin_13);
-	++ticks;
-}
-
 static void InitMainTimer()
 {
 	GPIO_InitTypeDef	gpio_init_s;
@@ -116,14 +136,6 @@ static void InitMainTimer()
 	GPIO_Init(GPIOG, &gpio_init_s);
 }
 
-
-osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
-osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
-
-// ID for theads
-osThreadId example_1a_thread;
-osThreadId tid_sweep;
-
 /*
  * main: initialize and start the system
  */
@@ -156,17 +168,5 @@ int main (void) {
 	tid_sweep = osThreadCreate(osThread(sweep_thread), NULL);
 	
 	osKernelStart ();                         // start thread execution 
-}
-
-void TIM2_IRQHandler(void)
-{
-  if (TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
-  {
-			//Set the temperature routine signal.
-			RequestData();	
-			osSignalSet(tid_sweep, 0x3);
-			//Clear interrupt set bit.
-			TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
-  }
 }
 

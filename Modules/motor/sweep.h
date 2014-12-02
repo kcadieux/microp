@@ -10,6 +10,8 @@
 #define Motor_Pin					GPIO_Pin_11
 #define Default_Angle 0
 
+#define SWEEP_START_SIGNAL  1
+#define MOTOR_TICK_SIGNAL   2  
 
 
 extern void initSweepTIM(void);

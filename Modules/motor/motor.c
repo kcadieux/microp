@@ -10,17 +10,10 @@
 #include "stm32f4xx.h"
 #include "motor.h"
 
-static GPIO_InitTypeDef  GPIO_InitStructure;
-static NVIC_InitTypeDef NVIC_InitStructure;
-static EXTI_InitTypeDef   EXTI_InitStructure;
-static TIM_TimeBaseInitTypeDef TIM_InitStruct;
-static TIM_OCInitTypeDef  TIM_OCInitStructure;
-static ADC_InitTypeDef adc_init_s;
-static ADC_CommonInitTypeDef adc_common_init_s;
-
 volatile float servo_angle = 0.0;
 
 TIM_OCInitTypeDef TIM_OCStruct;
+
 
  
 /**************************************************************************************/
