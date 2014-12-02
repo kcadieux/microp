@@ -202,15 +202,15 @@ void initCoords()
 void updateCoordsMap(int32_t xCoord, int32_t yCoord)
 {
 	float fractionX = (float)xCoord/(float)MAXIMUM_COORDINATES_POINT;
-	float fractionY = (float)yCoord/(float)MAXIMUM_COORDINATES_POINT;
+	float fractionY = (float)yCoord/(float)MAXIMUM_COORDINATES_POINT_Y;
 	
 	if (currentXcoord)
 	{
 		LCD_SetColors(MAP_BACKGROUND_COLOR, MAP_BACKGROUND_COLOR);
 		LCD_DrawFullCircle(currentXcoord, currentYcoord, BEACON_RADIUS);
-		LCD_SetColors(BEACON_COLOR, BEACON_COLOR);
 	}
 	
+	LCD_SetColors(BEACON_COLOR, BEACON_COLOR);
 	currentXcoord = (WIDTH_OFFSET/2) + (fractionX * (MAP_WIDTH - WIDTH_OFFSET));
 	currentYcoord = COORDS_HEIGHT + (HEIGHT_OFFSET/2) + (fractionY*(MAP_HEIGHT - HEIGHT_OFFSET));
 	
@@ -220,7 +220,7 @@ void updateCoordsMap(int32_t xCoord, int32_t yCoord)
 void updateCoords(int32_t xCoord, int32_t yCoord)
 {
 	// Check if the coordinates are within the valid range
-	if (xCoord < 0 || yCoord < 0 || xCoord > MAXIMUM_COORDINATES_POINT || yCoord > MAXIMUM_COORDINATES_POINT)
+	if (xCoord < 0 || yCoord < 0 || xCoord > MAXIMUM_COORDINATES_POINT || yCoord > MAXIMUM_COORDINATES_POINT_Y)
 	{
 		return;
 	}
@@ -231,5 +231,17 @@ void updateCoords(int32_t xCoord, int32_t yCoord)
 	sprintf(y, "%d", yCoord);
 	
 	updateCoordsMap(xCoord, yCoord);
+	updateCoordsString((uint8_t*)x, (uint8_t*)y);
+}
+
+void updateCoordsAngle(int32_t angle, int32_t distance)
+{
+	
+	char x[4];
+	char y[4];
+	sprintf(x, "%d", angle);
+	sprintf(y, "%d", distance);
+	
+	updateCoordsMap(0, 0);
 	updateCoordsString((uint8_t*)x, (uint8_t*)y);
 }

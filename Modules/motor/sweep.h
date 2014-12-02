@@ -5,7 +5,7 @@
 
 #define FULL_DUTY_PERIOD 8399
 #define PERCENT_DUTY_PERIOD 84
-#define MAXIMUM_ANGLE 180
+#define MAXIMUM_ANGLE 150
 
 #define Motor_Pin					GPIO_Pin_11
 #define Default_Angle -90
@@ -19,6 +19,8 @@ typedef struct
 	int distance;
 } position;
 
-extern void initSweepTIM(void);
-extern void sweep180(position * pos);
-extern void zerosweep(void);
+int  GetSweepIsActive(void);
+void ToggleSweepIsActive(void);
+void initSweepTIM(void);
+void sweep180(position * pos);
+void zerosweep(void);

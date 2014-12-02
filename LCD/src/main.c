@@ -14,6 +14,21 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+typedef struct
+{
+	int angle;
+	int distance;
+} position;
+
+void updatePosition(position * pos)
+{
+	double angleRadian = pos->angle * PI / 180.0;
+	updateCoords(150 + (cos(angleRadian) * pos->distance), sin(angleRadian) * pos->distance);
+}
 
 void lcdDisplay(void const *argument)
 {
@@ -23,14 +38,17 @@ void lcdDisplay(void const *argument)
 	clearBackground();
 	initCoords();
 	initMap();
+	
+	position pos;
+	pos.angle = 90;
+	pos.distance = 200;
 	while(1)
 	{
-		updateCoords(200, 400);
+		updatePosition(&pos);
 		osDelay(1000);
-		updateCoords(420, 430);
-		osDelay(1000);
+		/*updateCoords(420, 430);
 		updateCoords(620, 430);
-		osDelay(1000);
+		osDelay(1000);*/
 	}
 }
 

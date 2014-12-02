@@ -121,8 +121,14 @@ void sweep_thread(void const *argument)
 	while(1)
 	{
 		osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
-		sweep180(&pos);
-		updatePosition(&pos);
+		while (GetSweepIsActive())
+		{
+			sweep180(&pos);
+			updatePosition(&pos);
+			osSignalSet(osThreadGetId(), SWEEP_START_SIGNAL);
+		}
+		
+		osSignalClear(osThreadGetId(), SWEEP_START_SIGNAL);
 	}
 }
 

@@ -52,7 +52,9 @@ extern const char *aNewHope[A_NEW_HOPE_LINES];
 #define BEACON_COLOR												LCD_COLOR_WHITE
 #define BEACON_RADIUS												5
 
-#define MAXIMUM_COORDINATES_POINT						300
+#define MAXIMUM_COORDINATES_POINT					300
+#define MAXIMUM_COORDINATES_POINT_Y				200
+
 
 #define FOREGROUND_TRANSPARENCY							0x50
 #define BACKGROUND_TRANSPARENCY							0xFF

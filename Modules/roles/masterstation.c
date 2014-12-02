@@ -20,6 +20,7 @@ void ROLES_MasterStationThread(const void* sweepThreadId)
 		lastCounter = packet[1];
 		
 		//A person has been detected. Do something here.
+		ToggleSweepIsActive();
 		osSignalSet(*((osThreadId*)sweepThreadId), SWEEP_START_SIGNAL);
 	}
 }

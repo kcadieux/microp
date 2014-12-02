@@ -361,7 +361,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>HSE_VALUE=8000000 USE_STDPERIPH_DRIVER WLESS_RTX</Define>
               <Undefine></Undefine>
-              <IncludePath>.\inc;.\src;..\..\Drivers\CC2500;..\..\Modules\roles;..\..\Modules\wireless;..\..\Modules\motor;..\..\Modules\proximity</IncludePath>
+              <IncludePath>.\inc;.\src;..\..\Drivers\CC2500;..\..\Modules\roles;..\..\Modules\wireless;..\..\Modules\motor;..\..\Modules\proximity;..\..\Modules\lcd</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -438,6 +438,11 @@
               <FileName>movingAverageFloat.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\inc\movingAverageFloat.h</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Modules\lcd\lcd.c</FilePath>
             </File>
           </Files>
         </Group>

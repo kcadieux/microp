@@ -4,7 +4,7 @@
 #include "sweep.h"
 #include "ProximitySensor.h"
 
-#define DETECTION_THRESHOLD 30
+#define DETECTION_THRESHOLD 20
 #define ANGLE_OFFSET 90
 #define MAX_DISTANCE 150
 
@@ -12,12 +12,14 @@ static NVIC_InitTypeDef NVIC_InitStructure;
 static TIM_TimeBaseInitTypeDef TIM_InitStruct;
 static TIM_OCInitTypeDef  TIM_OCInitStructure;
 
-int some_angle = Default_Angle;
-int angle_modifier = 1;
-int distance = 0;
+static int some_angle = Default_Angle;
+static int angle_modifier = 1;
+static int distance = 0;
 
-int zero_vector[180];
-int NOT_DONE = 1;
+static int zero_vector[180];
+static int NOT_DONE = 1;
+
+static int sweepIsActive = 0;
 
 void initSweepTIM() {
 	   uint16_t PrescalerValue = 0;
@@ -77,20 +79,28 @@ void initSweepTIM() {
 
 int compareWithZero(int distance, int angle) {
 	int difference = zero_vector[angle+ANGLE_OFFSET] - distance;
+	if (difference > MAX_DISTANCE)
+	{
+		difference = 0;
+	}
+	
 	if (difference < 0) {
 		difference = 0;
 	}
 	if (difference > DETECTION_THRESHOLD) {
-		//printf("Difference: %d\n", difference);
+		printf("Difference: %d\n", difference);
 		return 1; //found something
 	}
-	//printf("Difference: %d\n", difference);
+	printf("Difference: %d\n", difference);
 	return 0;
 }
 
 void zerosweep() {
 	int count = 0;
 	NOT_DONE = 1;
+	setMotorAngle(Default_Angle);
+	osDelay(2000);
+	
 	while(NOT_DONE == 1) {
 		osSignalWait(MOTOR_TICK_SIGNAL, osWaitForever);
 		setMotorAngle(some_angle);
@@ -177,4 +187,14 @@ void sweep180(position * pos) {
 	pos->distance = sumDistance / numDistances;
 	some_angle = Default_Angle;
 	
+}
+
+void ToggleSweepIsActive()
+{
+	sweepIsActive = !sweepIsActive;
+}
+
+int GetSweepIsActive()
+{
+	return sweepIsActive;
 }
