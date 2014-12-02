@@ -13,7 +13,12 @@
 #define SWEEP_START_SIGNAL  1
 #define MOTOR_TICK_SIGNAL   2  
 
+typedef struct 	
+{
+	int angle;
+	int distance;
+} position;
 
 extern void initSweepTIM(void);
-extern void sweep180(void);
+extern void sweep180(position * pos);
 extern void zerosweep(void);

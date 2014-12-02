@@ -38,6 +38,9 @@ static const uint32_t PERIOD = 9;
 osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
 osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
 
+static int ObjectAngle = 0;
+static int ObjectDistance = 0;
+
 // ID for theads
 osThreadId example_1a_thread;
 osThreadId tid_sweep;
@@ -92,10 +95,14 @@ void DisplayRSSIThread(void const *argument)
 
 void sweep_thread(void const *argument)
 {
+	position pos;
 	zerosweep();
-	while(1) {
-	  osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
-		sweep180();
+	while(1)
+	{
+		osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
+		sweep180(&pos);
+		ObjectAngle = pos.angle;
+		ObjectAngle = pos.distance;
 	}
 }
 

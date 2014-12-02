@@ -124,9 +124,13 @@ void zerosweep() {
 		}
 	}
 }
-void sweep180() {
-	int somethingIsThere;
-	while(1) {
+
+void sweep180(position * pos) {
+	int somethingIsThere, sumDistance, numDistances, sumAngle, count;
+	setMotorAngle(-90);
+	osDelay(200);
+	for(count = 0; count < 181; count++) 
+	{
 		osSignalWait(MOTOR_TICK_SIGNAL, osWaitForever);
 		setMotorAngle(some_angle);
 		
@@ -153,8 +157,9 @@ void sweep180() {
 		somethingIsThere = compareWithZero(distance, some_angle);
 		
 		if (somethingIsThere == 1) {
-			//Report the angle and distance of thing found
-			//printf("FOUND YA!\n");
+			sumDistance += distance;
+			numDistances++;
+			sumAngle += some_angle;
 		}
 		
 		//printf("Angle: %d, Distance: %d\n", some_angle, distance);
@@ -163,5 +168,8 @@ void sweep180() {
 		//return 
 		//compare with zero values//
 	}
+	
+	pos->angle = sumAngle / numDistances;
+	pos->distance = sumDistance / numDistances;
+	
 }
-
