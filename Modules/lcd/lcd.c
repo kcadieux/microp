@@ -245,3 +245,29 @@ void updateCoordsAngle(int32_t angle, int32_t distance)
 	updateCoordsMap(0, 0);
 	updateCoordsString((uint8_t*)x, (uint8_t*)y);
 }
+
+void setAlarm(int isSubjectIn)
+{
+	if (isSubjectIn)
+	{
+		LCD_SetFont(&Font16x24);
+		LCD_SetColors(COORDS_BACKGROUND_COLOR, ALARM_TEXT_COLOR);
+		LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)ALARM_TITLE);
+		LCD_SetLayer(LCD_BACKGROUND_LAYER);	
+		LCD_SetFont(&Font16x24);
+		LCD_SetLayer(LCD_FOREGROUND_LAYER);	
+		LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+		LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)ALARM_TITLE);
+	}
+	else
+	{
+		LCD_SetFont(&Font16x24);
+		LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+		LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)COORDS_TITLE);
+		LCD_SetLayer(LCD_BACKGROUND_LAYER);	
+		LCD_SetFont(&Font16x24);
+		LCD_SetLayer(LCD_FOREGROUND_LAYER);	
+		LCD_SetColors(COORDS_BACKGROUND_COLOR, COORDS_TEXT_COLOR);
+		LCD_DisplayStringLine(COORDS_TITLE_OFFSET, (uint8_t*)COORDS_TITLE);
+	}
+}

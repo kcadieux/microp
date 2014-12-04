@@ -28,13 +28,14 @@ extern const char *aNewHopeTitle[A_NEW_HOPE_TITLE_LINES];
 extern const char *aNewHope[A_NEW_HOPE_LINES];
 #define A_NEW_HOPE_ROLL_TIME			10 
 
-
+#define ALARM_TITLE													"     ALARM     "
 #define COORDS_TITLE												"  Coordinates  "
 #define COORDS_TITLE_OFFSET									5
 #define COORDS_X														" X:"
 #define COORDS_Y														" Y:"
 #define COORDS_FONT													Font16x24
 #define COORDS_BACKGROUND_COLOR							LCD_COLOR_BLACK
+#define ALARM_TEXT_COLOR										LCD_COLOR_RED
 #define COORDS_TEXT_COLOR										LCD_COLOR_GREEN
 #define COORDS_HEIGHT												80 - 2
 #define COORDS_WIDTH												LCD_PIXEL_WIDTH
@@ -73,3 +74,4 @@ void initCoords(void);
 void initMap(void);
 void clearBackground(void);
 void updateCoords(int32_t xCoord, int32_t yCoord);
+void setAlarm(int isSubjectIn);

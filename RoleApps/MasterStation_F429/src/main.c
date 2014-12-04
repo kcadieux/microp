@@ -114,6 +114,10 @@ void sweep_thread(void const *argument)
 	position pos;
 	
 	clearBackground();
+	
+	starWarsIntro();
+	
+	
 	initCoords();
 	initMap();
 	
@@ -121,13 +125,14 @@ void sweep_thread(void const *argument)
 	while(1)
 	{
 		osSignalWait(SWEEP_START_SIGNAL, osWaitForever);
+		setAlarm(1);
 		while (GetSweepIsActive())
 		{
 			sweep180(&pos);
 			updatePosition(&pos);
 			osSignalSet(osThreadGetId(), SWEEP_START_SIGNAL);
 		}
-		
+		setAlarm(0);
 		osSignalClear(osThreadGetId(), SWEEP_START_SIGNAL);
 	}
 }
