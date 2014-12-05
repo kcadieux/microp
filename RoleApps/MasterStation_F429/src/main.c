@@ -23,7 +23,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAXIMUM_ANGLE						180
 
 static void DisplayRSSIThread(void const *argument);
 static void sweep_thread(void const *argument);
@@ -33,15 +32,9 @@ int currentAngle = 0.0;
 static char RSSI[7][10];
 static unsigned int ticks = 0;
 
-static const uint32_t PRESCALER = 10000;
-static const uint32_t PERIOD = 9;
-
 osThreadDef(ROLES_MasterStationThread, osPriorityNormal, 1, 0);
 osThreadDef(DisplayRSSIThread, osPriorityNormal, 1, 0);
 osThreadDef(sweep_thread, osPriorityNormal, 1, 0);
-
-static int ObjectAngle = 0;
-static int ObjectDistance = 0;
 
 // ID for theads
 osThreadId masterStationThreadId;
@@ -137,46 +130,6 @@ void sweep_thread(void const *argument)
 	}
 }
 
-
-static void InitMainTimer()
-{
-	GPIO_InitTypeDef	gpio_init_s;
-	
-	/*
-	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-	NVIC_InitTypeDef 				NVIC_InitStructure;
-	
-	// Enable the TIM2 gloabal Interrupt
-	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_Init(&NVIC_InitStructure);
-	 
-	// TIM3 clock enable
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-	// Time base configuration 
-	TIM_TimeBaseStructure.TIM_Period = PERIOD - 1;
-	TIM_TimeBaseStructure.TIM_Prescaler = PRESCALER - 1;
-	TIM_TimeBaseStructure.TIM_ClockDivision = 0;
-	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
-	// TIM IT enable
-	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
-	// TIM3 enable counter
-	TIM_Cmd(TIM3, ENABLE);
-	*/
-	
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE);
-	
-	gpio_init_s.GPIO_Mode = GPIO_Mode_OUT;
-	gpio_init_s.GPIO_OType = GPIO_OType_PP;
-	gpio_init_s.GPIO_Speed = GPIO_Speed_50MHz;
-	gpio_init_s.GPIO_Pin = GPIO_Pin_13;
-	
-	GPIO_Init(GPIOG, &gpio_init_s);
-}
-
 /*
  * main: initialize and start the system
  */
@@ -199,7 +152,6 @@ int main (void) {
 	
   //Init wireless communication module	
 	WLESS_Init();
-	InitMainTimer();
 	initMotor();
 	initSweepTIM();
 	InitProximitySensor();
